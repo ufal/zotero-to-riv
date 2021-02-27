@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" 
+  xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" 
+  xmlns:html="http://www.w3.org/TR/REC-html40" 
+  xmlns:o="urn:schemas-microsoft-com:office:office" 
+  xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<Styles>
+ <Style ss:ID="Default" ss:Name="Normal">
+  <Alignment ss:Vertical="Bottom"/>
+  <Borders/>
+  <Font/>
+  <Interior/>
+  <NumberFormat/>
+  <Protection/>
+ </Style>
+ <Style ss:ID="s27">
+  <Font x:Family="Swiss" ss:Color="#0000FF" ss:Bold="1"/>
+ </Style>
+ <Style ss:ID="s21">
+  <NumberFormat ss:Format="yyyy\-mm\-dd"/>
+ </Style>
+ <Style ss:ID="s22">
+  <NumberFormat ss:Format="yyyy\-mm\-dd\ hh:mm:ss"/>
+ </Style>
+ <Style ss:ID="s23">
+  <NumberFormat ss:Format="hh:mm:ss"/>
+ </Style>
+</Styles>
+
+ <Worksheet ss:Name="Sheet1">
+  <ss:Table>
+    
+    <ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[EXPORT VÝSLEDKŮ VÝZKUMU - OBECNÁ ANALÝZA ( 2021 / X / X ) vygenerováno 27.02.2021 21:40:20]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků za poskytovatele ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poskytovatel]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[MPO]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ministerstvo průmyslu a obchodu]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[189]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[MSM]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ministerstvo školství, mládeže a tělovýchovy]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[49]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[TA0]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Technologická agentura ČR]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[13]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[GA0]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Grantová agentura České republiky]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[12]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[MZE]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ministerstvo zemědělství]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[7]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[MV0]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ministerstvo vnitra]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[KHP]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hlavní město Praha]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[4]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet druhů výsledků ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Druh]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[G]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Technicky realizované výsledky]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[116]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[O]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ostatní výsledky]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[51]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Z]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poloprovoz, ověřená technologie, odrůda, plemeno]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[35]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[F]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Výsledky s právní ochranou]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[17]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[J]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Recenzovaný odborný článek]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[16]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[R]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Software]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[15]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[W]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Uspořádání workshopu]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[C]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Kapitola/y v odborné knize]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[D]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Stať ve sborníku]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[B]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Odborná kniha]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[4]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[N]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Metodiky, léčebné a pam. postupy, spec. mapy]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[4]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[M]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Uspořádání konference]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[V]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Souhrnná a výzkumná zpráva s utajovanou informací]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[P]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Patent]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Poddruh F - Výsledky s právní ochranou ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poddruh]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[F/U]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Užitný vzor]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[15]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[F/P]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Průmyslový vzor]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Poddruh G - Technicky realizované výsledky ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poddruh]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[G/A]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Prototyp]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[94]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[G/B]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Funkční vzorek]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[22]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Poddruh J - Recenzovaný odborný článek ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poddruh]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[J/A]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Článek je obsažen v databázi WoS (Article, Review, Letter)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[7]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[J/C]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ostatní články v odborných recenzovaných periodicích]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[7]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[J/B]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Článek je obsažen v databázi SCOPUS (Article, Review, Letter)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Poddruh N - Metodiky, léčebné a pam. postupy, spec. mapy ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poddruh]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[N/D]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Specializovaná mapa s odborným obsahem]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[4]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Poddruh V - Souhrnná a výzkumná zpráva s utajovanou informací ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poddruh]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[V/S]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Souhrnná výzkumná zpráva]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Poddruh Z - Poloprovoz, ověřená technologie, odrůda, plemeno ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poddruh]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Z/B]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ověřená technologie]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[30]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Z/A]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Poloprovoz]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků dle kategorie výsledku ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Kategorie]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[A]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Aplikované výsledky ( P, Z, F, G, H, N, R, S, V )]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[191]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[O]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ostatní výsledky ( A, E, M, W, O )]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[58]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[P]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Publikační výsledky ( J, B, C, D )]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[30]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků dle kategorie subjektu ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Kategorie]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[I]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Právnická osoba nebo fyzická osoba s IČO nebo organizační složka ČR]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[195]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[J]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Organizační jednotka]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[84]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků dle právní formy subjektu ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Právní forma]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[POO]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Právnická osoba zapsaná v obchodním rejstříku]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[162]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[VVS]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Veřejná nebo státní vysoká škola]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[84]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[VVI]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Veřejná výzkumná instituce]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[16]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[SPO]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Příspěvková organizace]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[10]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[PON]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Jiná právnická osoba]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[4]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[ZSP]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Zájmové sdružení právnických osob, občanské sdružení, spolek]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[3]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků dle druhů návazností ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Návaznost]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[P]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Projekt]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[293]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[J]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Velká výzkumná infrastruktura]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[49]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[S]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Specifický výzkum na vysokých školách (MŠMT)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[12]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[I]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Institucionální podpora na rozvoj VO]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[R]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Rámcový program EK]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků dle jazyku výsledku ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Jazyk]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[cze]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[čeština]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[233]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[eng]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[angličtina]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[45]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[fre]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[francouzština]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků dle roku uplatnění výsledku ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Rok uplatnění]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[2021]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[-]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[2020]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[-]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[113]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[2019]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[-]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[124]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[2018]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[-]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[29]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[2017]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[-]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[7]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[2016]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[-]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[[ Počet výsledků dle vědních oborů ]]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[Vědní obor]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Popis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hodnota]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20201]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Electrical and electronic engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[41]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20400]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2.4 Chemical engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[22]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20301]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Mechanical engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[22]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20700]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2.7 Environmental engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[17]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20501]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Materials engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[17]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20102]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Construction engineering, Municipal and structural engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[12]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[21100]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2.11 Other engineering and technologies]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[11]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20601]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Medical engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[9]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10501]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Hydrology]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[9]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[50701]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Cultural and economic geography]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[9]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[21101]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Food and beverages]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[8]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[60206]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Specific literatures]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[7]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[21001]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Nano-materials (production and properties)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[7]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20101]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Civil engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[6]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20200]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2.2 Electrical engineering, Electronic engineering, Information engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[6]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20205]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Automation and control systems]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[6]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20505]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Composites (including laminates, reinforced plastics, cermets, combined natural and synthetic fibre fabrics; filled composites)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10401]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Organic chemistry]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10511]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Environmental sciences (social aspects to be 5.7)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[5]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20202]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Communication engineering and systems]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[4]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10400]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1.4 Chemical sciences]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[4]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[30502]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Other medical science]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[3]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[30212]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Surgery]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[3]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[30211]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Orthopaedics]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[3]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[40106]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Agronomy, plant breeding and plant protection; (Agricultural biotechnology to be 4.4)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20302]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Applied mechanics]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20503]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Textiles; including synthetic dyes, colours, fibres (nanoscale  materials  to  be  2.10; biomaterials to be 2.9)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[50101]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Psychology (including human - machine relations)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20704]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Energy and fuels]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20901]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Industrial biotechnology]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20206]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Computer hardware and architecture]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10403]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Physical chemistry]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20204]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Robotics and automatic control]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[2]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[60401]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Arts, Art history]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20504]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Ceramics]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[60202]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Specific languages]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20103]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Architecture engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[40201]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Animal and dairy science; (Animal biotechnology to be 4.4)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[60205]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Literary theory]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20203]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Telecommunications]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[30230]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Other clinical medicine subjects]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[30403]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Technologies involving identifying the functioning of DNA, proteins and enzymes and how they influence the onset of disease and maintenance of well-being (gene-based diagnostics and therapeutic interventions [pharmacogenomics, gene-based therapeutics])]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20303]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Thermodynamics]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20402]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Chemical process engineering]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20902]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Bioprocessing technologies (industrial processes relying on biological agents to drive the process) biocatalysis, fermentation]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10600]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1.6 Biological sciences]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[50103]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Cognitive sciences]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10503]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Water resources]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10302]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Condensed matter physics (including formerly solid state physics, supercond.)]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10611]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Plant sciences, botany]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10404]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Polymer science]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[20306]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Audio engineering, reliability analysis]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[10402]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[Inorganic and nuclear chemistry]]></Data></ss:Cell>
+<ss:Cell><Data ss:Type="String"><![CDATA[1]]></Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><Data ss:Type="String"><![CDATA[]]></Data></ss:Cell>
+</ss:Row>
+
+  </ss:Table>
+ </Worksheet>
+</Workbook>

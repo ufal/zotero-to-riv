@@ -1,0 +1,36 @@
+{
+    "items": [
+        {
+            "id": "8780503/HL95JJDW",
+            "type": "chapter",
+            "title": "A Multilingual Crossover between Types of Resources",
+            "container-title": "Slavonic Natural Language Processing in the 21st Century",
+            "publisher": "Tribun EU",
+            "publisher-place": "Brno, Czechia",
+            "page": "64–78",
+            "event-place": "Brno, Czechia",
+            "ISBN": "978-80-263-1545-2",
+            "author": [
+                {
+                    "family": "Hajič",
+                    "given": "Jan"
+                },
+                {
+                    "family": "Hajičová",
+                    "given": "Eva"
+                },
+                {
+                    "family": "Urešová",
+                    "given": "Zdeňka"
+                }
+            ],
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            }
+        }
+    ]
+}

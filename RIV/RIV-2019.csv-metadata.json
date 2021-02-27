@@ -1,0 +1,586 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw",{"@language": "cs"}],
+  "url": "RIV-2019.csv",
+  "tableSchema": {
+    "columns": [
+    {
+      "name": "poradi",
+      "titles": "poradi",
+      "dc:description": "Označení pořadí dodaných dat.",
+      "required": true,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "odkaz_na_isvavai.cz",
+      "titles": "odkaz_na_isvavai.cz",
+      "dc:description": "Odkaz na informace o výsledku na webových stránkách Informačního systému výzkumu, experimentálního vývoje a inovací.",
+      "required": true,
+      "datatype": "anyURI"
+    },{
+      "name": "kod_vysledku",
+      "titles": "kod_vysledku",
+      "dc:description": "Identifikační kód výsledku.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "dodavatel",
+      "titles": "dodavatel",
+      "dc:description": "Kód organizační složky ČR, která je dodavatelem dodávky dat do RIV.",
+      "required": true,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/poskytovatel-podpory"
+      }
+    },{
+      "name": "nazev_v_puvodnim_jazyce",
+      "titles": "nazev_v_puvodnim_jazyce",
+      "dc:description": "Přesný a úplný (nezkrácený) název výsledku, v původním jazyce výsledku, tj. v jazyce, ve kterém byl výsledek publikován, zveřejněn nebo realizován.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "nazev_v_ceskem_jazyce",
+      "titles": "nazev_v_ceskem_jazyce",
+      "dc:description": "Přesný a úplný (nezkrácený) název výsledku v českém jazyce.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "druh",
+      "titles": "druh",
+      "dc:description": "Kód druhu výsledku.",
+      "required": true,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku"
+      }
+    },{
+      "name": "poddruh",
+      "titles": "poddruh",
+      "dc:description": "Kód poddruhu výsledku.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/poddruh-vysledku"
+      }
+    },{
+      "name": "jazyk",
+      "titles": "jazyk",
+      "dc:description": "Jazyk, ve kterém byl výsledek publikován, zveřejněn nebo realizován.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "obor_skupina",
+      "titles": "obor_skupina",
+      "dc:description": "Hlavní oborová skupina výsledku dle číselníku CEP a RIV.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/obor-skupina"
+      }
+    },{
+      "name": "obor",
+      "titles": "obor",
+      "dc:description": "Hlavní obor výsledku dle číselníku CEP a RIV.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/obor-klasifikace"
+      }
+    },{
+      "name": "obor_oecd",
+      "titles": "obor_oecd",
+      "dc:description": "Hlavní obor projektu podle číselníku oborových skupin OECD - Frascati Manual 2015.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/vedni-obory-oecd"
+      }
+    },{
+      "name": "zpusob_publikovani",
+      "titles": "zpusob_publikovani",
+      "dc:description": "Způsob publikování.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/zpusob-publikovani"
+      }
+    },{
+      "name": "termin_zverejneni",
+      "titles": "termin_zverejneni",
+      "dc:description": "Předpokládaný termín zveřejnění plného textu výsledku.",
+      "required": false,
+      "datatype": "date"
+    },{
+      "name": "stav_uplatneni_vysledku",
+      "titles": "stav_uplatneni_vysledku",
+      "dc:description": "Stav uplatnění výsledku.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/stav-uplatneni-vysledku"
+      }
+    },{
+      "name": "rok_uplatneni",
+      "titles": "rok_uplatneni",
+      "dc:description": "Rok vydání článku, knihy, výzkumné zprávy, certifikace metodiky, udělení patentu, zhotovení prototypu, zahájení výroby atd.",
+      "required": true,
+      "datatype": "gYear"
+    },{
+      "name": "kod_duvernosti",
+      "titles": "kod_duvernosti",
+      "dc:description": "Kód důvěrnosti údajů poskytnutých do RIV.",
+      "required": true,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/duvernost-udaju-riv"
+      }
+    },{
+      "name": "pocet_vyskytu_vysledku",
+      "titles": "pocet_vyskytu_vysledku",
+      "dc:description": "Počet všech dodaných záznamů tohoto výsledku do RIV.",
+      "required": true,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "pocet_tvurcu_celkem",
+      "titles": "pocet_tvurcu_celkem",
+      "dc:description": "Počet tvůrců výsledku celkem.",
+      "required": false,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "pocet_domacich_tvurcu",
+      "titles": "pocet_domacich_tvurcu",
+      "dc:description": "Počet domácích tvůrců výsledku celkem.",
+      "required": true,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "seznam_tvurcu",
+      "titles": "seznam_tvurcu",
+      "dc:description": "Jmenný seznam všech tvůrců výsledků oddělených středníkem.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "klicova_slova",
+      "titles": "klicova_slova",
+      "lang": "en",
+      "dc:description": "Klíčová slova vztahující se k výsledku – anglicky.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "doi_vysledku",
+      "titles": "doi_vysledku",
+      "dc:description": "DOI (Digital Object Identifier) výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "id_predkladatele",
+      "titles": "id_predkladatele",
+      "dc:description": "ID předkladatele ve tvaru: ico:12345678, příp. orjk:12345.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "kategorie",
+      "titles": "kategorie",
+      "dc:description": "Kategorie předkladatele výsledků.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/kategorie-subjektu"
+      }
+    },{
+      "name": "pravni_forma",
+      "titles": "pravni_forma",
+      "dc:description": "Zařazení předkladatele výsledku podle jeho právní formy.",
+      "required": true,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/pravni-forma-subjektu"
+      }
+    },{
+      "name": "ico",
+      "titles": "ico",
+      "dc:description": "IČ předkladatele.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "nazev_organizace",
+      "titles": "nazev_organizace",
+      "dc:description": "Název subjektu (předkladatele výsledku) v původním jazyce.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "ulice_sidla",
+      "titles": "ulice_sidla",
+      "dc:description": "Ulice sídla předkladatele výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "mesto_sidla",
+      "titles": "mesto_sidla",
+      "dc:description": "Město sídla předkladatele výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "psc_sidla",
+      "titles": "psc_sidla",
+      "dc:description": "PSČ sídla předkladatele výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "zeme_sidla",
+      "titles": "zeme_sidla",
+      "dc:description": "Země sídla předkladatele výsledku.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "region_sidla",
+      "titles": "region_sidla",
+      "dc:description": "Region sídla předkladatele výsledku - formát CZ NUTS 2.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "kraj_sidla",
+      "titles": "kraj_sidla",
+      "dc:description": "Kraj sídla předkladatele výsledku - formát CZ NUTS 3.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "okres_sidla",
+      "titles": "okres_sidla",
+      "dc:description": "Okres sídla předkladatele výsledku - formát CZ LAU 1.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "kod_predkladatele_oj",
+      "titles": "kod_predkladatele_oj",
+      "dc:description": "Kód organizační jednotky předkladatele výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "predkladatel_oj",
+      "titles": "predkladatel_oj",
+      "dc:description": "Název organizační jednotky předkladatele výsledku (např. fakulty vysokých škol).",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "oznaceni_dodavky_dat",
+      "titles": "oznaceni_dodavky_dat",
+      "dc:description": "Ozačení dodávky dat.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "datum_posledni_dodavky",
+      "titles": "datum_posledni_dodavky",
+      "dc:description": "Datum posledního dodaného záznamu o výsledku daným předkladatelem.",
+      "required": true,
+      "datatype": "date"
+    },{
+      "name": "specifikace",
+      "titles": "specifikace",
+      "dc:description": "Specifikace výsledku.",
+      "required": true,
+      "datatype": "string"
+    },{
+      "name": "kontrolni_cislo",
+      "titles": "kontrolni_cislo",
+      "dc:description": "Kontrolní číslo výsledku.",
+      "required": true,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "nazev_periodika_sborniku",
+      "titles": "nazev_periodika_sborniku",
+      "dc:description": "Název periodika nebo sborníku v originálním jazyce.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "isbn",
+      "titles": "isbn",
+      "dc:description": "Kód ISBN nebo ISMN.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "issn",
+      "titles": "issn",
+      "dc:description": "Kód ISSN.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "e_issn",
+      "titles": "e_issn",
+      "dc:description": "Kód e-ISSN.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "svazek_periodika",
+      "titles": "svazek_periodika",
+      "dc:description": "Číslo svazku, resp. pořadové číslo vydání.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "cislo_periodika_v_ramci_uvedeneho_svazku",
+      "titles": "cislo_periodika_v_ramci_uvedeneho_svazku",
+      "dc:description": "Číslo periodika v rámci uvedeného svazku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "nazev_nakladatele_resp._objednatele",
+      "titles": "nazev_nakladatele_resp._objednatele",
+      "dc:description": "Úplný oficiální název nakladatele, resp. objednatele.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "misto_vydani",
+      "titles": "misto_vydani",
+      "dc:description": "Místo vydání.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "stat_vydavatele_periodika",
+      "titles": "stat_vydavatele_periodika",
+      "dc:description": "Stát vydavatele periodika.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "pocet_stran_knihy",
+      "titles": "pocet_stran_knihy",
+      "dc:description": "Počet stran knihy.",
+      "required": false,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "pocet_stran_vysledku",
+      "titles": "pocet_stran_vysledku",
+      "dc:description": "Počet stran výsledku.",
+      "required": false,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "strana_od_do",
+      "titles": "strana_od_do",
+      "dc:description": "Rozsah stran výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "kod_ut_wos_clanku",
+      "titles": "kod_ut_wos_clanku",
+      "dc:description": "Kód UT WoS článku podle Web of Science.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "kod_eid_scopus_vysledku",
+      "titles": "kod_eid_scopus_vysledku",
+      "dc:description": "EID výsledku v databázi Scopus.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "misto_konani_akce",
+      "titles": "misto_konani_akce",
+      "dc:description": "Místo konání akce.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "datum_konani_nebo_zahajeni_akce",
+      "titles": "datum_konani_nebo_zahajeni_akce",
+      "dc:description": "Datum nebo rok konání nebo zahájení akce.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "datum_ukonceni_akce",
+      "titles": "datum_ukonceni_akce",
+      "dc:description": "Datum ukončení akce.",
+      "required": false,
+      "datatype": "date"
+    },{
+      "name": "celkovy_pocet_ucastniku",
+      "titles": "celkovy_pocet_ucastniku",
+      "dc:description": "Počet účastníků akce.",
+      "required": false,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "pocet_zahranicnich_ucastniku",
+      "titles": "pocet_zahranicnich_ucastniku",
+      "dc:description": "Počet zahraničních účastníků akce.",
+      "required": false,
+      "datatype": "nonNegativeInteger"
+    },{
+      "name": "typ_akce_podle_statni_prislusnosti_ucastniku",
+      "titles": "typ_akce_podle_statni_prislusnosti_ucastniku",
+      "dc:description": "Typ akce podle státní příslušnosti účastníků akce.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/typ-akce"
+      }
+    },{
+      "name": "stat_konani_akce",
+      "titles": "stat_konani_akce",
+      "dc:description": "Stát konání akce.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "cislo_patentu_nebo_vzoru",
+      "titles": "cislo_patentu_nebo_vzoru",
+      "dc:description": "Číslo platného dokumentu – uděleného patentu nebo osvědčení zapsaného vzoru.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "kod_vydavatele_patentu_nebo_vzoru",
+      "titles": "kod_vydavatele_patentu_nebo_vzoru",
+      "dc:description": "Kód patentového úřadu, který vydal osvědčení o udělení patentu nebo o zápisu vzoru.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "nazev_vydavatele_patentu_nebo_vzoru",
+      "titles": "nazev_vydavatele_patentu_nebo_vzoru",
+      "dc:description": "Název vydavatele patentu nebo vzoru.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "stat_vydavatele_patentu_nebo_vzoru",
+      "titles": "stat_vydavatele_patentu_nebo_vzoru",
+      "dc:description": "Stát vydavatele patentu nebo vzoru.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "datum_prijeti",
+      "titles": "datum_prijeti",
+      "dc:description": "Datum udělení (vydání) patentu, resp. přidělení osvědčení o vzoru.",
+      "required": false,
+      "datatype": "date"
+    },{
+      "name": "nazev_vlastnika",
+      "titles": "nazev_vlastnika",
+      "dc:description": "Úplný oficiální název všech vlastníků (majitelů) patentu nebo vzoru.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "zpusob_vyuziti",
+      "titles": "zpusob_vyuziti",
+      "dc:description": "Způsob využití patentu nebo vzoru.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/zpusob-vyuziti-patentu"
+      }
+    },{
+      "name": "druh_moznosti_vyuziti",
+      "titles": "druh_moznosti_vyuziti",
+      "dc:description": "Druh možnosti využití patentu nebo vzoru jiným subjektem.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/moznost-vyuziti-vysledku"
+      }
+    },{
+      "name": "interni_identifikacni_kod_produktu_prideleny_tvurcem",
+      "titles": "interni_identifikacni_kod_produktu_prideleny_tvurcem",
+      "dc:description": "Interní identifikační kód výsledku přidělený tvůrcem.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "ciselna_identifikace_nebo_cislo_predpisu",
+      "titles": "ciselna_identifikace_nebo_cislo_predpisu",
+      "dc:description": "Číselná identifikace nebo číslo předpisu.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "technicke_parametry",
+      "titles": "technicke_parametry",
+      "dc:description": "Technické aj. parametry charakterizující výstup resp. ověřitelnost výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "ekonomicke_parametry",
+      "titles": "ekonomicke_parametry",
+      "dc:description": "Ekonomické parametry charakterizující výstup (např. roční zvýšení objemu výroby, zisku, export, úspora nákladů, atd.).",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "kategorie_aplikovaneho_vysledku_podle_nakladu_na_jeho_vytvoreni",
+      "titles": "kategorie_aplikovaneho_vysledku_podle_nakladu_na_jeho_vytvoreni",
+      "dc:description": "Kategorie výsledku podle nákladů na jeho dosažení.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/kategorie-vysledku-dle-nakladu-na-dosazeni"
+      }
+    },{
+      "name": "ic_vlastnika_vysledku",
+      "titles": "ic_vlastnika_vysledku",
+      "dc:description": "IČ vlastníka výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "stat_vlastnika",
+      "titles": "stat_vlastnika",
+      "dc:description": "Stát vlastníka výsledku.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "pozadavek_na_licencni_poplatek",
+      "titles": "pozadavek_na_licencni_poplatek",
+      "dc:description": "Požadavek na licenční poplatek.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/pozadavek-na-licencni-poplatek"
+      }
+    },{
+      "name": "adresa_www_stranky_s_vysledkem",
+      "titles": "adresa_www_stranky_s_vysledkem",
+      "dc:description": "Adresa www stránky s výsledkem.",
+      "required": false,
+      "datatype": "anyURI"
+    },{
+      "name": "oznaceni_kompetencne_prislusneho_organu",
+      "titles": "oznaceni_kompetencne_prislusneho_organu",
+      "dc:description": "Název a sídlo (případně i stát) příslušného orgánu, který normu, směrnici nebo nelegislativní předpis vydal nebo schválil.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "uzemni_platnost_vysledku",
+      "titles": "uzemni_platnost_vysledku",
+      "dc:description": "Územní platnost výsledku.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/uzemni-platnost-vysledku"
+      }
+    },{
+      "name": "oznaceni_certifikacniho_organu",
+      "titles": "oznaceni_certifikacniho_organu",
+      "dc:description": "Úplný název a sídlo (případně stát) orgánu, který metodiku certifikoval (akreditoval) nebo schválil.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "datum_certifikace",
+      "titles": "datum_certifikace",
+      "dc:description": "Datum certifikace výsledku.",
+      "required": false,
+      "datatype": "date"
+    },{
+      "name": "zpusoby_vyuziti_vysledku",
+      "titles": "zpusoby_vyuziti_vysledku",
+      "dc:description": "Způsob využití výsledku.",
+      "required": false,
+      "datatype": "string",
+      "qb:codeList": {
+        "@id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/zpusob-vyuziti-vysledku"
+      }
+    },{
+      "name": "edice_svazek",
+      "titles": "edice_svazek",
+      "dc:description": "Název edice a číslo svazku, resp. verze.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "identifikacni_cislo_nosice",
+      "titles": "identifikacni_cislo_nosice",
+      "dc:description": "Identifikační číslo nosiče.",
+      "required": false,
+      "datatype": "string"
+    },{
+      "name": "seznam_navaznosti_na_va",
+      "titles": "seznam_navaznosti_na_va",
+      "dc:description": "Seznam návazností výsledku na výzkumné aktivity (např. na projekt, institucionální podporu, specifický vysokoškolský výzkum apod.).",
+      "required": false,
+      "datatype": "string"
+    }],
+    "primaryKey": "kontrolni_cislo"
+  }
+}

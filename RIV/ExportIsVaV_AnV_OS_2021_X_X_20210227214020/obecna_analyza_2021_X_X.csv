@@ -1,0 +1,157 @@
+﻿EXPORT VÝSLEDKŮ VÝZKUMU - OBECNÁ ANALÝZA ( 2021 / X / X ) vygenerováno 27.02.2021 21:40:20
+
+[ Počet výsledků za poskytovatele ]
+Poskytovatel;Popis;Hodnota
+MPO;Ministerstvo průmyslu a obchodu;189
+MSM;Ministerstvo školství, mládeže a tělovýchovy;49
+TA0;Technologická agentura ČR;13
+GA0;Grantová agentura České republiky;12
+MZE;Ministerstvo zemědělství;7
+MV0;Ministerstvo vnitra;5
+KHP;Hlavní město Praha;4
+
+[ Počet druhů výsledků ]
+Druh;Popis;Hodnota
+G;Technicky realizované výsledky;116
+O;Ostatní výsledky;51
+Z;Poloprovoz, ověřená technologie, odrůda, plemeno;35
+F;Výsledky s právní ochranou;17
+J;Recenzovaný odborný článek;16
+R;Software;15
+W;Uspořádání workshopu;5
+C;Kapitola/y v odborné knize;5
+D;Stať ve sborníku;5
+B;Odborná kniha;4
+N;Metodiky, léčebné a pam. postupy, spec. mapy;4
+M;Uspořádání konference;2
+V;Souhrnná a výzkumná zpráva s utajovanou informací;2
+P;Patent;2
+
+[ Poddruh F - Výsledky s právní ochranou ]
+Poddruh;Popis;Hodnota
+F/U;Užitný vzor;15
+F/P;Průmyslový vzor;2
+
+[ Poddruh G - Technicky realizované výsledky ]
+Poddruh;Popis;Hodnota
+G/A;Prototyp;94
+G/B;Funkční vzorek;22
+
+[ Poddruh J - Recenzovaný odborný článek ]
+Poddruh;Popis;Hodnota
+J/A;Článek je obsažen v databázi WoS (Article, Review, Letter);7
+J/C;Ostatní články v odborných recenzovaných periodicích;7
+J/B;Článek je obsažen v databázi SCOPUS (Article, Review, Letter);2
+
+[ Poddruh N - Metodiky, léčebné a pam. postupy, spec. mapy ]
+Poddruh;Popis;Hodnota
+N/D;Specializovaná mapa s odborným obsahem;4
+
+[ Poddruh V - Souhrnná a výzkumná zpráva s utajovanou informací ]
+Poddruh;Popis;Hodnota
+V/S;Souhrnná výzkumná zpráva;2
+
+[ Poddruh Z - Poloprovoz, ověřená technologie, odrůda, plemeno ]
+Poddruh;Popis;Hodnota
+Z/B;Ověřená technologie;30
+Z/A;Poloprovoz;5
+
+[ Počet výsledků dle kategorie výsledku ]
+Kategorie;Popis;Hodnota
+A;Aplikované výsledky ( P, Z, F, G, H, N, R, S, V );191
+O;Ostatní výsledky ( A, E, M, W, O );58
+P;Publikační výsledky ( J, B, C, D );30
+
+[ Počet výsledků dle kategorie subjektu ]
+Kategorie;Popis;Hodnota
+I;Právnická osoba nebo fyzická osoba s IČO nebo organizační složka ČR;195
+J;Organizační jednotka;84
+
+[ Počet výsledků dle právní formy subjektu ]
+Právní forma;Popis;Hodnota
+POO;Právnická osoba zapsaná v obchodním rejstříku;162
+VVS;Veřejná nebo státní vysoká škola;84
+VVI;Veřejná výzkumná instituce;16
+SPO;Příspěvková organizace;10
+PON;Jiná právnická osoba;4
+ZSP;Zájmové sdružení právnických osob, občanské sdružení, spolek;3
+
+[ Počet výsledků dle druhů návazností ]
+Návaznost;Popis;Hodnota
+P;Projekt;293
+J;Velká výzkumná infrastruktura;49
+S;Specifický výzkum na vysokých školách (MŠMT);12
+I;Institucionální podpora na rozvoj VO;5
+R;Rámcový program EK;1
+
+[ Počet výsledků dle jazyku výsledku ]
+Jazyk;Popis;Hodnota
+cze;čeština;233
+eng;angličtina;45
+fre;francouzština;1
+
+[ Počet výsledků dle roku uplatnění výsledku ]
+Rok uplatnění;Popis;Hodnota
+2021;-;1
+2020;-;113
+2019;-;124
+2018;-;29
+2017;-;7
+2016;-;5
+
+[ Počet výsledků dle vědních oborů ]
+Vědní obor;Popis;Hodnota
+20201;Electrical and electronic engineering;41
+20400;2.4 Chemical engineering;22
+20301;Mechanical engineering;22
+20700;2.7 Environmental engineering;17
+20501;Materials engineering;17
+20102;Construction engineering, Municipal and structural engineering;12
+21100;2.11 Other engineering and technologies;11
+20601;Medical engineering;9
+10501;Hydrology;9
+50701;Cultural and economic geography;9
+21101;Food and beverages;8
+60206;Specific literatures;7
+21001;Nano-materials (production and properties);7
+20101;Civil engineering;6
+20200;2.2 Electrical engineering, Electronic engineering, Information engineering;6
+20205;Automation and control systems;6
+20505;Composites (including laminates, reinforced plastics, cermets, combined natural and synthetic fibre fabrics, filled composites);5
+10401;Organic chemistry;5
+10511;Environmental sciences (social aspects to be 5.7);5
+20202;Communication engineering and systems;4
+10400;1.4 Chemical sciences;4
+30502;Other medical science;3
+30212;Surgery;3
+30211;Orthopaedics;3
+40106;Agronomy, plant breeding and plant protection, (Agricultural biotechnology to be 4.4);2
+20302;Applied mechanics;2
+20503;Textiles, including synthetic dyes, colours, fibres (nanoscale  materials  to  be  2.10, biomaterials to be 2.9);2
+50101;Psychology (including human - machine relations);2
+20704;Energy and fuels;2
+20901;Industrial biotechnology;2
+20206;Computer hardware and architecture;2
+10403;Physical chemistry;2
+20204;Robotics and automatic control;2
+60401;Arts, Art history;1
+20504;Ceramics;1
+60202;Specific languages;1
+20103;Architecture engineering;1
+40201;Animal and dairy science, (Animal biotechnology to be 4.4);1
+60205;Literary theory;1
+20203;Telecommunications;1
+30230;Other clinical medicine subjects;1
+30403;Technologies involving identifying the functioning of DNA, proteins and enzymes and how they influence the onset of disease and maintenance of well-being (gene-based diagnostics and therapeutic interventions [pharmacogenomics, gene-based therapeutics]);1
+20303;Thermodynamics;1
+20402;Chemical process engineering;1
+20902;Bioprocessing technologies (industrial processes relying on biological agents to drive the process) biocatalysis, fermentation;1
+10600;1.6 Biological sciences;1
+50103;Cognitive sciences;1
+10503;Water resources;1
+10302;Condensed matter physics (including formerly solid state physics, supercond.);1
+10611;Plant sciences, botany;1
+10404;Polymer science;1
+20306;Audio engineering, reliability analysis;1
+10402;Inorganic and nuclear chemistry;1
+

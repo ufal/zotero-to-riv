@@ -1,0 +1,137 @@
+{
+  "@context": "https://ofn.gov.cz/číselníky/draft/schémata/číselníky.context.jsonld",
+  "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku",
+  "typ": "číselník",
+  "název-číselníku": {
+    "cs":  "Číselník druhů výsledků ve VaVaI"
+  },
+  "položky": [
+    {
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/J",
+      "kód": "J",
+      "název": {
+        "cs": "Recenzovaný odborný článek (Jimp, Jsc a Jost)"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/B",
+      "kód": "B",
+      "název": {
+        "cs": "Odborná kniha"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/C",
+      "kód": "C",
+      "název": {
+        "cs": "Kapitola resp. kapitoly v odborné knize"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/D",
+      "kód": "D",
+      "název": {
+        "cs": "Stať ve sborníku"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/P",
+      "kód": "P",
+      "název": {
+        "cs": "Patent"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/Z",
+      "kód": "Z",
+      "název": {
+        "cs": "Poloprovoz, ověřená technologie, odrůda, plemeno"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/F",
+      "kód": "F",
+      "název": {
+        "cs": "Výsledky s právní ochranou (užitný vzor, průmyslový vzor)"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/G",
+      "kód": "G",
+      "název": {
+        "cs": "Technicky realizované výsledky (prototyp, funkční vzorek)"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/H",
+      "kód": "H",
+      "název": {
+        "cs": "Poskytovatelem realizované výsledky (výsledky promítnuté do právních předpisů a norem, do směrnic a předpisů nelegislativní povahy závazných v rámci kompetence příslušeného poskytovatele)"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/N",
+      "kód": "N",
+      "název": {
+        "cs": "Metodiky (metodiky schválené příslušným orgánem státní správy; metodiky certifikované oprávněným orgánem; metodiky a postupy akreditované oprávněným orgánem), léčebné postupy, památkové postupy, specializované mapy s odborným obsahem"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/R",
+      "kód": "R",
+      "název": {
+        "cs": "Software"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/V",
+      "kód": "V",
+      "název": {
+        "cs": "Výzkumná zpráva obsahující utajované informace (takový výsledek lze do RIV vložit pouze v případě, že zpráva obsahuje utajované informace a pole R12 = U), nebo souhrnná výzkumná zpráva"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/A",
+      "kód": "A",
+      "název": {
+        "cs": "Audiovizuální tvorba"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/M",
+      "kód": "M",
+      "název": {
+        "cs": "Uspořádání (zorganizování) konference"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/W",
+      "kód": "W",
+      "název": {
+        "cs": "Uspořádání (zorganizování) workshopu"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/E",
+      "kód": "E",
+      "název": {
+        "cs": "Uspořádání (zorganizování) výstavy (Enekrit), uspořádání (zorganizování) výstavy s kritickým katalogem (Ekrit)"
+      }
+    },{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/O",
+      "kód": "O",
+      "název": {
+        "cs": "Ostatní výsledky, které nelze zařadit do žádného z definovaných druhů výsledků"
+      }
+	},{
+      "typ": "položka",
+      "id": "https://www.isvavai.cz/dokumenty/open-data/ciselniky/druh-vysledku/S",
+      "kód": "S",
+      "název": {
+        "cs": "Specializovaná veřejná databáze (Sdb)"
+      }
+    }
+  ]
+}

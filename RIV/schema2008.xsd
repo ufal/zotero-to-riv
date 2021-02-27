@@ -1,0 +1,3336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:CZ-RVV-IS-VaV-XML-NS:data-1.2.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:CZ-RVV-IS-VaV-XML-NS:data-1.2.1" version="$Revision:74793 $">
+	<xs:annotation>
+		<xs:documentation>Schéma pro dodávky dat do IS VaV pro rok 2008. Úpravy oproti schématu pro rok 2007 (jmenný prostor "urn:CZ-RVV-IS-VaV-XML-NS:data-1.2.0"). Zpracovala a udržuje InfoScience Praha, s.r.o. s využitím dřívější práce MathAn Praha, s.r.o.</xs:documentation>
+	</xs:annotation>
+	<!-- Základ: knihovna společných typů -->
+	<xs:complexType name="Empty__Type">
+		<xs:annotation>
+			<xs:documentation>Prázdný typ: žádný obsah, žádné atributy. Elementy tohoto typu jsou tzv. příznakové (marker elements).</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="Empty__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Prázdný typ s možností uvedení lokace.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Empty__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="Void__Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String__Type">
+		<xs:annotation>
+			<xs:documentation>Obecný řetězec.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="String__StatusedType">
+		<xs:annotation>
+			<xs:documentation>Obecný řetězec s možností uvést atribut status-udaje="upraveno" a tím předat informaci o tom, že hodnota řetězce je upravená: nemusí odpovídat skutečnosti.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="String__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="String__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Obecný řetězec s možností uvést lokaci.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="String__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="String__StatusedLocatedType">
+		<xs:annotation>
+			<xs:documentation>Obecný řetězec s možností uvést lokaci a status.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="String__LocatedType">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:attributeGroup name="StatusUdaje__Attributes">
+		<xs:annotation>
+			<xs:documentation>Skupina atributů obsahující jediný atribut: status-udaje. Používá se při odvozování upravitelného typu od libovolného základního komplexního typu, a to rozšířením právě o tuto skupinu. Příkladem užití je String__StatusedType.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute default="neupravovano" name="status-udaje" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="neupravovano">
+						<xs:annotation>
+							<xs:documentation>Hodnota, která je obsahem elementu, odpovídá skutečnosti, nebyla nijak upravována. Pokud atribut status-udaje není uveden, předpokládá se právě tento status.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="upraveno">
+						<xs:annotation>
+							<xs:documentation>Hodnota, která je obsahem elementu, byla upravena tak, aby původní hodnota nebyla prozrazena.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="neuvedeno">
+						<xs:annotation>
+							<xs:documentation>Dodavatel explicitně specifikuje, že hodnota není uvedena, protože neexistuje nebo není zjistitelná.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="LokaceUdaje__Attributes">
+		<xs:annotation>
+			<xs:documentation>Skupina atributů sloužících k uvedení lokace údaje, který je obsahem elementu, u kterého tyto atributy jsou uvedeny.</xs:documentation>
+		</xs:annotation>
+		<xs:anyAttribute namespace="##other" processContents="skip"/>
+	</xs:attributeGroup>
+	<xs:simpleType name="JazykZCiselniku__Type">
+		<xs:annotation>
+			<xs:documentation>Kód jazyka z číselníku jazyků.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<!-- přesně 3 malá písmena -->
+			<xs:pattern value="[a-z]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="JazykPuvodni__Type">
+		<xs:annotation>
+			<xs:documentation>Kód jazyka '#ORIG' označující původní jazyk.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="#ORIG"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Jazyk__Type">
+		<xs:annotation>
+			<xs:documentation>Kód jazyka - buď z číselníku jazyků, nebo původní.</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="JazykZCiselniku__Type JazykPuvodni__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="Jazyk__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Jazyk__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="LanguageSpecificString__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Řetězec v určitém jazyce; kód jazyka je předán v atributu jazyk.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="String__Type">
+				<xs:attribute name="jazyk" type="Jazyk__Type" use="required"/>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="LanguageSpecificString__StatusedLocatedType">
+		<xs:annotation>
+			<xs:documentation>Řetězec v určitém jazyce s možností uvést upravenou hodnotu.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="LanguageSpecificString__LocatedType">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Zeme__Type">
+		<xs:annotation>
+			<xs:documentation>Kód státu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<!-- přesně 2 velká písmena -->
+			<xs:pattern value="[A-Z]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ZemeOrEmpty__Type">
+		<xs:annotation>
+			<xs:documentation>Kód státu.</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="Zeme__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="Zeme__StatusedType">
+		<xs:annotation>
+			<xs:documentation>Kód státu s možností uvést upravenou hodnotu.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ZemeOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Zeme__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Zeme__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Zeme__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Zeme__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="IdentifikacniKod__Type">
+		<xs:annotation>
+			<xs:documentation>Identifikační kód objektu VaV.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<!-- neprázdný -->
+			<xs:pattern value=".+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Year__Type">
+		<xs:restriction base="xs:gYear"/>
+	</xs:simpleType>
+	<xs:simpleType name="YearOrEmpty__Type">
+		<xs:union memberTypes="Year__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="Year__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Year__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Year__StatusedType">
+		<xs:simpleContent>
+			<xs:extension base="YearOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Year__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Year__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Date__Type">
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+	<xs:simpleType name="DateOrEmpty__Type">
+		<xs:union memberTypes="Date__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="Date__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Date__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Date__StatusedType">
+		<xs:simpleContent>
+			<xs:extension base="DateOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Date__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Date__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="YearMonthOrYear__Type">
+		<xs:union memberTypes="xs:gYearMonth xs:gYear"/>
+	</xs:simpleType>
+	<xs:simpleType name="YearMonthOrYearOrEmpty__Type">
+		<xs:union memberTypes="YearMonthOrYear__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="YearMonthOrYear__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="YearMonthOrYear__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="YearMonthOrYear__StatusedType">
+		<xs:simpleContent>
+			<xs:extension base="YearMonthOrYearOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="YearMonthOrYear__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="YearMonthOrYear__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="YearMonth__Type">
+		<xs:restriction base="xs:gYearMonth"/>
+	</xs:simpleType>
+	<xs:simpleType name="YearMonthOrEmpty__Type">
+		<xs:union memberTypes="YearMonth__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="YearMonth__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="YearMonth__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="YearMonth__StatusedType">
+		<xs:simpleContent>
+			<xs:extension base="YearMonthOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="YearMonth__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="YearMonth__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Boolean__Type">
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+	<xs:simpleType name="BooleanOrEmpty__Type">
+		<xs:union memberTypes="Boolean__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="Boolean__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Boolean__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Boolean__StatusedType">
+		<xs:simpleContent>
+			<xs:extension base="BooleanOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Boolean__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Boolean__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Integer__Type">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:simpleType name="IntegerOrEmpty__Type">
+		<xs:union memberTypes="Integer__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="IntegerOrEmpty__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="IntegerOrEmpty__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NonNegativeInteger__Type">
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:complexType name="NonNegativeInteger__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="NonNegativeInteger__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NonNegativeIntegerOrEmpty__Type">
+		<xs:union memberTypes="NonNegativeInteger__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="NonNegativeIntegerOrEmpty__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="NonNegativeIntegerOrEmpty__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="NonNegativeInteger__StatusedType">
+		<xs:simpleContent>
+			<xs:extension base="NonNegativeIntegerOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="NonNegativeInteger__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="NonNegativeInteger__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Dodávka -->
+	<xs:element name="dodavka" type="Dodavka__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Kořenový element. Reprezentuje celou dodávku.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Dodavka__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="zahlavi" type="ZahlaviDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o dodávce a dodavateli.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="obsah" type="ObsahDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Datový obsah dodávky.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="struktura" type="StrukturaDodavky__Type" use="required">
+			<xs:annotation>
+				<xs:documentation>Dodavatelská struktura dodávky. Popisuje rozsah sbíraných dat.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="StrukturaDodavky__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CEP08A"/>
+			<xs:enumeration value="CEZ08A"/>
+			<xs:enumeration value="RIV08A"/>
+			<xs:enumeration value="VES08A"/>
+			<xs:enumeration value="SRP08A"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ObsahDodavky__LocatedType">
+		<xs:choice minOccurs="0">
+			<xs:element maxOccurs="unbounded" ref="projekt"/>
+			<xs:element maxOccurs="unbounded" ref="zamer"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="vysledek-uplatneny"/>
+				<xs:element ref="vysledek-dosud-neuplatneny"/>
+			</xs:choice>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="verejna-soutez-vyhlasena"/>
+				<xs:element ref="verejna-soutez-vyhodnocena"/>
+			</xs:choice>
+			<xs:element maxOccurs="unbounded" ref="oblast"/>
+		</xs:choice>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="ZahlaviDodavky__LocatedType">
+		<xs:sequence>
+			<xs:element name="rozsah" type="RozsahDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Rozsah dodávky: Vymezení prostoru, za který dodávka obsahuje data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="dodavatel" type="DodavatelDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Dodavatel dodávky.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="verze" type="VerzeDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Verze dodávky.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="pruvodka" type="PruvodkaDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Základní informace z průvodky dodávky.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="RozsahDodavky__LocatedType">
+		<xs:sequence>
+			<xs:element name="informacni-oblast" type="InformacniOblastDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informační oblast dodávky.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="obdobi-sberu" type="ObdobiSberuDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Období sběru dodávky (rok).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="kolo-navrhu" type="KoloNavrhuSR__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Kolo procesu přípravy státního rozpočtu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="poskytovatel" type="ResortKod__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Kód organizační složky státu - poskytovatele prostředků ze státního rozpočtu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="aktivita" type="AktivitaKod__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Kód aktivity (programu nebo typu grantových projektů) - uvádí se pro informační oblast CEP.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="predkladatel" type="PredkladatelDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Předkladatel dodávky - uvádí se pro informační oblast RIV. Je to ten subjekt, organizační jednotka nebo osoba, která figurovala jako příjemce nebo vykonavatel těch projektů nebo záměrů, z nichž bylo podpořeno dosažení výsledků uvedených v dodávce.     </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="duvernost" type="DuvernostDatDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Doplňující určení dodávky z hlediska důvěrnosti obsahu dodávky. Uvádí se pro informační oblasti CEP, CEZ a RIV. Obsahem je jedině kód "neutajovano".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="status" type="StatusDatDodavky__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Doplňující určení dodávky z hlediska statutu dat dodávky. Uvádí se pro informační oblast CEP. Obsahem je buď kód resene, a potom projekty dodávky nesmějí mít status-teto-faze roven ukoncene nebo zastaveny. Nebo je obsahem kód ukoncene, a potom projekty dodávky musejí mít       status-teto-faze roven ukoncene nebo zastaveny.     </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="InformacniOblastDodavky__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CEP">
+				<xs:annotation>
+					<xs:appinfo source="vklap">CEP - Centrální evidence projektů financovaných ze státního rozpočtu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CEZ">
+				<xs:annotation>
+					<xs:appinfo source="vklap">CEZ - Centrální evidence výzkumných záměrů</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RIV">
+				<xs:annotation>
+					<xs:appinfo source="vklap">RIV - Rejstřík výsledků</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VES">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VES - Veřejné soutěže</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SRP">
+				<xs:annotation>
+					<xs:appinfo source="vklap">SR - Příprava návrhu státního rozpočtu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="InformacniOblastDodavky__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="InformacniOblastDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ObdobiSberuDodavky__Type">
+		<xs:restriction base="Year__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="ObdobiSberuDodavky__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="ObdobiSberuDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="KoloNavrhuSR__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>				
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="AktivitaKod__Type">
+		<xs:restriction base="xs:string">
+			<!-- právě 2 velká písmena nebo číslice -->
+			<xs:pattern value="[A-Z0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AktivitaKod__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="AktivitaKod__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="PredkladatelDodavky__LocatedType">
+		<xs:choice minOccurs="0">
+			<xs:sequence>
+				<xs:element ref="subjekt">
+					<xs:annotation>
+						<xs:documentation>Subjekt - předkladatel dodávky.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" ref="organizacni-jednotka">
+					<xs:annotation>
+						<xs:documentation>Organizační jednotka subjektu, za který se předkládá dodávka.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:element ref="osoba">
+				<xs:annotation>
+					<xs:documentation>Osoba - předkladatel dodávky.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="DuvernostDatDodavky__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="neutajovano">
+				<xs:annotation>
+					<xs:appinfo source="vklap">N - dodávka dat obsahuje pouze zveřejnitelné údaje</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DuvernostDatDodavky__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="DuvernostDatDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="StatusDatDodavky__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="resene">
+				<xs:annotation>
+					<xs:appinfo source="vklap">R - dodávka obsahující řešené projekty/výzkumné záměry</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ukoncene">
+				<xs:annotation>
+					<xs:appinfo source="vklap">U - dodávka obsahující ukončené projekty/výzkumné záměry</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StatusDatDodavky__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="StatusDatDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DodavatelDodavky__Type">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="subjekt">
+				<xs:annotation>
+					<xs:documentation>Subjekt - dodavatel dodávky. Při současném uspořádání sběru to je vždy organizační složka státu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="pracovnik-povereny-pripravou-dodavky">
+				<xs:annotation>
+					<xs:documentation>Pracovník dodavatele pověřený přípravou dodávky.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence minOccurs="0">
+						<xs:element ref="osoba"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DodavatelDodavky__LocatedType">
+		<xs:complexContent>
+			<xs:extension base="DodavatelDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="VerzeDodavky__Type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9A-Z]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VerzeDodavky__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="VerzeDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="PruvodkaDodavky__Type">
+		<xs:attribute name="cislo-jednaci" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Číslo jednací průvodky k dodávce dat.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PruvodkaDodavky__LocatedType">
+		<xs:complexContent>
+			<xs:extension base="PruvodkaDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PrvekObsahuDodavky__Type">
+		<xs:annotation>
+			<xs:documentation>Triviální typ, ze kterého se odvodí typy všech elementů, které mohou být obsahem dodávky. Žádné atributy, prázdný obsah.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="PrvekObsahuDodavky__LocatedType">
+		<xs:complexContent>
+			<xs:extension base="PrvekObsahuDodavky__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PrvekObsahuDodavkySIdentifikatorem__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Typ, ze kterého se odvodí typ pro element reprezentující veřejnou soutěž v obsahu dodávky. Prázdný obsah, jediný atribut: identifikacni-kod.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrvekObsahuDodavky__LocatedType">
+				<xs:attribute name="identifikacni-kod" type="IdentifikacniKod__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Identifikační kód prvku obsahu dodávky.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PrvekObsahuDodavkySNepovinnymIdentifikatorem__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Typ, ze kterého se odvodí typ pro element reprezentující veřejnou soutěž v obsahu dodávky. Prázdný obsah, jediný atribut, nepovinný: identifikacni-kod.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrvekObsahuDodavky__LocatedType">
+				<xs:attribute name="identifikacni-kod" type="IdentifikacniKod__Type" use="optional">
+					<xs:annotation>
+						<xs:documentation>Identifikační kód prvku obsahu dodávky.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PrvekObsahuDodavkySIdentifikatoremSDuvernosti__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Typ, ze kterého se odvodí typy pro elementy reprezentující projekt, záměr nebo výsledek v obsahu dodávky. Prázdný obsah, dva atributy: identifikacni-kod a duvernost.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrvekObsahuDodavkySIdentifikatorem__LocatedType">
+				<xs:attribute name="duvernost-udaju" type="DuvernostUdaju__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Důvěrnost údajů o prvku obsahu dodávky.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PrvekObsahuDodavkySNepovinnymIdentifikatoremSDuvernosti__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Typ, ze kterého se odvodí typy pro elementy reprezentující projekt, záměr nebo výsledek v obsahu dodávky. Prázdný obsah, dva atributy: identifikacni-kod a duvernost.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrvekObsahuDodavkySNepovinnymIdentifikatorem__LocatedType">
+				<xs:attribute name="duvernost-udaju" type="DuvernostUdaju__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Důvěrnost údajů o prvku obsahu dodávky.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="DuvernostUdaju__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="verejne-pristupne">
+				<xs:annotation>
+					<xs:documentation>Údaje jsou zveřejnitelné.</xs:documentation>
+					<xs:appinfo source="vklap">S - údaje jsou zveřejnitelné a odpovídají skutečnosti</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="obchodni-tajemstvi-upravene">
+				<xs:annotation>
+					<xs:documentation>Údaje jsou zveřejnitelné, vlastní předmět podléhá obchodnímu tajemství.</xs:documentation>
+					<xs:appinfo source="vklap">C - údaje jsou upraveny tak, aby byly zveřejnitelné; vlastní předmět podléhá obchodnímu tajemství</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="utajovano-upravene">
+				<xs:annotation>
+					<xs:documentation>Údaje jsou zveřejnitelné, vlastní předmět je utajovanou skutečností.</xs:documentation>
+					<xs:appinfo source="vklap">U - údaje jsou upraveny tak, aby byly zveřejnitelné; vlastní předmět je utajovanou skutečností</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Projekt -->
+	<xs:element name="projekt">
+		<xs:annotation>
+			<xs:documentation>Projekt.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="PrvekObsahuDodavkySNepovinnymIdentifikatoremSDuvernosti__LocatedType">
+					<xs:sequence>
+						<xs:group ref="NazvyProjektuZameru__Group"/>
+						<xs:group ref="AnotaceProjektuZameru__Group"/>
+						<xs:group ref="KontaktniUdajeProjektuZameru__Group"/>
+						<xs:group ref="KlasifikaceProjektuZameruVysledku__Group"/>
+						<xs:group ref="NavaznostiProjektuZameruVysledku__Group"/>
+						<xs:group ref="ReseniProjektu__Group"/>
+						<xs:group ref="FinancovaniProjektuZameru__Group"/>
+						<xs:group ref="UcastniciProjektuZameru__Group"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="ReseniProjektu__Group">
+		<xs:sequence>
+			<xs:element name="reseni" type="ReseniProjektu__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o postupu a výsledku řešení projektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="ReseniProjektu__LocatedType">
+		<xs:sequence>
+			<xs:element name="zahajeni" type="Date__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Datum zahájení řešení projektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ukonceni" type="Date__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Datum ukončení řešení projektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status-teto-faze" type="StatusFazeProjektu__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Stav řešení v roce sběru dat.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="2" minOccurs="0" name="oduvodneni-stavu" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Odůvodnění stavu řešení projektu. Vždy v určitém jazyce.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="doslo-ke-zmene-smlouvy" type="Boolean__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Logická hodnota vyjadřující, zda došlo ke změně smlouvy nebo rozhodnutí o přidělení finančních prostředků od posledního dodání dat do IS VaV za minulé období sběru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="hodnoceni" type="HodnoceniProjektuZameru__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Hodnocení ukončeného nebo zastaveného projektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="StatusFazeProjektu__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="jednolety">
+				<xs:annotation>
+					<xs:documentation>Projekt, který začal i skončí ve stejném roce</xs:documentation>
+					<xs:appinfo source="vklap">J - jednoletý</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="zacinajici">
+				<xs:annotation>
+					<xs:documentation>Víceletý projekt, který je v prvním roce řešení</xs:documentation>
+					<xs:appinfo source="vklap">Z - začínající</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="bezici">
+				<xs:annotation>
+					<xs:documentation>Víceletý projekt v takovém roce řešení, který není ani první, ani poslední</xs:documentation>
+					<xs:appinfo source="vklap">B - běžící</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="koncici">
+				<xs:annotation>
+					<xs:documentation>Víceletý projekt v posledním roce řešení</xs:documentation>
+					<xs:appinfo source="vklap">K - končící</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="preruseny">
+				<xs:annotation>
+					<xs:documentation>Projekt, jehož řešení bylo dočasně přerušeno; je předpoklad, že v budoucnu bude řešení obnoveno</xs:documentation>
+					<xs:appinfo source="vklap">P - přerušený</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="zastaveny">
+				<xs:annotation>
+					<xs:documentation>Projekt, jehož řešení bylo zastaveno před jeho plánovaným koncem</xs:documentation>
+					<xs:appinfo source="vklap">S - zastavený</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ukonceny">
+				<xs:annotation>
+					<xs:documentation>Projekt, jehož řešení skončilo v minulém roce; nyní se o něm dodávají údaje naposledy</xs:documentation>
+					<xs:appinfo source="vklap">U - ukončený</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StatusFazeProjektu__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="StatusFazeProjektu__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Záměr -->
+	<xs:element name="zamer">
+		<xs:annotation>
+			<xs:documentation>Výzkumný záměr.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="PrvekObsahuDodavkySNepovinnymIdentifikatoremSDuvernosti__LocatedType">
+					<xs:sequence>
+						<xs:group ref="NazvyProjektuZameru__Group"/>
+						<xs:group ref="AnotaceProjektuZameru__Group"/>
+						<xs:group ref="KontaktniUdajeProjektuZameru__Group"/>
+						<xs:group ref="KlasifikaceProjektuZameruVysledku__Group"/>
+						<xs:group ref="NavaznostiProjektuZameruVysledku__Group"/>
+						<xs:group ref="ReseniZameru__Group"/>
+						<xs:group ref="FinancovaniProjektuZameru__Group"/>
+						<xs:group ref="UcastniciProjektuZameru__Group"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="ReseniZameru__Group">
+		<xs:sequence>
+			<xs:element name="reseni" type="ReseniZameru__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o postupu a zhodnocení řešení záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="ReseniZameru__LocatedType">
+		<xs:sequence>
+			<xs:element name="zahajeni" type="Date__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Rok a měsíc zahájení řešení záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ukonceni" type="Date__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Rok a měsíc ukončení řešení záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status-teto-faze" type="StatusFazeZameru__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Stav řešení v roce sběru dat.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="2" minOccurs="0" name="oduvodneni-stavu" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Odůvodnění stavu řešení záměru. Vždy v určitém jazyce.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="hodnoceni" type="HodnoceniProjektuZameru__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Hodnocení ukončeného nebo zastaveného záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="StatusFazeZameru__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="zacinajici">
+				<xs:annotation>
+					<xs:documentation>Víceletý výzkumný záměr, který je v prvním roce řešení</xs:documentation>
+					<xs:appinfo source="vklap">Z - začínající</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="bezici">
+				<xs:annotation>
+					<xs:documentation>Víceletý výzkumný záměr v takovém roce řešení, který není ani první, ani poslední</xs:documentation>
+					<xs:appinfo source="vklap">B - běžící</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="koncici">
+				<xs:annotation>
+					<xs:documentation>Víceletý výzkumný záměr v posledním roce řešení</xs:documentation>
+					<xs:appinfo source="vklap">K - končící</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="preruseny">
+				<xs:annotation>
+					<xs:documentation>Výzkumný záměr, jehož řešení bylo dočasně přerušeno; je předpoklad, že v budoucnu bude řešení obnoveno</xs:documentation>
+					<xs:appinfo source="vklap">P - přerušený</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="zastaveny">
+				<xs:annotation>
+					<xs:documentation>Výzkumný záměr, jehož řešení bylo zastaveno před jeho plánovaným koncem</xs:documentation>
+					<xs:appinfo source="vklap">S - zastavený</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ukonceny">
+				<xs:annotation>
+					<xs:documentation>Výzkumný záměr, jehož řešení skončilo v minulém roce; nyní se o něm dodávají údaje naposledy</xs:documentation>
+					<xs:appinfo source="vklap">U - ukončený</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StatusFazeZameru__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="StatusFazeZameru__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Společné pro projekty a záměry -->
+	<xs:group name="NazvyProjektuZameru__Group">
+		<xs:sequence>
+			<xs:element maxOccurs="2" minOccurs="0" name="nazev" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Název projektu/záměru. Vždy v určitém jazyce.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="AnotaceProjektuZameru__Group">
+		<xs:sequence>
+			<xs:element maxOccurs="2" minOccurs="0" name="anotace" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Anotace projektu/záměru. Vždy v určitém jazyce.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="KontaktniUdajeProjektuZameru__Group">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="adresa-WWW" type="String__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Webová adresa hlavní stránky projektu/záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="FinancovaniProjektuZameru__Group">
+		<xs:sequence>
+			<xs:element name="financovani" type="Financovani__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Financování projektu/záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="UcastniciProjektuZameru__Group">
+		<xs:sequence>
+			<xs:element name="ucastnici" type="Ucastnici__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Účastníci projektu/záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="Ucastnici__LocatedType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ucastnik" type="Ucastnik__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Účastník projektu/záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="Ucastnik__LocatedType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:annotation>
+					<xs:documentation>Kdo je účastníkem.</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="subjekt"/>
+				<xs:element ref="organizacni-jednotka"/>
+				<xs:element ref="osoba"/>
+			</xs:choice>
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
+				<xs:element name="cerpani-financi" type="CerpaniFinanci__LocatedType">
+					<xs:annotation>
+						<xs:documentation>A v případě uzavřeného projzáměru i čerpání financí jednotlivými účastníky řešení.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ucastnik" type="Ucastnik__LocatedType">
+					<xs:annotation>
+						<xs:documentation>Jemu organizačně podřízení účastníci.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="role" type="SeznamRoliUcastnika__Type" use="optional">
+			<xs:annotation>
+				<xs:documentation>Seznam rolí, ve kterých účastník vystupuje vůči projektu/záměru.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="SeznamRoliUcastnika__Type">
+		<xs:list itemType="RoleUcastnika__Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="RoleUcastnika__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="koordinator">
+				<xs:annotation>
+					<xs:documentation>U projektu s více příjemci označuje toho příjemce, který je garantujícím/koordinujícím. Uvádí se společně s kódem 'prijemce'.</xs:documentation>
+					<xs:appinfo source="vklap">Koordinující příjemce podpory ze státního rozpočtu u projektů s několika příjemci</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="prijemce">
+				<xs:annotation>
+					<xs:documentation>Příjemce podpory ze státního rozpočtu. Může být subjekt nebo osoba.</xs:documentation>
+					<xs:appinfo source="vklap">Příjemce podpory ze státního rozpočtu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="vykonavatel">
+				<xs:annotation>
+					<xs:documentation>Vykonavatel - místo, kde se projekt/výzkumný záměr řeší. Může být přímo příjemce, nebo organizační jednotka příjemce, pokud tento je subjektem.</xs:documentation>
+					<xs:appinfo source="vklap">Vykonavatel řešení</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="resitel">
+				<xs:annotation>
+					<xs:documentation>Hlavní řešitel. Je příjemci zodpovědný za řešení projektu/výzkumného záměru. Může být jedině osoba.</xs:documentation>
+					<xs:appinfo source="vklap">Hlavní řešitel</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="dalsi-resitel">
+				<xs:annotation>
+					<xs:documentation>Další osoba podílející se na řešení projektu/výzkumného záměru.</xs:documentation>
+					<xs:appinfo source="vklap">Další řešitel</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="spoluprijemce">
+				<xs:annotation>
+					<xs:documentation>Spolupříjemce podpory ze státního rozpočtu. Může být subjekt nebo osoba. Má smluvní vztah s příjemcem o řešení části projektu. Nevyskytuje se na výzkumných záměrech.</xs:documentation>
+					<xs:appinfo source="vklap">Spolupříjemce</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="spoluvykonavatel">
+				<xs:annotation>
+					<xs:documentation>Spoluvykonavatel - místo, kde se část projektu řeší. Může být přímo spolupříjemce, nebo organizační jednotka spolupříjemce, pokud tento je subjektem.</xs:documentation>
+					<xs:appinfo source="vklap">Vykonavatel řešení u spolupříjemce</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="spoluresitel">
+				<xs:annotation>
+					<xs:documentation>Hlavní řešitel na straně spolupříjemce.</xs:documentation>
+					<xs:appinfo source="vklap">Hlavní řešitel u spolupříjemce</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="dalsi-spoluresitel">
+				<xs:annotation>
+					<xs:documentation>Další osoba podílející se na řešení projektu.</xs:documentation>
+					<xs:appinfo source="vklap">Další řešitel u spolupříjemce</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HodnoceniProjektuZameru__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="stupen-hodnoceni" type="StupenHodnoceniProjektuZameru__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Kódové zhodnocení projektu/záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="textove-hodnoceni" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Textové zhodnocení projektu/záměru.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="StupenHodnoceniProjektuZameru__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="vynikajici">
+				<xs:annotation>
+					<xs:documentation>Projekt/výzkumný záměr uspěl s vynikajícími výsledky.</xs:documentation>
+					<xs:appinfo source="vklap">V - uspěl s vynikajícími výsledky</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="uspel">
+				<xs:annotation>
+					<xs:documentation>Projekt/výzkumný záměr uspěl podle zadání.</xs:documentation>
+					<xs:appinfo source="vklap">U - uspěl podle zadání</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="neuspel-smlouva-dodrzena">
+				<xs:annotation>
+					<xs:documentation>Projekt/výzkumný záměr nesplnil zadání, smlouva však byla dodržena.</xs:documentation>
+					<xs:appinfo source="vklap">O - nesplnil zadání, smlouva však byla dodržena</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="neuspel-smluvni-sankce">
+				<xs:annotation>
+					<xs:documentation>Projekt/výzkumný záměr nesplnil zadání, bylo přistoupeno k sankčním ustanovením smlouvy.</xs:documentation>
+					<xs:appinfo source="vklap">S - nesplnil zadání, přistoupeno k sankčním ustanovením smlouvy</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StupenHodnoceniProjektuZameru__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="StupenHodnoceniProjektuZameru__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Výsledek -->
+	<xs:element name="vysledek-uplatneny">
+		<xs:annotation>
+			<xs:documentation>Výsledek uplatněný.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Vysledek__LocatedType">
+					<xs:sequence>
+						<xs:group ref="JazykVysledku__Group"/>
+						<xs:group ref="NazvyVysledku__Group"/>
+						<xs:group ref="AnotaceVysledku__Group"/>
+						<xs:group ref="AutoriVysledku__Group"/>
+						<xs:group ref="KlasifikaceProjektuZameruVysledku__Group"/>
+						<xs:group ref="NavaznostiProjektuZameruVysledku__Group"/>
+						<xs:choice minOccurs="0">
+							<xs:group ref="VysledekSpec_ClanekVPeriodiku__Group"/>
+							<xs:group ref="VysledekSpec_KnihaNeboVyzkumnaZpravaNeboPrezentace__Group"/>
+							<xs:group ref="VysledekSpec_KapitolaVKnize__Group"/>
+							<xs:group ref="VysledekSpec_ClanekVeSborniku__Group"/>
+							<xs:group ref="VysledekSpec_AplikovaneVysledky__Group"/>
+							<xs:group ref="VysledekSpec_Patent__Group"/>
+							<xs:group ref="VysledekSpec_KonferenceWorkshopVystava__Group"/>
+						</xs:choice>
+					</xs:sequence>
+					<xs:attribute name="rok-uplatneni" type="Year__Type" use="required">
+						<xs:annotation>
+							<xs:documentation>Rok uplatnění výsledku.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="vysledek-dosud-neuplatneny">
+		<xs:annotation>
+			<xs:documentation>Výsledek dosud neuplatněný.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Vysledek__LocatedType">
+					<xs:sequence>
+						<xs:element name="nazev" type="String__StatusedLocatedType"/>
+						<xs:group ref="NavaznostiProjektuZameruVysledku__Group"/>
+					</xs:sequence>
+					<xs:attribute name="rok-predpokladaneho-uplatneni" type="Year__Type" use="required">
+						<xs:annotation>
+							<xs:documentation>Rok předpokládaného uplatnění výsledku.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Vysledek__LocatedType">
+		<xs:complexContent>
+			<xs:extension base="PrvekObsahuDodavkySNepovinnymIdentifikatoremSDuvernosti__LocatedType">
+				<xs:attribute name="nejnizsi-organizacni-jednotka-predkladatele" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Kód nejnižší organizační jednotky předkladatele výsledku, na které výsledek vznikl.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="druh" type="DruhVysledku__Type" use="optional">
+					<xs:annotation>
+						<xs:documentation>Druh výsledku.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="DruhVysledku__Type">
+		<xs:restriction base="String__Type">
+			<xs:enumeration value="clanek-v-periodiku">
+				<xs:annotation>
+					<xs:documentation>Článek v odborném periodiku.</xs:documentation>
+					<xs:appinfo source="vklap">J - článek v odborném periodiku</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="kniha">
+				<xs:annotation>
+					<xs:documentation>Odborná monografie.</xs:documentation>
+					<xs:appinfo source="vklap">B - odborná monografie</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="kapitola-v-knize">
+				<xs:annotation>
+					<xs:documentation>Kapitola v knize.</xs:documentation>
+					<xs:appinfo source="vklap">C - kapitola v knize</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="clanek-ve-sborniku">
+				<xs:annotation>
+					<xs:documentation>Článek ve sborníku.</xs:documentation>
+					<xs:appinfo source="vklap">D - článek ve sborníku</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="vyzkumna-zprava">
+				<xs:annotation>
+					<xs:documentation>Výzkumná zpráva.</xs:documentation>
+					<xs:appinfo source="vklap">V - výzkumná zpráva</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="patent">
+				<xs:annotation>
+					<xs:documentation>Patent nebo jiný chráněný výsledek.</xs:documentation>
+					<xs:appinfo source="vklap">P - patent nebo jiný chráněný výsledek</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="poloprovoz-technologie-odruda-plemeno">
+				<xs:annotation>
+					<xs:documentation>Poloprovoz, ověřená technologie, apod.</xs:documentation>
+					<xs:appinfo source="vklap">Z - poloprovoz, ověřená technologie, odrůda, plemeno,...</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="prototyp-metodika-vzorek-software">
+				<xs:annotation>
+					<xs:documentation>Prototyp, uplatněná metodika, funkční vzorek, software, apod.</xs:documentation>
+					<xs:appinfo source="vklap">S - prototyp, uplatněná metodika, funkční vzorek, software,...</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="prezentace">
+				<xs:annotation>
+					<xs:documentation>Prezentace v oblasti VaV.</xs:documentation>
+					<xs:appinfo source="vklap">A - prezentace v oblasti VaV</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="konference">
+				<xs:annotation>
+					<xs:documentation>Uspořádání konference.</xs:documentation>
+					<xs:appinfo source="vklap">M - uspořádání konference</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="workshop">
+				<xs:annotation>
+					<xs:documentation>Uspořádání workshopu.</xs:documentation>
+					<xs:appinfo source="vklap">W - uspořádání workshopu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="vystava">
+				<xs:annotation>
+					<xs:documentation>Uspořádání výstavy.</xs:documentation>
+					<xs:appinfo source="vklap">E - uspořádání výstavy</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ostatni">
+				<xs:annotation>
+					<xs:documentation>Ostatní.</xs:documentation>
+					<xs:appinfo source="vklap">O - ostatní</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:group name="JazykVysledku__Group">
+		<xs:sequence>
+			<xs:element name="jazyk" type="Jazyk__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Jazyk výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="NazvyVysledku__Group">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="nazev" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Název výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="AnotaceVysledku__Group">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="anotace" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Anotace výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="AutoriVysledku__Group">
+		<xs:sequence>
+			<xs:element name="autori">
+				<xs:annotation>
+					<xs:documentation>Strukturované informace o autorech.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="autor" type="AutorVysledku__Type">
+							<xs:annotation>
+								<xs:documentation>Autor výsledku.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="pocet-celkem" type="NonNegativeInteger__Type" use="required">
+						<xs:annotation>
+							<xs:documentation>Počet autorů výsledku celkem.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="pocet-domacich" type="NonNegativeInteger__Type" use="required">
+						<xs:annotation>
+							<xs:documentation>Počet "domácích" autorů výsledku.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="AutorVysledku__Type">
+		<xs:complexContent>
+			<xs:extension base="Osoba__LocatedType">
+				<xs:attribute default="false" name="je-garant" type="Boolean__Type" use="optional">
+					<xs:annotation>
+						<xs:documentation>Příznak, zda tento autor je garantem výsledku.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute default="false" name="je-domaci" type="Boolean__Type" use="optional">
+					<xs:annotation>
+						<xs:documentation>Příznak, zda tento autor je "domácím" autorem.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Specifické části pro různé druhy výsledků -->
+	<xs:group name="VysledekSpec_ClanekVPeriodiku__Group">
+		<xs:sequence>
+			<xs:element name="periodikum" type="Periodikum__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Periodikum, ve kterém článek vyšel.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="rocnik" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Ročník periodika, ve kterém článek vyšel.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cislo" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Číslo v rámci ročníku periodika, ve kterém článek vyšel.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<!-- Strana od-do a počet stran -->
+			<xs:group ref="Strany__Group"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="VysledekSpec_KnihaNeboVyzkumnaZpravaNeboPrezentace__Group">
+		<xs:choice>
+			<!-- Prezentace se vzdáleným přístupem -->
+			<xs:group ref="Pristup__Group"/>
+			<!-- Zbytek -->
+			<xs:sequence>
+				<!-- ISBN nebo ISSN je všem druhům společné -->
+				<xs:element minOccurs="0" name="ISBN" type="String__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>ISBN knihy nebo výzkumné zprávy nebo prezentace.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="ISSN" type="String__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>ISSN knihy nebo výzkumné zprávy nebo prezentace.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<!-- Větvení: kniha a zbylé dva druhy -->
+				<xs:choice minOccurs="0">
+					<!-- Pro knihu -->
+					<xs:element name="edice-cislo-svazku" type="String__StatusedLocatedType">
+						<xs:annotation>
+							<xs:documentation>Edice a číslo svazku knihy.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- Pro vyzkumnou zpravu nebo prezentaci -->
+					<xs:element name="verze" type="String__StatusedLocatedType">
+						<xs:annotation>
+							<xs:documentation>Edice a číslo svazku výzkumné zprávy nebo prezentace.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+				<!-- Pokracujeme dalsimi (nepovinnymi) udaji -->
+				<xs:element minOccurs="0" name="misto-vydani" type="String__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>Místo vydání knihy nebo výzkumné zprávy nebo prezentace.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<!-- Opět větvení: kniha a zbylé dva druhy -->
+				<xs:choice>
+					<!-- Pro knihu -->
+					<xs:sequence>
+						<xs:element name="nakladatel" type="SubjektRIV__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Informace o nakladateli knihy.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:group ref="Strany__Group"/>
+					</xs:sequence>
+					<!-- Výzkumná zpráva nebo prezentace -->
+					<xs:sequence>
+						<!-- Informace o výzkumné zprávě nebo prezentaci společné oběma druhům -->
+						<xs:element minOccurs="0" name="objednatel" type="SubjektRIV__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Informace o objednateli výzkumné zprávy nebo prezentace.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<!-- Specifické části pro každý z obou druhů -->
+						<xs:choice>
+							<!-- Počet stran výzkumné zprávy -->
+							<xs:group ref="Strany__Group"/>
+							<!-- Informace o přístupu k prezentaci -->
+							<xs:group ref="Pristup__Group"/>
+						</xs:choice>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="VysledekSpec_KapitolaVKnize__Group">
+		<xs:sequence>
+			<xs:element name="kniha">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="nazev" type="String__StatusedLocatedType">
+							<xs:annotation>
+								<xs:documentation>Název knihy.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<!-- Informace o knize -->
+						<xs:group ref="Kniha__Group"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+			<!-- Strana od-do a počet stran kapitoly -->
+			<xs:group ref="Strany__Group"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="VysledekSpec_ClanekVeSborniku__Group">
+		<xs:sequence>
+			<xs:element name="sbornik">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="nazev" type="String__StatusedLocatedType">
+							<xs:annotation>
+								<xs:documentation>Název sborníku.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<!-- Informace o knize - sborníku -->
+						<xs:group ref="Kniha__Group"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="akce">
+				<xs:complexType>
+					<xs:sequence>
+						<!-- Informace o akci -->
+						<xs:group ref="Akce__Group"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+			<!-- Strana od-do a počet stran článku -->
+			<xs:group ref="Strany__Group"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="VysledekSpec_AplikovaneVysledky__Group">
+		<xs:sequence>
+			<xs:element name="interni-identifikace" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Interní identifikace výsledku, přidělená tvůrcem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="umisteni" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Umístění výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="technicke-parametry" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Technické parametry výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ekonomicke-parametry" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Ekonomické parametry výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="kategorie-podle-nakladu" type="KategorieVysledkuPodleNakladu__LocatedType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Kategorie výsledku podle nákladů na jeho dosažení.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vlastnik" type="SubjektRIV__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o vlastníkovi výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="moznost-vyuzivani" type="VyuzivaniVysledku__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o možnosti využívání výsledku jinými subjekty.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="VysledekSpec_Patent__Group">
+		<xs:sequence>
+			<xs:element name="cislo" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Číslo patentu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vydani">
+				<xs:annotation>
+					<xs:documentation>Informace o vydání patentu.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="datum-registrace" type="Date__StatusedLocatedType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Datum registrace patentu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="datum-prijeti" type="Date__StatusedLocatedType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Datum přijetí patentu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="misto" type="String__StatusedLocatedType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Místo vydání patentu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="stat" type="Zeme__StatusedLocatedType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Stát vydání patentu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="vydavatel" type="VydavatelPatentu__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o vydavateli patentu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vlastnik" type="SubjektRIV__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o vlastníkovi patentu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="moznost-vyuzivani" type="VyuzivaniVysledku__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o možnosti využívání výsledku jinými subjekty.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="zpusob-vyuziti" type="ZpusobVyuzitiVysledku__LocatedType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Informace o způsobu využívání výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="VysledekSpec_KonferenceWorkshopVystava__Group">
+		<xs:sequence>
+			<!-- Informace o akci -->
+			<xs:group ref="Akce__Group"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Strany__Group">
+		<xs:sequence>
+			<xs:element name="strany" type="Strany__LocatedType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="Strany__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="od-do" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Strany od-do, oddělené nějakým oddělovačem (není předepsán).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="pocet" type="NonNegativeInteger__Type" use="required">
+			<xs:annotation>
+				<xs:documentation>Počet stran výsledku.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="Periodikum__LocatedType">
+		<xs:sequence>
+			<xs:element name="ISSN" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>ISSN periodika.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nazev" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Oficiální název periodika.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vydavatel" type="SubjektRIV__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Vydavatel periodika.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:group name="Kniha__Group">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ISBN" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>ISBN knihy nebo výzkumné zprávy nebo prezentace.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ISSN" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>ISSN knihy nebo výzkumné zprávy nebo prezentace.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="edice-cislo-svazku" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Edice a číslo svazku knihy.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="misto-vydani" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Místo vydání knihy.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nakladatel" type="SubjektRIV__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o nakladateli knihy.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Pristup__Group">
+		<!-- Informace o přístupu k prezentaci -->
+		<xs:sequence>
+			<xs:element name="pristup" type="Pristup__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Informace o přístupu k prezentaci.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="Pristup__LocatedType">
+		<xs:sequence>
+			<xs:element name="druh" type="DruhPristupuKPrezentaci__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Druh přístupu k prezentaci.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice minOccurs="0">
+				<xs:element name="identifikacni-cislo-nosice" type="String__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>Identifikační číslo nosiče prezentace (pro lokální přístup).</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="adresa-WWW" type="String__LocatedType">
+					<xs:annotation>
+						<xs:documentation>Webová adresa hlavní stránky prezentace.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:group name="Akce__Group">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="konani">
+				<xs:annotation>
+					<xs:documentation>Informace o konání akce.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<!-- Nejprve časové informace -->
+						<xs:choice minOccurs="0">
+							<!-- Buď jenom rok... -->
+							<xs:element name="v-roce" type="Year__StatusedLocatedType">
+								<xs:annotation>
+									<xs:documentation>Rok konání akce.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<!-- ... nebo datum zahájení a volitelně datum ukončení -->
+							<xs:sequence>
+								<xs:element name="zahajeni" type="Date__StatusedLocatedType">
+									<xs:annotation>
+										<xs:documentation>Datum zahájení akce.</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element minOccurs="0" name="ukonceni" type="Date__StatusedLocatedType">
+									<xs:annotation>
+										<xs:documentation>Datum ukončení akce.</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:choice>
+						<!-- A teď informace o místě -->
+						<xs:element minOccurs="0" name="misto" type="String__StatusedLocatedType">
+							<xs:annotation>
+								<xs:documentation>Místo konání akce.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<!-- A volitelně stát -->
+						<xs:element minOccurs="0" name="stat" type="Zeme__StatusedLocatedType">
+							<xs:annotation>
+								<xs:documentation>Stát konání akce.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="ucastnici">
+				<xs:annotation>
+					<xs:documentation>Informace o účastnících akce.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="2" minOccurs="0" name="pocet">
+							<xs:annotation>
+								<xs:documentation>Počet účastníků akce.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="NonNegativeInteger__StatusedLocatedType">
+										<xs:attribute name="urceni" use="required">
+											<xs:simpleType>
+												<xs:restriction base="String__Type">
+													<xs:enumeration value="celkem">
+														<xs:annotation>
+															<xs:documentation>Toto je celkový počet účastníků.</xs:documentation>
+														</xs:annotation>
+													</xs:enumeration>
+													<xs:enumeration value="zahranicni">
+														<xs:annotation>
+															<xs:documentation>Toto je počet zahraničních účastníků.</xs:documentation>
+														</xs:annotation>
+													</xs:enumeration>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="klasifikace-podle-statni-prislusnosti" type="KlasifikaceAkcePodleStatniPrislusnostiUcastniku__StatusedLocatedType">
+							<xs:annotation>
+								<xs:documentation>Klasifikace akce podle státní příslušností jejích účastníků.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:simpleType name="KlasifikaceAkcePodleStatniPrislusnostiUcastniku__Type">
+		<xs:restriction base="String__Type">
+			<xs:enumeration value="celostatni">
+				<xs:annotation>
+					<xs:documentation>Celostátní akce.</xs:documentation>
+					<xs:appinfo source="vklap">CST - celostátní</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="evropska">
+				<xs:annotation>
+					<xs:documentation>Evropská akce.</xs:documentation>
+					<xs:appinfo source="vklap">EUR - evropská</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="celosvetova">
+				<xs:annotation>
+					<xs:documentation>Celosvětová akce.</xs:documentation>
+					<xs:appinfo source="vklap">WRD - celosvětová</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="">
+				<xs:annotation>
+					<xs:documentation>Upravená hodnota.</xs:documentation>
+					<xs:appinfo source="vklap">(upravená hodnota)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="KlasifikaceAkcePodleStatniPrislusnostiUcastniku__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="KlasifikaceAkcePodleStatniPrislusnostiUcastniku__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DruhPristupuKPrezentaci__Type">
+		<xs:restriction base="String__Type">
+			<xs:enumeration value="lokalni">
+				<xs:annotation>
+					<xs:documentation>Lokální přístup k prezentaci.</xs:documentation>
+					<xs:appinfo source="vklap">L - lokální</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="internet">
+				<xs:annotation>
+					<xs:documentation>Přístup k prezentaci po síti Internet.</xs:documentation>
+					<xs:appinfo source="vklap">V - vzdálený (přes Internet)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DruhPristupuKPrezentaci__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="DruhPristupuKPrezentaci__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="KategorieVysledkuPodleNakladu__Type">
+		<xs:restriction base="String__Type">
+			<xs:enumeration value="do-5MKc">
+				<xs:annotation>
+					<xs:documentation>menší nebo rovno 5 mil. Kč</xs:documentation>
+					<xs:appinfo source="vklap">A - náklady &lt;= 5 mil. Kč</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="do-10MKc">
+				<xs:annotation>
+					<xs:documentation>větší než 5 mil. Kč, menší nebo rovno 10 mil. Kč</xs:documentation>
+					<xs:appinfo source="vklap">B - náklady &gt; 5 mil. Kč, ale &lt;= 10 mil. Kč</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="do-50MKc">
+				<xs:annotation>
+					<xs:documentation>větší než 10 mil. Kč, menší nebo rovno 50 mil. Kč</xs:documentation>
+					<xs:appinfo source="vklap">C - náklady &gt; 10 mil. Kč, ale &lt;= 50 mil. Kč</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="do-100MKc">
+				<xs:annotation>
+					<xs:documentation>větší než 50 mil. Kč, menší nebo rovno 100 mil. Kč</xs:documentation>
+					<xs:appinfo source="vklap">D - náklady &gt; 50 mil. Kč, ale &lt;= 100 mil. Kč</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nad-100MKc">
+				<xs:annotation>
+					<xs:documentation>větší než 100 mil. Kč</xs:documentation>
+					<xs:appinfo source="vklap">E - náklady &gt; 100 mil. Kč</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="KategorieVysledkuPodleNakladu__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="KategorieVysledkuPodleNakladu__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="VydavatelPatentu__LocatedType">
+		<xs:sequence>
+			<xs:element name="kategorie" minOccurs="0" type="KategorieVydavatelePatentu__LocatedType">
+				<xs:annotation>
+					<xs:documentation>kategorie vydavatele patentu</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nazev" minOccurs="0" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>název vydavatele patentu</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="KategorieVydavatelePatentu__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="KategorieVydavatelePatentu__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>		
+	</xs:complexType>
+	<xs:simpleType name="KategorieVydavatelePatentu__Type">
+		<xs:restriction base="String__Type">
+			<xs:enumeration value="EPO">
+				<xs:annotation>
+					<xs:documentation>EPO</xs:documentation>
+					<xs:appinfo source="vklap">A - Evropský patentový úřad</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="USTPO">
+				<xs:annotation>
+					<xs:documentation>USTPO</xs:documentation>
+					<xs:appinfo source="vklap">B - Úřad pro patenty a ochranné známky USA</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JPO">
+				<xs:annotation>
+					<xs:documentation>JPO</xs:documentation>
+					<xs:appinfo source="vklap">C - Japonský patentový úřad</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="narodni-patentovy-urad-mimo-CR">
+				<xs:annotation>
+					<xs:documentation>národní patentový úřad mimo ČR</xs:documentation>
+					<xs:appinfo source="vklap">D - národní patentový úřad mimo ČR</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="UPVCR">
+				<xs:annotation>
+					<xs:documentation>Úřad průmyslového vlastnictví ČR</xs:documentation>
+					<xs:appinfo source="vklap">E - Úřad průmyslového vlastnictví ČR</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VyuzivaniVysledku__LocatedType">
+		<xs:sequence/>
+		<xs:attribute name="povinnost-licence" type="SpecifikacePovinnosti__Type" use="optional">
+			<xs:annotation>
+				<xs:documentation>Specifikace povinnosti nabytí licence pro využití výsledku jiným subjektem.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="povinnost-licencniho-poplatku" type="SpecifikacePovinnosti__Type" use="optional">
+			<xs:annotation>
+				<xs:documentation>Specifikace povinnosti licenčního poplatku v těch případech, kdy je požadováno nabytí licence.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="ZpusobVyuzitiVysledku__LocatedType">
+		<xs:sequence/>
+		<xs:attribute name="druh" type="ZpusobVyuzitiVysledkuDruh__Type" use="optional">
+			<xs:annotation>
+				<xs:documentation>Specifikace způsobu využití patentu: pouze udělení nebo využívání vlastníkem, využívání na základě licenční smlouvy.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="SpecifikacePovinnosti__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="vzdy">
+				<xs:annotation>
+					<xs:documentation>Povinné vždy</xs:documentation>
+					<xs:appinfo source="vklap">A - povinné vždy</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nekdy">
+				<xs:annotation>
+					<xs:documentation>Povinné v některých případech</xs:documentation>
+					<xs:appinfo source="vklap">P/Z - povinné v některých případech</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ne">
+				<xs:annotation>
+					<xs:documentation>Nevyžaduje se</xs:documentation>
+					<xs:appinfo source="vklap">N - nevyžaduje se</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ZpusobVyuzitiVysledkuDruh__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="jen-udeleny-nebo-vyuzivan-vlastnikem">
+				<xs:annotation>
+					<xs:documentation>Při pouze uděleném patentu nebo patentu využívaném jeho vlastníkem.</xs:documentation>
+					<xs:appinfo source="vklap">A - při pouze uděleném patentu nebo patentu využívaném jeho vlastníkem</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="vyuzivan-na-zaklade-licencni-smlouvy">
+				<xs:annotation>
+					<xs:documentation>Při využívání patentu na základě uzavřené licenční smlouvy mezi vlastníkem a uživatelem.</xs:documentation>
+					<xs:appinfo source="vklap">B - při využívání patentu na základě uzavřené licenční smlouvy mezi vlastníkem a uživatelem</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SubjektRIV__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Zjednodušený subjekt pro použití ve specifických částech výsledků.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ICO" type="ICO__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>IČO subjektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="nazev" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Název nebo obchodní jméno subjektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="stat" type="Zeme__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Kód státu subjektu - organizace cizího státu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<!-- Společné pro projekty, záměry i výsledky -->
+	<xs:group name="KlasifikaceProjektuZameruVysledku__Group">
+		<xs:sequence>
+			<xs:element name="klasifikace" type="Klasifikace__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Klasifikace projektu/záměru/výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="NavaznostiProjektuZameruVysledku__Group">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="navaznosti" type="Navaznosti__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Návaznosti projektu/záměru/výsledku.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!-- Partneři: subjekt, organizační jednotka, osoba -->
+	<xs:simpleType name="ResortKod__Type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z][A-Z0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResortKodOrEmpty__Type">
+		<xs:union memberTypes="ResortKod__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="ResortKod__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="ResortKod__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ResortKod__StatusedType">
+		<xs:simpleContent>
+			<xs:extension base="ResortKodOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ResortKod__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="ResortKod__StatusedType">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="subjekt" type="Subjekt__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Subjekt. Nositel právní subjektivity - dříve instituce nebo resort.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Subjekt__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="druh" type="DruhSubjektu__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Druh subjektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice minOccurs="0">
+				<xs:element name="ICO" type="ICO__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>IČO subjektu.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="kod" type="ResortKod__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>Kód subjektu - organizační složky státu.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element minOccurs="0" maxOccurs="2" name="nazev" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Název nebo obchodní jméno subjektu. Jednou se uvede s jazykem 'eng' (anglicky), podruhé s jazykem '#ORIG' (původní)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="nadrizena-organizacni-slozka-statu" type="ResortKod__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Kód organizační složky státu, která je nadřízená subjektu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="stat" type="Zeme__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Kód státu subjektu - organizace cizího státu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="kontakt" type="Kontakt__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Kontakt na subjekt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:element name="organizacni-jednotka" type="OrganizacniJednotka__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Organizační jednotka nějakého subjektu.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="OrganizacniJednotka__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="kod" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Kód organizační jednotky.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="2" name="nazev" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Název organizační jednotky. Jednou se uvede s jazykem 'eng' (anglicky), podruhé s jazykem '#ORIG' (původní)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:element name="osoba" type="Osoba__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Osoba.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Osoba__LocatedType">
+		<xs:sequence>
+			<xs:group minOccurs="0" ref="JmenoOsoby__Group"/>
+			<xs:group minOccurs="0" ref="StatniPrislusnostOsoby__Group"/>
+			<xs:group minOccurs="0" ref="IdentifikaceOsoby__Group"/>
+			<xs:group minOccurs="0" ref="KontaktNaOsobu__Group"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:group name="JmenoOsoby__Group">
+		<xs:annotation>
+			<xs:documentation>Jméno osoby: buď dohromady, nebo strukturovaně.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="cele-jmeno" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Celé jméno osoby dohromady.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Celé jméno osoby strukturovaně.</xs:documentation>
+				</xs:annotation>
+				<xs:element minOccurs="0" name="tituly" type="TitulSPostavenim__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>Tituly osoby uváděné přej jménem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="jmeno" type="String__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>Křestní jméno osoby.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="prijmeni" type="String__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>Příjmení osoby.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="tituly" type="TitulSPostavenim__StatusedLocatedType">
+					<xs:annotation>
+						<xs:documentation>Tituly osoby uváděné za jménem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="StatniPrislusnostOsoby__Group">
+		<xs:annotation>
+			<xs:documentation>Státní příslušnost osoby.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="cizi-statni-prislusnik" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Indikace, že osoba je cizím státním příslušníkem. Příznakový element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="statni-prislusnost" type="Zeme__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Kód státní příslušnosti osoby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="IdentifikaceOsoby__Group">
+		<xs:choice>
+			<xs:element name="rodne-cislo" type="RodneCisloOsoby__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Rodné číslo osoby. Uvádí se bez lomítka.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="identifikacni-cislo" type="IdentifikacniCisloOsoby__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Identifikační číslo osoby. Generuje se stejným způsobem jako prvních šest číslic rodného čísla.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="TitulSPostavenim__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="String__StatusedLocatedType">
+				<xs:attribute name="postaveni" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="pred-jmenem"/>
+							<xs:enumeration value="za-jmenem"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ICO__Type">
+		<xs:restriction base="String__Type">
+			<!-- přesně 8 číslic -->
+			<xs:pattern value="[0-9]{8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ICOOrEmpty__Type">
+		<xs:union memberTypes="ICO__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="ICO__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="ICOOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="RodneCisloOsoby__Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="9"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RodneCisloOsobyOrEmpty__Type">
+		<xs:union memberTypes="RodneCisloOsoby__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="RodneCisloOsoby__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="RodneCisloOsobyOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="IdentifikacniCisloOsoby__Type">
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IdentifikacniCisloOsobyOrEmpty__Type">
+		<xs:union memberTypes="IdentifikacniCisloOsoby__Type Void__Type"/>
+	</xs:simpleType>
+	<xs:complexType name="IdentifikacniCisloOsoby__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="IdentifikacniCisloOsobyOrEmpty__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DruhSubjektu__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="prispevkova-organizace">
+				<xs:annotation>
+					<xs:appinfo source="vklap">SPO - příspěvková organizace (zákon č. 219/2000 Sb., zákon č. 250/2000 Sb.)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="verejna-vysoka-skola">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VVS - veřejná vysoká škola (zákon č. 111/1998 Sb., o vysokých školách)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="verejna-vyzkumna-instituce">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VVI - veřejná výzkumná instituce (zákon č. 341/2005 Sb., o veřejných výzkumných institucích)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pravnicka-osoba-zapsana">
+				<xs:annotation>
+					<xs:appinfo source="vklap">POO - právnická osoba zapsaná v obchodním rejstříku [§ 2 odst. 2 písm. a) a § 27 obchodního zákoníku]</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="obecne-prospesna-spolecnost">
+				<xs:annotation>
+					<xs:appinfo source="vklap">OPS - obecně prospěšná společnost (zákon č. 248/1995 Sb., o obecně prospěšných společnostech)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nadace">
+				<xs:annotation>
+					<xs:appinfo source="vklap">NAD - nadace (zákon č. 227/1997 Sb., o nadacích a nadačních fondech)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="zajmove-sdruzeni-pravnickych-osob">
+				<xs:annotation>
+					<xs:appinfo source="vklap">ZSP - zájmové sdružení právnických osob (§ 20f až 21 občanského zákoníku), občanské sdružení, spolek,…</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="fyzicka-osoba-s-ICO">
+				<xs:annotation>
+					<xs:appinfo source="vklap">FOI - fyzická osoba s IČ</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="organizacni-slozka-statu">
+				<xs:annotation>
+					<xs:appinfo source="vklap">OSS - organizační složka státu (zákon č. 219/2000 Sb.)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="organizace-ciziho-statu">
+				<xs:annotation>
+					<xs:appinfo source="vklap">OCS - organizace cizího státu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="uzemni-samospravny-celek">
+				<xs:annotation>
+					<xs:appinfo source="vklap">USC - územní samosprávný celek</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pravnicka-osoba-jina">
+				<xs:annotation>
+					<xs:appinfo source="vklap">PON - právnická osoba jiná (tj. právnická osoba nezařaditelná podle předcházejících kódů)</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DruhSubjektu__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="DruhSubjektu__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:group name="KontaktNaOsobu__Group">
+		<xs:sequence>
+			<xs:element name="kontakt" type="Kontakt__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Kontaktní a adresové údaje vztahující se k osobě.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!-- Kontakt -->
+	<xs:complexType name="Kontakt__LocatedType">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="emailova-adresa" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Emailová adresa osoby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="telefonni-cislo" type="TelefonniCislo__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Telefonické nebo faxové spojení na osobu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="adresa" type="Adresa__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Korespondenční spojení na osobu nebo místo pobytu osoby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="adresa-WWW" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>URL domovské stránky osoby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="Adresa__LocatedType">
+		<xs:complexContent>
+			<xs:extension base="AdresaZaklad__LocatedType">
+				<xs:attribute name="druh" type="DruhAdresy__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Druh adresy.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="DruhAdresy__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="adresa-pro-korespondenci">
+				<xs:annotation>
+					<xs:appinfo source="vklap">adresa pro korespondenci</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="misto-pobytu">
+				<xs:annotation>
+					<xs:appinfo source="vklap">místo pobytu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="adresa-sidla">
+				<xs:annotation>
+					<xs:appinfo source="vklap">adresa sídla</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AdresaZaklad__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="pracoviste" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Název pracoviště.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ulice-a-cislo" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Ulice nebo veřejné prostranství a číslo běžně používané v adresových údajích.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PSC" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>PSČ nebo jeho obdoba v zahraničí.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="misto" type="String__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Místo (obec).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="stat" type="Zeme__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Stát. Uvádí se, pokud jde o adresu v zahraničí.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="TelefonniCislo__Type">
+		<xs:simpleContent>
+			<xs:extension base="String__Type">
+				<xs:attribute name="druh" type="DruhTelefonnihoCisla__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Druh telekomunikačního zařízení připojeného pod telefonním číslem.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DruhTelefonnihoCisla__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="telefon"/>
+			<xs:enumeration value="fax"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TelefonniCislo__StatusedLocatedType">
+		<xs:simpleContent>
+			<xs:extension base="TelefonniCislo__Type">
+				<xs:attributeGroup ref="StatusUdaje__Attributes"/>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Návaznost -->
+	<xs:complexType name="Navaznosti__LocatedType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="navaznost" type="Navaznost__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Jednotlivá návaznost.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="Navaznost__LocatedType">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="textova-navaznost" type="String__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazované projekty nebo záměry textově.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="projekt" type="PrvekObsahuDodavkySIdentifikatorem__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovaný projekt (s identifikačním kódem).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="zamer" type="PrvekObsahuDodavkySIdentifikatorem__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovaný záměr (s identifikačním kódem).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="verejna-soutez" type="PrvekObsahuDodavkySNepovinnymIdentifikatorem__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovaná veřejná soutěž (s identifikačním kódem).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="verejna-zakazka" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovaná veřejná zakázka (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dvoustranna-dohoda-o-mezinarodni-spolupraci" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovaná dohoda o mezinárodní spolupráci (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="spolufinancovani-projektu-ramcoveho-programu" type="PrvekObsahuDodavkySNepovinnymIdentifikatorem__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovaná výzva rámcového programu (s identifikačním kódem).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="program-podpory-maleho-a-stredniho-podnikani" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Projekt je projektem z programu podpory malého a středního podnikání (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="specificky-vyzkum" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovaný specifický výzkum na VŠ (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operacni-programy" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovany operační programy (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ramcove-programy-EK" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovany rámocové programy EK (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jine-verejne-zdroje" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovany jiné veřejné zdroje (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="neverejne-zdroje" type="Empty__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Odkazovany neveřejné zdroje (bez identifikačního kódu, pouze příznakový element).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="druh-vztahu" type="DruhNavaznosti__Type" use="required">
+			<xs:annotation>
+				<xs:documentation>Význam návaznosti.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="DruhNavaznosti__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="resi-obdobnou-problematiku"/>
+			<xs:enumeration value="je-financovan-na-zaklade"/>
+			<xs:enumeration value="byl-dosazen-pri-reseni"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Finance -->
+	<xs:complexType name="Financovani__LocatedType">
+		<xs:sequence>
+			<xs:element name="poskytovani-podpory-ze-statniho-rozpoctu" type="PoskytovaniPodporyProjZameruZeStatnihoRozpoctu__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Údaje o poskytování podpory ze státního rozpočtu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="finance-na-celou-dobu-reseni" type="Finance__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Finanční prostředky na celou dobu řešení.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="finance-na-rok" type="FinanceNaRok__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Finanční prostředky na určitý rok.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="CerpaniFinanci__LocatedType">
+		<xs:sequence>
+			<xs:element name="finance-na-celou-dobu-reseni" type="Finance__LocatedType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Finanční prostředky čerpané účastníkem za celou dobu řešení.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="finance-na-rok" type="FinanceNaRok__LocatedType" minOccurs="0" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>Finanční prostředky přidělené účastníkovi v běžném roce řešení nebo vyčerpané za minulý rok.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FinanceNaRok__LocatedType">
+		<xs:complexContent>
+			<xs:extension base="Finance__LocatedType">
+				<xs:attribute name="vztazny-rok" type="Year__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Vztažný rok finančních údajů.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Finance__LocatedType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="castka" type="FinancniCastka__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Finanční částka se svými kvalifikátory (typem zdroje financování a formou poskytnutí financí) - ty jsou nepovinné.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="FinancniCastka__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="NonNegativeInteger__LocatedType">
+				<xs:attribute name="typ-zdroje" type="TypZdrojeFinanci__Type"/>
+				<xs:attribute name="forma-poskytnuti" type="FormaPoskytnutiFinanci__Type"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="TypZdrojeFinanci__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="statni-rozpocet-ucelove">
+				<xs:annotation>
+					<xs:appinfo source="vklap">Účelová podpora ze státního rozpočtu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="statni-rozpocet-institucionalni">
+				<xs:annotation>
+					<xs:appinfo source="vklap">Institucionální podpora ze státního rozpočtu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ostatni-verejne">
+				<xs:annotation>
+					<xs:appinfo source="vklap">Ostatní veřejné zdroje</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="neverejne">
+				<xs:annotation>
+					<xs:appinfo source="vklap">Neveřejné zdroje</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FormaPoskytnutiFinanci__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="dotace">
+				<xs:annotation>
+					<xs:appinfo source="vklap">Dotace</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pujcka">
+				<xs:annotation>
+					<xs:appinfo source="vklap">Půjčka</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PoskytovaniPodporyProjZameruZeStatnihoRozpoctu__LocatedType">
+		<xs:sequence>
+			<xs:element name="cislo-smlouvy" type="String__LocatedType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Číslo smlouvy nebo rozhodnutí o poskytnutí podpory.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="datum-posledniho-uvolneni-podpory-v-minulem-roce" type="Date__LocatedType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum uvolnění podpory v minulém roce. Byla-li podpora uvolněna v několika splátkách, uvede se datum poslední z nich.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="PoskytovaniPodporyProjektumZeStatnihoRozpoctu__LocatedType">
+		<xs:sequence>
+			<xs:element name="zahajeni" type="YearOrEmpty__Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Rok zahájení poskytování podpory.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ukonceni" type="YearOrEmpty__Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Rok ukončení poskytování podpory.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<!-- Klasifikace -->
+	<xs:complexType name="Klasifikace__LocatedType">
+		<xs:annotation>
+			<xs:documentation>Klasifikace objektu VaV.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="kategorie-VaV" type="KategorieVaV__LocatedType">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="obor" type="OborSPostavenim__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Oborové zařazení.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="klicove-slovo" type="LanguageSpecificString__StatusedLocatedType">
+				<xs:annotation>
+					<xs:documentation>Jedno klíčové slovo nebo klíčová fráze.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	<xs:complexType name="OborSPostavenim__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="Obor__LocatedType">
+				<xs:attribute name="postaveni" type="PostaveniOboru__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Postavení oborové klasifikace vzhledem k jiným oborovým klasifikacím.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="PostaveniOboru__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hlavni"/>
+			<xs:enumeration value="vedlejsi"/>
+			<xs:enumeration value="dalsi-vedlejsi"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Obor__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="IdentifikacniKod__Type">
+				<xs:attribute name="ciselnik" type="CiselnikOboru__Type" use="required">
+					<xs:annotation>
+						<xs:documentation>Určení systému, ve kterém je klasifikace provedena.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="CiselnikOboru__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OboryCEPRIP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="KategorieVaV__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="KategorieVaV__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="KategorieVaV__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="zakladni-vyzkum">
+				<xs:annotation>
+					<xs:documentation>Základní výzkum</xs:documentation>
+					<xs:appinfo source="vklap">ZV - základní výzkum</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="neprumyslovy-vyzkum">
+				<xs:annotation>
+					<xs:documentation>Aplikovaný výzkum vyjma průmyslového</xs:documentation>
+					<xs:appinfo source="vklap">NV - aplikovaný výzkum vyjma průmyslového</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="prumyslovy-vyzkum">
+				<xs:annotation>
+					<xs:documentation>Průmyslový výzkum</xs:documentation>
+					<xs:appinfo source="vklap">PV - průmyslový výzkum</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="vyvoj">
+				<xs:annotation>
+					<xs:documentation>Vývoj</xs:documentation>
+					<xs:appinfo source="vklap">VV - vývoj</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="infrastruktura">
+				<xs:annotation>
+					<xs:documentation>Infrastruktura</xs:documentation>
+					<xs:appinfo source="vklap">IF - infrastruktura</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Verejna soutez -->
+	<xs:element name="verejna-soutez-vyhlasena">
+		<xs:annotation>
+			<xs:documentation>Vyhlášená veřejná soutěž.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="PrvekObsahuDodavkySIdentifikatorem__LocatedType">
+					<xs:sequence>
+						<xs:element minOccurs="0" name="typ" type="TypVerejneSouteze__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Typ veřejné soutěže ve výzkumu a vývoji podle určení účelových prostředků z rozpočtové kapitoly poskytovatele</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="aktivita" type="AktivitaKod__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Kód aktivity (programu nebo typu grantových projektů) - uvádí se pro informační oblast VES.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="datum-vyhlaseni" type="Date__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Rok konání soutěže.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="soutezni-rok" type="Year__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Rok konání soutěže.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="zahajeni-reseni" type="Date__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Rok a měsíc zahájení řešení projektu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="posledni-rok-ucelove-podpory" type="Year__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Předpokládaný poslední rok přidělení účelové podpory</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="informacni-zdroje" type="InformacniZdroje__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Informační zdroje s informacemi o vyhlášené veřejné soutěži.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="podavani-navrhu" type="PodavaniNavrhu__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Informace o podávání návrhů projektů.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="vyhodnoceni" type="Vyhodnoceni__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Informace o vyhodnocení veřejné soutěže.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="financovani" type="FinancovaniVES__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Financování projektu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="FinancovaniVES__LocatedType">
+		<xs:sequence>
+			<xs:element name="finance-na-celou-dobu-reseni" type="Finance__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Finanční prostředky na celou dobu řešení.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="finance-na-rok" type="FinanceNaRok__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Finanční prostředky na určitý rok.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:simpleType name="TypVerejneSouteze__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="soutez-v-nove-aktivite">
+				<xs:annotation>
+					<xs:appinfo source="vklap">N - soutěž o účelové finanční prostředky určené na novou aktivitu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="soutez-v-prechazejici-aktivite">
+				<xs:annotation>
+					<xs:appinfo source="vklap">P - soutěž o účelové finanční prostředky určené na aktivitu přecházející z minulých let do soutěžního roku</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TypVerejneSouteze__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="TypVerejneSouteze__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:element name="verejna-soutez-vyhodnocena">
+		<xs:annotation>
+			<xs:documentation>Vyhodnocená veřejná soutěž.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="PrvekObsahuDodavkySIdentifikatorem__LocatedType">
+					<xs:sequence>
+						<xs:element name="navrhy-projektu" type="NavrhyProjektu__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Informace o podaných návrzích projektů.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="stav-verejne-souteze">
+							<xs:complexType>
+								<xs:choice minOccurs="0">
+									<xs:element name="neprideleno" type="Neprideleno__LocatedType">
+										<xs:annotation>
+											<xs:documentation>Údaje které se vyplňují pouze v případě zrušení veřejné soutěže ve výzkumu a vývoji nebo nepřidělení účelové podpory</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="prideleno" type="Prideleno__LocatedType">
+										<xs:annotation>
+											<xs:documentation>Údaje které se vyplňují pouze v případě přidělení účelové podpory</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="InformacniZdroje__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="adresa-WWW" type="String__LocatedType">
+				<xs:annotation>
+					<xs:documentation>URL domovské stránky osoby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="2" minOccurs="0" name="ostatni-zdroje" type="LanguageSpecificString__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Ostatní mediální zdroje s plným zněním vyhlášené veřejné soutěže ve výzkumu a vývoji</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pracovnik-povereny-podavanim-informaci" type="PracovnikPoverenyPodavanimInformaci__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Údaje o osobě, u které lze získat informace o vyhlášené veřejné soutěži ve výzkumu a vývoji a zadávací dokumentaci.</xs:documentation>
+				</xs:annotation>
+			</xs:element>			
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="PracovnikPoverenyPodavanimInformaci__LocatedType">
+		<xs:sequence>
+			<xs:element ref="osoba">
+				<xs:annotation>
+					<xs:documentation>Údaje o osobě, u které lze získat informace o vyhlášené veřejné soutěži ve výzkumu a vývoji a zadávací dokumentaci.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>	
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="PodavaniNavrhu__LocatedType">
+		<xs:sequence>
+			<xs:element name="uzaverka" type="String__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Datum a čas uzávěrky veřejné soutěže ve výzkumu a vývoji ve tvaru RRRR-MM-DD HH:MM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="2" minOccurs="0" name="podminky-souteze" type="LanguageSpecificString__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Podmínky veřejné soutěže ve výzkumu a vývoji</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="2" minOccurs="0" name="zpusob-podani-navrhu-projektu" type="LanguageSpecificString__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Způsob podávání návrhů projektů do veřejné soutěže ve výzkumu a vývoji</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="misto-podani" type="MistoPodani__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Údaje o místě a době podání návrhů projektů do veřejné soutěže ve výzkumu a vývoji</xs:documentation>
+				</xs:annotation>
+			</xs:element>			
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="MistoPodani__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="kontakt" type="Kontakt__LocatedType"/>
+			<xs:element minOccurs="0" name="uredni-hodiny" type="String__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Úřední hodiny pro podávání návrhů projektů</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="Vyhodnoceni__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="datum-vyhodnoceni" type="Date__LocatedType"/>
+			<xs:element maxOccurs="2" minOccurs="0" name="kriteria-hodnoceni" type="LanguageSpecificString__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Kriteria hodnocení návrhu projektu</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="2" minOccurs="0" name="zpusob-oznameni-vysledku" type="LanguageSpecificString__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Způsob oznámení výsledků veřejné soutěže ve výzkumu a vývoji</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	
+	<xs:complexType name="NavrhyProjektu__LocatedType">
+		<xs:sequence>
+			<xs:element maxOccurs="3" minOccurs="0" name="pocet">
+				<xs:annotation>
+					<xs:documentation>Počet projektů.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="NonNegativeInteger__StatusedLocatedType">
+							<xs:attribute name="urceni" use="required">
+								<xs:simpleType>
+									<xs:restriction base="String__Type">
+										<xs:enumeration value="doruceno">
+											<xs:annotation><xs:documentation>Počet doručených návrhů projektů do veřejné soutěže ve výzkumu a vývoji</xs:documentation></xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="hodnoceno">
+											<xs:annotation><xs:documentation>Počet hodnocených návrhů projektů ve veřejné soutěže ve výzkumu a vývoji</xs:documentation></xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="podporovano">
+											<xs:annotation><xs:documentation>Konečný počet podporovaných projektů resp. podporovaných grantových projektů spadajících pod danou aktivitu zahajovaných v soutěžním roce.</xs:documentation></xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="Prideleno__LocatedType">
+		<xs:sequence>
+			<xs:element name="financovani">
+				<xs:annotation>
+					<xs:documentation>Financování projektů z veřejné soutěže.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="poskytovani-podpory-ze-statniho-rozpoctu" type="PoskytovaniPodporyProjektumZeStatnihoRozpoctu__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Údaje o poskytování podpory ze státního rozpočtu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="finance-na-celou-dobu-reseni" type="Finance__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Finanční prostředky na celou dobu řešení.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="finance-na-rok" type="FinanceNaRok__LocatedType">
+							<xs:annotation>
+								<xs:documentation>Finanční prostředky na určitý rok.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="Neprideleno__LocatedType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="kod-neprideleni" type="KodNeprideleni__LocatedType">
+				<xs:annotation><xs:documentation>Důvod zrušení veřejné soutěže ve výzkumu a vývoji nebo důvody nepřidělení účelové podpory</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="2" minOccurs="0" name="duvod-neprideleni" type="LanguageSpecificString__LocatedType">
+				<xs:annotation>
+					<xs:documentation>Bližší informace o důvodu odvolání veřejné soutěže ve výzkumu a vývoji nebo nepřidělení účelové podpory</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="datum-zruseni" type="Date__LocatedType">
+				<xs:annotation><xs:documentation>Datum zrušení veřejné soutěže ve výzkumu a vývoji nebo nepřidělení účelové podpory</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="KodNeprideleni__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="nepodany-zadne-navrhy">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VRP - nebyly podány žádné návrhy projektů</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nevybran-zadny-navrh">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VRV - z podaných návrhů projektů nebyl žádný vybrán</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="neuzavrena-zadna-smlouva">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VRS - nedošlo k uzavření žádné smlouvy ani vydání rozhodnutí, ač z podaných návrhů projektů byl vybrán vítěz / vítězové</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nepostoupil-zadny-navrh">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VRD - do 2. stupně veřejné soutěže ve výzkumu a vývoji nepostoupil žádný návrh projektu</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="zmena-okolnosti">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VRZ - došlo k podstatné změně okolností, za nichž byla veřejná soutěž ve výzkumu a vývoji vyhlášena, kterou nemohl poskytovatel předvídat</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pominuly-duvody">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VRN - pominuly důvody pro plnění předmětu veřejné soutěže ve výzkumu a vývoji</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="jiny">
+				<xs:annotation>
+					<xs:appinfo source="vklap">VXX - jiný případ nepřidělení účelových prostředků ze SR ve veřejné soutěži ve výzkumu a vývoji</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="KodNeprideleni__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="KodNeprideleni__Type">
+				<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<!-- 
+		Statni rozpocet 
+	-->
+	<xs:element name="oblast" type="OblastSR__LocatedType"/>
+	
+	<xs:complexType name="OblastSR__LocatedType">
+		<xs:sequence>
+			<xs:element name="popis" type="String__LocatedType" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="oblast" maxOccurs="unbounded"/>
+				<xs:element name="castka" type="CastkaSR__LocatedType" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="typ" type="TypOblastiSR__Type" use="required"/>
+		<xs:attribute name="kod-poskytovatele" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Kód poskytovatele</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="kod-programu" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Kód programu</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="typ-programu" type="TypProgramu__Type" use="optional">
+			<xs:annotation>
+				<xs:documentation>Typ programu</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="od-roku" type="xs:string" use="optional"/>
+		<xs:attribute name="druh-prijemce" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Druh příjemce</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="identifikacni-kod" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Identifikační kód</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="LokaceUdaje__Attributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="CastkaSR__LocatedType">
+		<xs:simpleContent>
+			<xs:extension base="IntegerOrEmpty__LocatedType">
+				<xs:attribute name="vztazny-rok" type="xs:string" use="required"/>
+				<xs:attribute name="mena" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="TypOblastiSR__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="poskytovatel"/>
+			<xs:enumeration value="ucelove"/>
+			<xs:enumeration value="institucionalni"/>
+			<xs:enumeration value="limity"/>
+			<xs:enumeration value="programy"/>
+			<xs:enumeration value="programy-typ"/>
+			<xs:enumeration value="program"/>
+			<xs:enumeration value="prechazejici-nebo-minule"/>
+			<xs:enumeration value="nove-zahajovane"/>
+			<xs:enumeration value="puvodni-hodnoty"/>
+			<xs:enumeration value="korekce"/>
+			<xs:enumeration value="cinnost-komisi"/>
+			<xs:enumeration value="cinnost-kancelari"/>
+			<xs:enumeration value="oceneni-mimoradnych-vysledku"/>
+			<xs:enumeration value="verejna-soutez"/>
+			<xs:enumeration value="vyzkumne-zamery"/>
+			<xs:enumeration value="vyzkumne-zamery-druh-prijemce"/>
+			<xs:enumeration value="specificky-vyzkum"/>
+			<xs:enumeration value="mezinarodni-spoluprace"/>
+			<xs:enumeration value="ramcove-programy-EU"/>
+			<xs:enumeration value="operacni-program-EU"/>
+			<xs:enumeration value="program-EU"/>
+			<xs:enumeration value="prodlouzeni"/>
+			<xs:enumeration value="jine-zajisteni-institucionalniho-financovani"/>
+			<xs:enumeration value="stav-rezervniho-fondu"/>
+			<xs:enumeration value="cerpani-rezervniho-fondu"/>
+			<xs:enumeration value="prevod-do-rezervniho-fondu"/>
+			<xs:enumeration value="budouci-programy"/>
+			<xs:enumeration value="prevod-do-rezervniho-fondu"/>
+			<xs:enumeration value="pouziti-mimo-VaV"/>
+			<xs:enumeration value="budouci-verejne-souteze"/>
+			<xs:enumeration value="budouci-verejne-zakazky"/>
+			<xs:enumeration value="poplatky-za-clenstvi-v-mezinarodnich-organizacich"/>
+			<xs:enumeration value="podle-dodavatele"/>
+			<xs:enumeration value="uprava-RVV"/>
+			<xs:enumeration value="cely-rozpocet"/>
+<!-- 
+			<xs:enumeration value=""/>
+ -->			
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypProgramu__Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="P">
+				<xs:annotation>
+					<xs:appinfo source="vklap">P - Program výzkumu a vývoje</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="G">
+				<xs:annotation>
+					<xs:appinfo source="vklap">G - Grantové projekty</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Z">
+				<xs:annotation>
+					<xs:appinfo source="vklap">Z - Veřejné zakázky ve výzkumu a vývoji</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
