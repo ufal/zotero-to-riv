@@ -30,22 +30,36 @@ my $encoding = 'UTF-8';
 my $doc = XML::LibXML::Document->new('1.0',$encoding);
 my $root = $doc->createElementNS( "", "results" );
 $doc->setDocumentElement( $root );
-my $el_name = "result";
+my $result_elem_name = "result";
 
 # loop over the imported results and output them
 for my $res_idx ( 0..$#{$zotero} ) {
+    my $result = $doc->createElement($result_elem_name);
+    $result = $root->appendChild( $result );
+
+    # nodes unique per result
     my $title = $zotero->[$res_idx]->{"title"};
+    my $titlenode = $doc->createElement('title');
+    $titlenode = $result->addChild( $titlenode );
+    $titlenode->appendText( $title );
+    my $authors_node = $doc->createElement('authors');
+    $authors_node = $result->addChild( $authors_node );
 
-    # TODO: loop over all authors
-    my $author_last = $zotero->[$res_idx]->{"author"}->[0]->{"family"};
-    my $author_given = $zotero->[$res_idx]->{"author"}->[0]->{"given"};
-    my $author = "$author_given "."$author_last";
+    # loop over all authors
+    for my $auth_idx ( 0..$#{$zotero->[$res_idx]->{"author"}} ){
 
-    my ($attr_name, $attr_value) = ('author', $author);
-    my $element = $doc->createElement($el_name);
-    $element->setAttribute( $attr_name, $attr_value );
-    $element->appendText( $title );
-    $element = $root->appendChild( $element );
+        # get the author
+        my $author_last = 
+             $zotero->[$res_idx]->{"author"}->[$auth_idx]->{"family"};
+        my $author_given = 
+             $zotero->[$res_idx]->{"author"}->[$auth_idx]->{"given"};
+
+        # set the author
+        my $authornode = $doc->createElement('author');
+        $authornode = $authors_node->addChild( $authornode );
+        $authornode->setAttribute('last', $author_last);
+        $authornode->setAttribute('given', $author_given);
+    }
 }
 
 #$state = $doc->toFile($filename, $format);
