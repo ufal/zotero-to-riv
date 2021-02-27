@@ -37,11 +37,15 @@ for my $res_idx ( 0..$#{$zotero} ) {
     my $result = $doc->createElement($result_elem_name);
     $result = $root->appendChild( $result );
 
-    # nodes unique per result
-    my $title = $zotero->[$res_idx]->{"title"};
-    my $titlenode = $doc->createElement('title');
-    $titlenode = $result->addChild( $titlenode );
-    $titlenode->appendText( $title );
+    # simple text nodes unique per result
+    for my $name ( qw(type language title source) ) {
+        $result->appendTextChild( 
+            $name , 
+            $zotero->[$res_idx]->{"$name"} 
+        );
+    }
+    # complex nodes
+    # authors
     my $authors_node = $doc->createElement('authors');
     $authors_node = $result->addChild( $authors_node );
 
