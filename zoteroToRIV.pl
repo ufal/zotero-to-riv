@@ -19,22 +19,21 @@ use Path::Tiny;
 my $in_filename = 'biblio-export-csl.json';
 my $out_filename = 'publikace.xml';
 
-# Publikace z CSL JSON souboru ze Zotera
+# Publications from a CSL JSON file
 my $json = JSON->new->allow_nonref;
 my $all_of_it = path( $in_filename )->slurp;
 my $zotero = $json->decode( $all_of_it );
 #my $zotero = $json->decode( $string );
-say "počet importovaných publikací: ", $#{$zotero};
+say "Imported $#{$zotero} results.";
 
-# příprava výstupu do RIV XML
+# RIV XML template
 my $encoding = 'UTF-8';
 my $el_name = "result";
-
 my $doc = XML::LibXML::Document->new('1.0',$encoding);
 my $root = $doc->createElementNS( "", "results" );
 $doc->setDocumentElement( $root );
 
-# pro každý výsledek
+# loop over the imported results and output them
 for my $res_idx ( 0..$#{$zotero} ) {
     my $title = $zotero->[$res_idx]->{"title"};
 
