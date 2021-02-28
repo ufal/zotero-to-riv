@@ -38,11 +38,11 @@ for my $res_idx ( 0..$#{$zotero} ) {
     $result = $root->appendChild( $result );
 
     # simple text nodes unique per result
-    for my $name ( qw(type language title source) ) {
-        $result->appendTextChild( 
+    for my $name ( qw(type language title abstract source) ) {
+        $result->appendTextChild(
             $name , 
             $zotero->[$res_idx]->{"$name"} 
-        );
+        ) if $zotero->[$res_idx]->{"$name"};
     }
     # complex nodes
     # authors
