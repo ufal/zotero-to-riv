@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf8"?>
+<dodavka xmlns="urn:CZ-RVV-IS-VaV-XML-NS:data-1.2.9" struktura="RIV21A">
+  <zahlavi>
+    <rozsah>
+      <informacni-oblast>RIV</informacni-oblast>
+      <obdobi-sberu>2021</obdobi-sberu>
+      <predkladatel>
+        <subjekt>
+          <druh>verejna-vysoka-skola</druh>
+          <ICO>00216208</ICO>
+          <nazev jazyk="#ORIG">Univerzita Karlova</nazev>
+          <nazev jazyk="eng">Charles University</nazev>
+          <nadrizena-organizacni-slozka-statu>MSM</nadrizena-organizacni-slozka-statu>
+        </subjekt>
+        <organizacni-jednotka>
+          <kod>11320</kod>
+          <nazev jazyk="#ORIG">Matematicko-fyzikální fakulta</nazev>
+          <nazev jazyk="eng">Faculty of Mathematics and Physics</nazev>
+        </organizacni-jednotka>
+      </predkladatel>
+    </rozsah>
+    <dodavatel>
+      <subjekt>
+        <kod>MSM</kod>
+      </subjekt>
+      <pracovnik-povereny-pripravou-dodavky>
+        <osoba>
+          <cele-jmeno>Marcel Goliaš</cele-jmeno>
+          <kontakt>
+            <telefonni-cislo druh="telefon">951551257</telefonni-cislo>
+            <emailova-adresa>marcel.golias@mff.cuni.cz</emailova-adresa>
+          </kontakt>
+        </osoba>
+      </pracovnik-povereny-pripravou-dodavky>
+    </dodavatel>
+    <verze>01</verze>
+    <pruvodka cislo-jednaci="1"/>
+  </zahlavi>
+  <obsah>
+
+    <vysledek identifikacni-kod="RIV/00216208:11320/17:10336140" duvernost-udaju="verejne-pristupne" rok-uplatneni="2017" druh="clanek-v-periodiku">
+      <jazyk>eng</jazyk>
+      <nazev jazyk="eng">Properties of Mechanically Alloyed W-Ti Materials with Dual Phase Particle Dispersion</nazev>
+      <anotace jazyk="eng">W alloys are currently widely studied materials for their potential application in future fusion reactors. In the presented study, we report on the preparation and properties of mechanically alloyed W-Ti powders compacted by pulsed electric current sintering.</anotace>
+      <odkaz>https://verso.is.cuni.cz/pub/verso.fpl?fname=obd_publikace_handle&amp;handle=24mfe0U_Dq</odkaz>
+      <doi>10.3390/met7010003</doi>
+      <autori pocet-celkem="6" pocet-domacich="1">
+        <autor je-domaci="false">
+          <jmeno>František</jmeno>
+          <prijmeni>Lukáč</prijmeni>
+        </autor>
+        <autor je-domaci="false">
+          <jmeno>Monika</jmeno>
+          <prijmeni>Vilémová</prijmeni>
+        </autor>
+        <autor je-domaci="false">
+          <jmeno>Barbara</jmeno>
+          <prijmeni>Nevrlá</prijmeni>
+        </autor>
+        <autor je-domaci="false">
+          <jmeno>Jakub</jmeno>
+          <prijmeni>Klečka</prijmeni>
+        </autor>
+        <autor je-domaci="false">
+          <jmeno>Tomáš</jmeno>
+          <prijmeni>Chráska</prijmeni>
+        </autor>
+        <autor je-domaci="true">
+          <jmeno>Orsolya</jmeno>
+          <prijmeni>Molnárová</prijmeni>
+          <cizi-statni-prislusnik/>
+          <statni-prislusnost>SK</statni-prislusnost>
+          <rodne-cislo>9056036858</rodne-cislo>
+          <orcid>0000-0003-1829-1574</orcid>
+          <scopusid>56524610300</scopusid>
+          <researcherid>Q-2141-2016</researcherid>
+        </autor>
+      </autori>
+      <klasifikace>
+        <obor postaveni="hlavni" ciselnik="OblastiOECD">10302</obor>
+        <klicove-slovo jazyk="eng">small-angle neutron scattering</klicove-slovo>
+        <klicove-slovo jazyk="eng">in-situ neutron diffraction</klicove-slovo>
+        <klicove-slovo jazyk="eng">neutron scattering</klicove-slovo>
+        <klicove-slovo jazyk="eng">precipitation</klicove-slovo>
+        <klicove-slovo jazyk="eng">superalloy</klicove-slovo>
+        <klicove-slovo jazyk="eng">high temperature alloys</klicove-slovo>
+        <klicove-slovo jazyk="eng">metals</klicove-slovo>
+      </klasifikace>
+      <navaznosti>
+        <navaznost druh-vztahu="byl-dosazen-pri-reseni">
+          <projekt identifikacni-kod="GA15-15609S"/>
+          <specificky-vyzkum/>
+          <institucionalni-podpora-na-rozvoj-VO/>
+          <vvi identifikacni-kod="90057"/>
+        </navaznost>
+      </navaznosti>
+      <poddruh>clanek-wos</poddruh>
+      <periodikum>
+        <ISSN>2075-4701</ISSN>
+        <nazev>Metals</nazev>
+        <vydavatel>
+          <stat>CH</stat>
+        </vydavatel>
+      </periodikum>
+      <rocnik>7</rocnik>
+      <cislo>3</cislo>
+      <strany pocet="10">
+        <rozsah>1-10</rozsah>
+      </strany>
+      <kod-ut-isi>000396509900003</kod-ut-isi>
+      <EID>2-s2.0-85009743259</EID>
+      <eISSN status-udaje="neuvedeno"/>
+      <zpusob-publikovani>open-access</zpusob-publikovani>
+    </vysledek>
+    
+    <vysledek identifikacni-kod="RIV/00216208:11320/19:10378554" duvernost-udaju="verejne-pristupne" rok-uplatneni="2019" druh="clanek-ve-sborniku">
+      <jazyk>eng</jazyk>
+      <nazev jazyk="eng">Quadric Sections of Four-Dimensional Cones</nazev>
+      <anotace jazyk="eng">Graphic constructions of real three-dimensional quadrics as cuts of four-dimensional cones with three-dimensional spaces are described. All the constructions are presented on interactive models in GeoGebra 5 with use of descriptive geometry methods, which are based on a visualization technique of double orthogonal projection of the four-dimensional space onto two perpendicular three-dimensional spaces. We visualize a four-dimensional cone, its cutting 3-space and the section simultaneously in one figure. For detailed reasoning and verifications, the constructions are also supported analytically.</anotace>
+      <odkaz>https://link.springer.com/chapter/10.1007%2F978-3-319-95588-9_41</odkaz>
+      <doi>10.1007/978-3-319-95588-9_41</doi>
+      <autori pocet-celkem="1" pocet-domacich="1">
+        <autor je-domaci="true">
+          <jmeno>Michal</jmeno>
+          <prijmeni>Zamboj</prijmeni>
+          <cizi-statni-prislusnik/>
+          <statni-prislusnost>SK</statni-prislusnost>
+          <rodne-cislo>8905078963</rodne-cislo>
+          <orcid>0000-0002-7927-2302</orcid>
+          <scopusid>57193210003</scopusid>
+          <researcherid>D-7795-2017</researcherid>
+        </autor>
+      </autori>
+      <klasifikace>
+        <obor postaveni="hlavni" ciselnik="OblastiOECD">10101</obor>
+        <klicove-slovo jazyk="eng">Descriptive geometry</klicove-slovo>
+        <klicove-slovo jazyk="eng">Monge’s projection</klicove-slovo>
+        <klicove-slovo jazyk="eng">Conic sections</klicove-slovo>
+        <klicove-slovo jazyk="eng">Quadric</klicove-slovo>
+        <klicove-slovo jazyk="eng">Four-dimensional geometry</klicove-slovo>
+      </klasifikace>
+      <navaznosti>
+        <navaznost druh-vztahu="byl-dosazen-pri-reseni">
+          <specificky-vyzkum/>
+          <institucionalni-podpora-na-rozvoj-VO/>
+          <vvi identifikacni-kod="90057"/>
+        </navaznost>
+      </navaznosti>
+      <sbornik>
+        <nazev>Advances in Intelligent Systems and Computing</nazev>
+        <ISBN>978-3-319-95587-2</ISBN>
+        <ISSN>2194-5357</ISSN>
+        <eISSN status-udaje="neuvedeno"/>
+        <forma-vydani>tistena</forma-vydani>
+        <misto-vydani>Cham</misto-vydani>
+        <nakladatel>
+          <nazev>Springer,</nazev>
+        </nakladatel>
+      </sbornik>
+      <akce>
+        <konani>
+          <zahajeni>2018-08-03</zahajeni>
+          <misto>Milan, Italy</misto>
+        </konani>
+        <ucastnici>
+          <klasifikace-podle-statni-prislusnosti>celosvetova</klasifikace-podle-statni-prislusnosti>
+        </ucastnici>
+      </akce>
+      <strany pocet="14">
+        <rozsah>500-513</rozsah>
+      </strany>
+      <EID>2-s2.0-85050634653</EID>
+    </vysledek>
+
+    <vysledek identifikacni-kod="RIV/00216208:11320/19:10397139" duvernost-udaju="verejne-pristupne" rok-uplatneni="2019" druh="ostatni">
+      <jazyk>eng</jazyk>
+      <nazev jazyk="eng">Methodology of Curriculum Development</nazev>
+      <anotace jazyk="eng">This contribution deals with physics curriculum for secondary school. We present the results of a literature review focused on the methodology of physics curriculum development and the results of our preparatory phase of a qualitative research which will aim for development of a new physics curriculum. The literature review has shown that the methodology of curriculum development is in effect missing and if we would like to create a new physics curriculum, we must create our own transparent methodology. We have decided for a qualitative research approach and we would like to interview persons which are relevant for physics curriculum.</anotace>
+      <autori pocet-celkem="1" pocet-domacich="1">
+        <autor je-domaci="true">
+          <jmeno>Petr</jmeno>
+          <prijmeni>Kolář</prijmeni>
+          <rodne-cislo>9107224918</rodne-cislo>
+          <orcid>0000-0001-9744-9004</orcid>
+          <researcherid>O-5287-2017</researcherid>
+        </autor>
+      </autori>
+      <klasifikace>
+        <obor postaveni="hlavni" ciselnik="OblastiOECD">50301</obor>
+        <klicove-slovo jazyk="eng">grounded theory</klicove-slovo>
+        <klicove-slovo jazyk="eng">secondary schools</klicove-slovo>
+        <klicove-slovo jazyk="eng">physics</klicove-slovo>
+        <klicove-slovo jazyk="eng">curriculum development</klicove-slovo>
+        <klicove-slovo jazyk="eng">PER</klicove-slovo>
+      </klasifikace>
+      <navaznosti>
+        <navaznost druh-vztahu="byl-dosazen-pri-reseni">
+          <specificky-vyzkum/>
+          <vvi identifikacni-kod="90057"/>
+        </navaznost>
+      </navaznosti>
+    </vysledek>
+    
+  </obsah>
+</dodavka>
+
