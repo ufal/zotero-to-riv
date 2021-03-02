@@ -92,17 +92,24 @@ $header->appendTextChild( 'verze', "$verze" );
 $header->addNewChild( '', 'pruvodka' )->setAttribute( 
     'cislo-jednaci', "$cislo_jednaci");
 
-
 #obsah
 my $content = $doc->createElement('obsah');
    $content = $root->appendChild( $content );
 my $result_elem_name = "vysledek";
 # RIV XML Template – END
 
+
 # loop over the imported results and output them
 for my $res_idx ( 0..$#{$zotero} ) {
-    my $result = $doc->createElement($result_elem_name);
-    $result = $content->appendChild( $result );
+    my $result = $content->addNewChild( '', $result_elem_name );
+    $result->setAttribute( 
+        'identifikacni-kod', $zotero->[$res_idx]->{"id"} );
+    $result->setAttribute( 
+        'duvernost-udaju', 'verejne-pristupne' );
+    $result->setAttribute( 
+        'rok-uplatneni', $obdobi );
+    $result->setAttribute( 
+        'druh', 'ostatni' ); #TODO implementovat dalsi druhy
 
     # simple text nodes unique per result
     for my $name ( qw(type language title abstract source) ) {
