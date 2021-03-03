@@ -1,0 +1,3122 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:link="http://purl.org/rss/1.0/modules/link/"
+ xmlns:vcard="http://nwalsh.com/rdf/vCard#">
+    <bib:Article rdf:about="https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/259820">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>2020</prism:volume>
+                <dc:title>じんもんこん2020論文集</dc:title>
+                <dcterms:alternative>deplacy: a CUI-based tree visualizer for Universal Dependencies</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>安岡</foaf:surname>
+                        <foaf:givenName>孝一</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4294"/>
+        <link:link rdf:resource="#item_4295"/>
+        <dc:title>Universal Dependenciesにもとづく多言語係り受け可視化ツールdeplacy</dc:title>
+        <dcterms:abstract>Universal Dependenciesは, カレル大学のLINDAT/CLARINを中心に製作中の多言語係り受けコーパスであり, 現在, 90の言語に及んでいる. Universal Dependenciesを用いた係り受け解析ツールや, 係り受け可視化ツールも数多く製作されており, グラフィカルな画面に解析結果が出力されるようになってきている. ただ, 係り受け解析作業そのものは, CUI上でpythonなどのスクリプト言語を用いておこなうのが主であり, できれば解析結果もCUI上で見たい. そのような要求に答えるべく, 可視化ツールdeplacyを製作した. deplacyは, Universal Dependenciesにもとづく係り受け有向グラフを, CUI上に表示するpython3モジュールである. さらに, 50以上の書写言語にdeplacyを適用し, 各言語用のデモページをGoogle Colaboratory上に製作した. https://koichiyasuoka.github.io/deplacy/で公開中である.</dcterms:abstract>
+        <dc:date>2020-12</dc:date>
+        <z:language>jpn</z:language>
+        <z:libraryCatalog>repository.kulib.kyoto-u.ac.jp</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/259820</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 17:36:09</dcterms:dateSubmitted>
+        <dc:rights>ここに掲載した著作物の利用に関する注意 本著作物の著作権は情報処理学会に帰属します。本著作物は著作権者である情報処理学会の許可のもとに掲載するものです。ご利用に当たっては「著作権法」ならびに「情報処理学会倫理綱領」に従うことをお願いいたします。</dc:rights>
+        <dc:description>Accepted: 2020-12-17T05:56:15Z
+Publisher: 情報処理学会</dc:description>
+        <bib:pages>95-100</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_4294">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/259820</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 17:36:15</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4295">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/259820/1/IPSJ-CH2020014.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 17:36:12</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.degruyter.com/document/doi/10.1515/lingvan-2019-0077/html">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2199-174X"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nikolaev</foaf:surname>
+                        <foaf:givenName>Dmitry</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Karidi</foaf:surname>
+                        <foaf:givenName>Taelin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kenneth</foaf:surname>
+                        <foaf:givenName>Neta</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mitnik</foaf:surname>
+                        <foaf:givenName>Veronika</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Saeboe</foaf:surname>
+                        <foaf:givenName>Lilja</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abend</foaf:surname>
+                        <foaf:givenName>Omri</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4313"/>
+        <link:link rdf:resource="#item_4314"/>
+        <dc:title>Morphosyntactic predictability of translationese</dc:title>
+        <dcterms:abstract>It is often assumed that translated texts are easier to process than original ones. However, it has also been shown that translated texts contain evident traces of source-language morphosyntax, which should presumably make them less predictable and harder to process. We test these competing observations by measuring morphosyntactic entropies of original and translated texts in several languages and show that there may exist a categorical distinction between translations made from structurally-similar languages (which are more predictable than original texts) and those made from structurally-divergent languages (which are often non-idiomatic, involve structural transfer, and therefore are more entropic).</dcterms:abstract>
+        <dc:date>2020/01/01</dc:date>
+        <z:language>en</z:language>
+        <z:libraryCatalog>www.degruyter.com</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.degruyter.com/document/doi/10.1515/lingvan-2019-0077/html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 16:54:16</dcterms:dateSubmitted>
+        <dc:description>Publisher: De Gruyter
+Section: Linguistics Vanguard</dc:description>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2199-174X">
+        <prism:volume>6</prism:volume>
+        <dc:title>Linguistics Vanguard</dc:title>
+        <dc:identifier>DOI 10.1515/lingvan-2019-0077</dc:identifier>
+        <prism:number>1</prism:number>
+        <dc:identifier>ISSN 2199-174X</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_4313">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Nikolaev et al. - 2020 - Morphosyntactic predictability of translationese.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4314">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.degruyter.com/document/doi/10.1515/lingvan-2019-0077/html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 16:54:20</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:979-10-95546-34-4">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vodolazsky</foaf:surname>
+                        <foaf:givenName>Daniil</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4316"/>
+        <dc:title>DerivBase.Ru: a Derivational Morphology Resource for Russian</dc:title>
+        <dcterms:abstract>Russian morphology has been studied for decades, but there is still no large high coverage resource that contains the derivational families (groups of words that share the same root) of Russian words. The number of words used in different areas of the language grows rapidly, thus the human-made dictionaries published long time ago cannot cover the neologisms and the domain-specific lexicons. To fill such resource gap, we have developed a rule-based framework for deriving words and we applied it to build a derivational morphology resource named DerivBase.Ru, which we introduce in this paper.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:shortTitle>DerivBase.Ru</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.485</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 11:19:39</dcterms:dateSubmitted>
+        <bib:pages>3937–3943</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4316">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.485.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 11:19:41</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.232">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Aspillaga</foaf:surname>
+                        <foaf:givenName>Carlos</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Carvallo</foaf:surname>
+                        <foaf:givenName>Andrés</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Araujo</foaf:surname>
+                        <foaf:givenName>Vladimir</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4317"/>
+        <dc:title>Stress Test Evaluation of Transformer-based Models in Natural Language Understanding Tasks</dc:title>
+        <dcterms:abstract>There has been significant progress in recent years in the field of Natural Language Processing thanks to the introduction of the Transformer architecture. Current state-of-the-art models, via a large number of parameters and pre-training on massive text corpus, have shown impressive results on several downstream tasks. Many researchers have studied previous (non-Transformer) models to understand their actual behavior under different scenarios, showing that these models are taking advantage of clues or failures of datasets and that slight perturbations on the input data can severely reduce their performance. In contrast, recent models have not been systematically tested with adversarial-examples in order to show their robustness under severe stress conditions. For that reason, this work evaluates three Transformer-based models (RoBERTa, XLNet, and BERT) in Natural Language Inference (NLI) and Question Answering (QA) tasks to know if they are more robust or if they have the same flaws as their predecessors. As a result, our experiments reveal that RoBERTa, XLNet and BERT are more robust than recurrent neural network models to stress tests for both NLI and QA tasks. Nevertheless, they are still very fragile and demonstrate various unexpected behaviors, thus revealing that there is still room for future improvement in this field.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.232</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:21:38</dcterms:dateSubmitted>
+        <bib:pages>1882–1894</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4317">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.232.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:21:42</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.acl-main.665">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.acl-main.665</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Elder</foaf:surname>
+                        <foaf:givenName>Henry</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Burke</foaf:surname>
+                        <foaf:givenName>Robert</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>O'Connor</foaf:surname>
+                        <foaf:givenName>Alexander</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Foster</foaf:surname>
+                        <foaf:givenName>Jennifer</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4318"/>
+        <dc:title>Shape of Synth to Come: Why We Should Use Synthetic Data for English Surface Realization</dc:title>
+        <dcterms:abstract>The Surface Realization Shared Tasks of 2018 and 2019 were Natural Language Generation shared tasks with the goal of exploring approaches to surface realization from Universal-Dependency-like trees to surface strings for several languages. In the 2018 shared task there was very little difference in the absolute performance of systems trained with and without additional, synthetically created data, and a new rule prohibiting the use of synthetic data was introduced for the 2019 shared task. Contrary to the findings of the 2018 shared task, we show, in experiments on the English 2018 dataset, that the use of synthetic data can have a substantial positive effect – an improvement of almost 8 BLEU points for a previously state-of-the-art system. We analyse the effects of synthetic data, and we argue that its use should be encouraged rather than prohibited so that future research efforts continue to explore systems that can take advantage of such data.</dcterms:abstract>
+        <dc:date>2020-07</dc:date>
+        <z:shortTitle>Shape of Synth to Come</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.acl-main.665</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:19:58</dcterms:dateSubmitted>
+        <bib:pages>7465–7471</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>ACL 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4318">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.acl-main.665.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:19:59</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.findings-emnlp.118">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Findings of the Association for Computational Linguistics: EMNLP 2020</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.findings-emnlp.118</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chau</foaf:surname>
+                        <foaf:givenName>Ethan C.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lin</foaf:surname>
+                        <foaf:givenName>Lucy H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Smith</foaf:surname>
+                        <foaf:givenName>Noah A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4320"/>
+        <dc:title>Parsing with Multilingual BERT, a Small Corpus, and a Small Treebank</dc:title>
+        <dcterms:abstract>Pretrained multilingual contextual representations have shown great success, but due to the limits of their pretraining data, their benefits do not apply equally to all language varieties. This presents a challenge for language varieties unfamiliar to these models, whose labeled and unlabeled data is too limited to train a monolingual model effectively. We propose the use of additional language-specific pretraining and vocabulary augmentation to adapt multilingual models to low-resource settings. Using dependency parsing of four diverse low-resource language varieties as a case study, we show that these methods significantly improve performance over baselines, especially in the lowest-resource cases, and demonstrate the importance of the relationship between such models' pretraining data and target language varieties.</dcterms:abstract>
+        <dc:date>2020-11</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.findings-emnlp.118</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:10:07</dcterms:dateSubmitted>
+        <bib:pages>1324–1334</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+               <dc:title>EMNLP-Findings 2020</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4320">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.findings-emnlp.118.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:10:09</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.776">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abdi Khojasteh</foaf:surname>
+                        <foaf:givenName>Hadi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ansari</foaf:surname>
+                        <foaf:givenName>Ebrahim</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bohlouli</foaf:surname>
+                        <foaf:givenName>Mahdi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4321"/>
+        <dc:title>LSCP: Enhanced Large Scale Colloquial Persian Language Understanding</dc:title>
+        <dcterms:abstract>Language recognition has been significantly advanced in recent years by means of modern machine learning methods such as deep learning and benchmarks with rich annotations. However, research is still limited in low-resource formal languages. This consists of a significant gap in describing the colloquial language especially for low-resourced ones such as Persian. In order to target this gap for low resource languages, we propose a “Large Scale Colloquial Persian Dataset” (LSCP). LSCP is hierarchically organized in a semantic taxonomy that focuses on multi-task informal Persian language understanding as a comprehensive problem. This encompasses the recognition of multiple semantic aspects in the human-level sentences, which naturally captures from the real-world sentences. We believe that further investigations and processing, as well as the application of novel algorithms and methods, can strengthen enriching computerized understanding and processing of low resource languages. The proposed corpus consists of 120M sentences resulted from 27M tweets annotated with parsing tree, part-of-speech tags, sentiment polarity and translation in five different languages.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:shortTitle>LSCP</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.776</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:04:28</dcterms:dateSubmitted>
+        <bib:pages>6323–6327</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4321">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.776.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:04:30</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.sustainlp-1.16">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of SustaiNLP: Workshop on Simple and Efficient Natural Language Processing</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.sustainlp-1.16</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abdaoui</foaf:surname>
+                        <foaf:givenName>Amine</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pradel</foaf:surname>
+                        <foaf:givenName>Camille</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sigel</foaf:surname>
+                        <foaf:givenName>Grégoire</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4322"/>
+        <dc:title>Load What You Need: Smaller Versions of Mutililingual BERT</dc:title>
+        <dcterms:abstract>Pre-trained Transformer-based models are achieving state-of-the-art results on a variety of Natural Language Processing data sets. However, the size of these models is often a drawback for their deployment in real production applications. In the case of multilingual models, most of the parameters are located in the embeddings layer. Therefore, reducing the vocabulary size should have an important impact on the total number of parameters. In this paper, we propose to extract smaller models that handle fewer number of languages according to the targeted corpora. We present an evaluation of smaller versions of multilingual BERT on the XNLI data set, but we believe that this method may be applied to other multilingual transformers. The obtained results confirm that we can generate smaller models that keep comparable results, while reducing up to 45% of the total number of parameters. We compared our models with DistilmBERT (a distilled version of multilingual BERT) and showed that unlike language reduction, distillation induced a 1.7% to 6% drop in the overall accuracy on the XNLI data set. The presented models and code are publicly available.</dcterms:abstract>
+        <dc:date>2020-11</dc:date>
+        <z:shortTitle>Load What You Need</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.sustainlp-1.16</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:03:32</dcterms:dateSubmitted>
+        <bib:pages>119–123</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+               <dc:title>EMNLP-sustainlp 2020</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4322">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.sustainlp-1.16.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:03:34</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.aacl-main.60">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 10th International Joint Conference on Natural Language Processing</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Suzhou, China</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Koto</foaf:surname>
+                        <foaf:givenName>Fajri</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lau</foaf:surname>
+                        <foaf:givenName>Jey Han</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baldwin</foaf:surname>
+                        <foaf:givenName>Timothy</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4323"/>
+        <dc:title>Liputan6: A Large-scale Indonesian Dataset for Text Summarization</dc:title>
+        <dcterms:abstract>In this paper, we introduce a large-scale Indonesian summarization dataset. We harvest articles from Liputan6.com, an online news portal, and obtain 215,827 document–summary pairs. We leverage pre-trained language models to develop benchmark extractive and abstractive summarization methods over the dataset with multilingual and monolingual BERT-based models. We include a thorough error analysis by examining machine-generated summaries that have low ROUGE scores, and expose both issues with ROUGE itself, as well as with extractive and abstractive summarization models.</dcterms:abstract>
+        <dc:date>2020-12</dc:date>
+        <z:shortTitle>Liputan6</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.aacl-main.60</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:02:35</dcterms:dateSubmitted>
+        <bib:pages>598–608</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>AACL 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4323">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.aacl-main.60.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 14:02:38</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.iwpt-1.25">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 16th International Conference on Parsing Technologies and the IWPT 2020 Shared Task on Parsing into Enhanced Universal Dependencies</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.iwpt-1.25</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hershcovich</foaf:surname>
+                        <foaf:givenName>Daniel</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>de Lhoneux</foaf:surname>
+                        <foaf:givenName>Miryam</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kulmizev</foaf:surname>
+                        <foaf:givenName>Artur</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pejhan</foaf:surname>
+                        <foaf:givenName>Elham</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nivre</foaf:surname>
+                        <foaf:givenName>Joakim</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4324"/>
+        <dc:title>Køpsala: Transition-Based Graph Parsing via Efficient Training and Effective Encoding</dc:title>
+        <dcterms:abstract>We present Køpsala, the Copenhagen-Uppsala system for the Enhanced Universal Dependencies Shared Task at IWPT 2020. Our system is a pipeline consisting of off-the-shelf models for everything but enhanced graph parsing, and for the latter, a transition-based graph parser adapted from Che et al. (2019). We train a single enhanced parser model per language, using gold sentence splitting and tokenization for training, and rely only on tokenized surface forms and multilingual BERT for encoding. While a bug introduced just before submission resulted in a severe drop in precision, its post-submission fix would bring us to 4th place in the official ranking, according to average ELAS. Our parser demonstrates that a unified pipeline is effective for both Meaning Representation Parsing and Enhanced Universal Dependencies.</dcterms:abstract>
+        <dc:date>2020-07</dc:date>
+        <z:shortTitle>Køpsala</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.iwpt-1.25</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:48:47</dcterms:dateSubmitted>
+        <bib:pages>236–244</bib:pages>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4324">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.iwpt-1.25.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:48:49</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.tlt-1.10">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 19th International Workshop on Treebanks and Linguistic Theories</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.tlt-1.10</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Düsseldorf, Germany</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vale</foaf:surname>
+                        <foaf:givenName>Daniel Couto</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schulz</foaf:surname>
+                        <foaf:givenName>Konstantin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4262"/>
+        <dc:title>Intelligenti Pauca - Probing a Novel Alternative to Universal Dependencies for Under-Resourced Languages on Latin</dc:title>
+        <dcterms:abstract>In this paper, we aim at improving the study of Latin in three ways: 1) by providing better visualizations of syntagma and structure for both research and the classroom, 2) by supporting a
+high-level search interface for corpus exploration, and 3) by improving the accuracy of taggers
+and parsers. To achieve this, we introduce a new linguistic description called Intelligenti Pauca,
+an alternative to Universal Dependencies for under-resourced languages. We show the key differences between the two linguistic descriptions, how the structure of Intelligenti Pauca favours
+our goals, and the effect it has on parsing accuracy for the Index Tomisticus Treebank.</dcterms:abstract>
+        <dc:date>2020-10</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.tlt-1.10</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 11:21:52</dcterms:dateSubmitted>
+        <bib:pages>111–123</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>TLT 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4262">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.tlt-1.10.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 11:21:53</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.aacl-main.85">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 10th International Joint Conference on Natural Language Processing</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Suzhou, China</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wilie</foaf:surname>
+                        <foaf:givenName>Bryan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vincentio</foaf:surname>
+                        <foaf:givenName>Karissa</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Winata</foaf:surname>
+                        <foaf:givenName>Genta Indra</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cahyawijaya</foaf:surname>
+                        <foaf:givenName>Samuel</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Li</foaf:surname>
+                        <foaf:givenName>Xiaohong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lim</foaf:surname>
+                        <foaf:givenName>Zhi Yuan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Soleman</foaf:surname>
+                        <foaf:givenName>Sidik</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mahendra</foaf:surname>
+                        <foaf:givenName>Rahmad</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fung</foaf:surname>
+                        <foaf:givenName>Pascale</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bahar</foaf:surname>
+                        <foaf:givenName>Syafri</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Purwarianti</foaf:surname>
+                        <foaf:givenName>Ayu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4326"/>
+        <dc:title>IndoNLU: Benchmark and Resources for Evaluating Indonesian Natural Language Understanding</dc:title>
+        <dcterms:abstract>Although Indonesian is known to be the fourth most frequently used language over the internet, the research progress on this language in natural language processing (NLP) is slow-moving due to a lack of available resources. In response, we introduce the first-ever vast resource for training, evaluation, and benchmarking on Indonesian natural language understanding (IndoNLU) tasks. IndoNLU includes twelve tasks, ranging from single sentence classification to pair-sentences sequence labeling with different levels of complexity. The datasets for the tasks lie in different domains and styles to ensure task diversity. We also provide a set of Indonesian pre-trained models (IndoBERT) trained from a large and clean Indonesian dataset (Indo4B) collected from publicly available sources such as social media texts, blogs, news, and websites. We release baseline models for all twelve tasks, as well as the framework for benchmark evaluation, thus enabling everyone to benchmark their system performances.</dcterms:abstract>
+        <dc:date>2020-12</dc:date>
+        <z:shortTitle>IndoNLU</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.aacl-main.85</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:37:18</dcterms:dateSubmitted>
+        <bib:pages>843–857</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>AACL 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4326">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.aacl-main.85.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:37:24</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.coling-main.66">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 28th International Conference on Computational Linguistics</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.coling-main.66</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Barcelona, Spain (Online)</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>International Committee on Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Koto</foaf:surname>
+                        <foaf:givenName>Fajri</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rahimi</foaf:surname>
+                        <foaf:givenName>Afshin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lau</foaf:surname>
+                        <foaf:givenName>Jey Han</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baldwin</foaf:surname>
+                        <foaf:givenName>Timothy</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4327"/>
+        <dc:title>IndoLEM and IndoBERT: A Benchmark Dataset and Pre-trained Language Model for Indonesian NLP</dc:title>
+        <dcterms:abstract>Although the Indonesian language is spoken by almost 200 million people and the 10th most spoken language in the world, it is under-represented in NLP research. Previous work on Indonesian has been hampered by a lack of annotated datasets, a sparsity of language resources, and a lack of resource standardization. In this work, we release the IndoLEM dataset comprising seven tasks for the Indonesian language, spanning morpho-syntax, semantics, and discourse. We additionally release IndoBERT, a new pre-trained language model for Indonesian, and evaluate it over IndoLEM, in addition to benchmarking it against existing resources. Our experiments show that IndoBERT achieves state-of-the-art performance over most of the tasks in IndoLEM.</dcterms:abstract>
+        <dc:date>2020-12</dc:date>
+        <z:shortTitle>IndoLEM and IndoBERT</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.coling-main.66</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:36:23</dcterms:dateSubmitted>
+        <bib:pages>757–770</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>COLING 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4327">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.coling-main.66.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:36:25</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://dialnet.unirioja.es/servlet/articulo?codigo=7670688">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the Workshop on Hybrid Intelligence for Natural Language Processing Tasks (HI4NLP 2020) co-located with 24th European Conference on Artificial Intelligence (ECAI 2020): Santiago de Compostela, Spain, August 29, 2020, 2020, págs. 7-15</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>CEUR Workshop Proceedings</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cabral</foaf:surname>
+                        <foaf:givenName>Bruno</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Souza</foaf:surname>
+                        <foaf:givenName>Marlo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Claro</foaf:surname>
+                        <foaf:givenName>Daniela Barreiro</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4328"/>
+        <link:link rdf:resource="#item_4329"/>
+        <dc:title>Explainable OpenIE Classifier with Morpho-syntactic Rules</dc:title>
+        <dcterms:abstract>Autorías: Bruno Cabral, Marlo Souza, Daniela Barreiro Claro.
+Localización: Proceedings of the Workshop on Hybrid Intelligence for Natural Language Processing Tasks (HI4NLP 2020) co-located with 24th European Conference on Artificial Intelligence (ECAI 2020): Santiago de Compostela, Spain, August 29, 2020, 2020.
+Artículo de Libro en Dialnet.</dcterms:abstract>
+        <dc:date>2020</dc:date>
+        <z:language>spa</z:language>
+        <z:libraryCatalog>dialnet.unirioja.es</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://dialnet.unirioja.es/servlet/articulo?codigo=7670688</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:34:21</dcterms:dateSubmitted>
+        <dc:description>Section: Proceedings of the Workshop on Hybrid Intelligence for Natural Language Processing Tasks (HI4NLP 2020) co-located with 24th European Conference on Artificial Intelligence (ECAI 2020): Santiago de Compostela, Spain, August 29, 2020</dc:description>
+        <bib:pages>7-15</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>Proceedings of the Workshop on Hybrid Intelligence for Natural Language Processing Tasks (HI4NLP 2020) co-located with 24th European Conference on Artificial Intelligence (ECAI 2020): Santiago de Compostela, Spain, August 29, 2020</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4328">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://dialnet.unirioja.es/servlet/articulo?codigo=7670688</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:34:25</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4329">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://dialnet.unirioja.es/servlet/citart?info=link&amp;codigo=7670688&amp;orden=0</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:34:24</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.acl-main.375">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.acl-main.375</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kulmizev</foaf:surname>
+                        <foaf:givenName>Artur</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ravishankar</foaf:surname>
+                        <foaf:givenName>Vinit</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abdou</foaf:surname>
+                        <foaf:givenName>Mostafa</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nivre</foaf:surname>
+                        <foaf:givenName>Joakim</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4330"/>
+        <dc:title>Do Neural Language Models Show Preferences for Syntactic Formalisms?</dc:title>
+        <dcterms:abstract>Recent work on the interpretability of deep neural language models has concluded that many properties of natural language syntax are encoded in their representational spaces. However, such studies often suffer from limited scope by focusing on a single language and a single linguistic formalism. In this study, we aim to investigate the extent to which the semblance of syntactic structure captured by language models adheres to a surface-syntactic or deep syntactic style of analysis, and whether the patterns are consistent across different languages. We apply a probe for extracting directed dependency trees to BERT and ELMo models trained on 13 different languages, probing for two different syntactic annotation styles: Universal Dependencies (UD), prioritizing deep syntactic relations, and Surface-Syntactic Universal Dependencies (SUD), focusing on surface structure. We find that both models exhibit a preference for UD over SUD — with interesting variations across languages and layers — and that the strength of this preference is correlated with differences in tree shape.</dcterms:abstract>
+        <dc:date>2020-07</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.acl-main.375</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:29:49</dcterms:dateSubmitted>
+        <bib:pages>4077–4091</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>ACL 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4330">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.acl-main.375.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:29:53</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.acl-main.627">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.acl-main.627</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fei</foaf:surname>
+                        <foaf:givenName>Hao</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhang</foaf:surname>
+                        <foaf:givenName>Meishan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ji</foaf:surname>
+                        <foaf:givenName>Donghong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4332"/>
+        <dc:title>Cross-Lingual Semantic Role Labeling with High-Quality Translated Training Corpus</dc:title>
+        <dcterms:abstract>Many efforts of research are devoted to semantic role labeling (SRL) which is crucial for natural language understanding. Supervised approaches have achieved impressing performances when large-scale corpora are available for resource-rich languages such as English. While for the low-resource languages with no annotated SRL dataset, it is still challenging to obtain competitive performances. Cross-lingual SRL is one promising way to address the problem, which has achieved great advances with the help of model transferring and annotation projection. In this paper, we propose a novel alternative based on corpus translation, constructing high-quality training datasets for the target languages from the source gold-standard SRL annotations. Experimental results on Universal Proposition Bank show that the translation-based method is highly effective, and the automatic pseudo datasets can improve the target-language SRL performances significantly.</dcterms:abstract>
+        <dc:date>2020-07</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.acl-main.627</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:23:12</dcterms:dateSubmitted>
+        <bib:pages>7014–7026</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>ACL 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4332">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.acl-main.627.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:23:14</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.wmt-1.94">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the Fifth Conference on Machine Translation</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Saunders</foaf:surname>
+                        <foaf:givenName>Danielle</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Byrne</foaf:surname>
+                        <foaf:givenName>Bill</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4333"/>
+        <dc:title>Addressing Exposure Bias With Document Minimum Risk Training: Cambridge at the WMT20 Biomedical Translation Task</dc:title>
+        <dcterms:abstract>The 2020 WMT Biomedical translation task evaluated Medline abstract translations. This is a small-domain translation task, meaning limited relevant training data with very distinct style and vocabulary. Models trained on such data are susceptible to exposure bias effects, particularly when training sentence pairs are imperfect translations of each other. This can result in poor behaviour during inference if the model learns to neglect the source sentence. The UNICAM entry addresses this problem during fine-tuning using a robust variant on Minimum Risk Training. We contrast this approach with data-filtering to remove `problem' training examples. Under MRT fine-tuning we obtain good results for both directions of English-German and English-Spanish biomedical translation. In particular we achieve the best English-to-Spanish translation result and second-best Spanish-to-English result, despite using only single models with no ensembling.</dcterms:abstract>
+        <dc:date>2020-11</dc:date>
+        <z:shortTitle>Addressing Exposure Bias With Document Minimum Risk Training</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.wmt-1.94</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:17:48</dcterms:dateSubmitted>
+        <bib:pages>862–869</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>EMNLP-WMT 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4333">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.wmt-1.94.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:17:50</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://journals.uic.edu/ojs/index.php/dad/article/view/11372">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2152-9620"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zeldes</foaf:surname>
+                        <foaf:givenName>Amir</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Liu</foaf:surname>
+                        <foaf:givenName>Yang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4334"/>
+        <link:link rdf:resource="#item_4335"/>
+        <dc:title>A Neural Approach to Discourse Relation Signal Detection</dc:title>
+        <dcterms:abstract>Previous data-driven work investigating the types and distributions of discourse relation signals, including discourse markers such as 'however' or phrases such as 'as a result' has focused on the relative frequencies of signal words within and outside text from each discourse relation. Such approaches do not allow us to quantify the signaling strength of individual instances of a signal on a scale (e.g. more or less discourse-relevant instances of 'and'), to assess the distribution of ambiguity for signals, or to identify words that hinder discourse relation identification in context ('anti-signals' or 'distractors'). In this paper we present a data-driven approach to signal detection using a distantly supervised neural network and develop a metric, Δs (or 'delta-softmax'), to quantify signaling strength. Ranging between -1 and 1 and relying on recent advances in contextualized words embeddings, the metric represents each word's positive or negative contribution to the identifiability of a relation in specific instances in context. Based on an English corpus annotated for discourse relations using Rhetorical Structure Theory and signal type annotations anchored to specific tokens, our analysis examines the reliability of the metric, the places where it overlaps with and differs from human judgments, and the implications for identifying features that neural models may need in order to perform better on automatic discourse relation classification.</dcterms:abstract>
+        <dc:date>2020/07/01</dc:date>
+        <z:language>en</z:language>
+        <z:libraryCatalog>journals.uic.edu</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.uic.edu/ojs/index.php/dad/article/view/11372</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:03:17</dcterms:dateSubmitted>
+        <dc:rights>Copyright (c) 2020</dc:rights>
+        <dc:description>Number: 2</dc:description>
+        <bib:pages>1-33</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2152-9620">
+        <prism:volume>11</prism:volume>
+        <dc:title>Dialogue &amp; Discourse</dc:title>
+        <dc:identifier>DOI 10.5087/dad.2020.201</dc:identifier>
+        <prism:number>2</prism:number>
+        <dc:identifier>ISSN 2152-9620</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_4334">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.uic.edu/ojs/index.php/dad/article/view/11372</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:03:20</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4335">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.uic.edu/ojs/index.php/dad/article/download/11372/9733</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 13:03:19</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.cambridge.org/core/journals/natural-language-engineering/article/estimating-wordlevel-quality-of-statistical-machine-translation-output-using-monolingual-information-alone/CC59FF0C07E859AAA01CC30CF7BA9326">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1351-3249,%201469-8110"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tezcan</foaf:surname>
+                        <foaf:givenName>Arda</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hoste</foaf:surname>
+                        <foaf:givenName>Véronique</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Macken</foaf:surname>
+                        <foaf:givenName>Lieve</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4336"/>
+        <link:link rdf:resource="#item_4337"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Neural networks</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Machine translation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Quality estimation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Estimating word-level quality of statistical machine translation output using monolingual information alone</dc:title>
+        <dcterms:abstract>Various studies show that statistical machine translation (SMT) systems suffer from fluency errors, especially in the form of grammatical errors and errors related to idiomatic word choices. In this study, we investigate the effectiveness of using monolingual information contained in the machine-translated text to estimate word-level quality of SMT output. We propose a recurrent neural network architecture which uses morpho-syntactic features and word embeddings as word representations within surface and syntactic n-grams. We test the proposed method on two language pairs and for two tasks, namely detecting fluency errors and predicting overall post-editing effort. Our results show that this method is effective for capturing all types of fluency errors at once. Moreover, on the task of predicting post-editing effort, while solely relying on monolingual information, it achieves on-par results with the state-of-the-art quality estimation systems which use both bilingual and monolingual information.</dcterms:abstract>
+        <dc:date>2020/01</dc:date>
+        <z:language>en</z:language>
+        <z:libraryCatalog>Cambridge University Press</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.cambridge.org/core/journals/natural-language-engineering/article/estimating-wordlevel-quality-of-statistical-machine-translation-output-using-monolingual-information-alone/CC59FF0C07E859AAA01CC30CF7BA9326</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 12:54:16</dcterms:dateSubmitted>
+        <dc:description>Publisher: Cambridge University Press</dc:description>
+        <bib:pages>73-94</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1351-3249,%201469-8110">
+        <prism:volume>26</prism:volume>
+        <dc:title>Natural Language Engineering</dc:title>
+        <dc:identifier>DOI 10.1017/S1351324919000111</dc:identifier>
+        <prism:number>1</prism:number>
+        <dc:identifier>ISSN 1351-3249, 1469-8110</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_4336">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.cambridge.org/core/journals/natural-language-engineering/article/estimating-wordlevel-quality-of-statistical-machine-translation-output-using-monolingual-information-alone/CC59FF0C07E859AAA01CC30CF7BA9326</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 12:54:38</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4337">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CC59FF0C07E859AAA01CC30CF7BA9326/S1351324919000111a.pdf/div-class-title-estimating-word-level-quality-of-statistical-machine-translation-output-using-monolingual-information-alone-div.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 12:54:18</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.emnlp-main.71">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.emnlp-main.71</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Li</foaf:surname>
+                        <foaf:givenName>Bai</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Thomas</foaf:surname>
+                        <foaf:givenName>Guillaume</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xu</foaf:surname>
+                        <foaf:givenName>Yang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rudzicz</foaf:surname>
+                        <foaf:givenName>Frank</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4390"/>
+        <dc:title>Word class flexibility: A deep contextualized approach</dc:title>
+        <dcterms:abstract>Word class flexibility refers to the phenomenon whereby a single word form is used across different grammatical categories. Extensive work in linguistic typology has sought to characterize word class flexibility across languages, but quantifying this phenomenon accurately and at scale has been fraught with difficulties. We propose a principled methodology to explore regularity in word class flexibility. Our method builds on recent work in contextualized word embeddings to quantify semantic shift between word classes (e.g., noun-to-verb, verb-to-noun), and we apply this method to 37 languages. We find that contextualized embeddings not only capture human judgment of class variation within words in English, but also uncover shared tendencies in class flexibility across languages. Specifically, we find greater semantic variation when flexible lemmas are used in their dominant word class, supporting the view that word class flexibility is a directional process. Our work highlights the utility of deep contextualized models in linguistic typology.</dcterms:abstract>
+        <dc:date>2020-11</dc:date>
+        <z:shortTitle>Word class flexibility</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.emnlp-main.71</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 10:48:17</dcterms:dateSubmitted>
+        <bib:pages>983–994</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>EMNLP 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4390">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.emnlp-main.71.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 10:48:20</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.481">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Metheniti</foaf:surname>
+                        <foaf:givenName>Eleni</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Neumann</foaf:surname>
+                        <foaf:givenName>Guenter</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4372"/>
+        <dc:title>Wikinflection Corpus: A (Better) Multilingual, Morpheme-Annotated Inflectional Corpus</dc:title>
+        <dcterms:abstract>Multilingual, inflectional corpora are a scarce resource in the NLP community, especially corpora with annotated morpheme boundaries. We are evaluating a generated, multilingual inflectional corpus with morpheme boundaries, generated from the English Wiktionary (Metheniti and Neumann, 2018), against the largest, multilingual, high-quality inflectional corpus of the UniMorph project (Kirov et al., 2018). We confirm that the generated Wikinflection corpus is not of such quality as UniMorph, but we were able to extract a significant amount of words from the intersection of the two corpora. Our Wikinflection corpus benefits from the morpheme segmentations of Wiktionary/Wikinflection and from the manually-evaluated morphological feature tags of the UniMorph project, and has 216K lemmas and 5.4M word forms, in a total of 68 languages.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:shortTitle>Wikinflection Corpus</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.481</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 09:47:20</dcterms:dateSubmitted>
+        <bib:pages>3905–3912</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4372">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.481.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 09:47:22</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.653">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wróblewska</foaf:surname>
+                        <foaf:givenName>Alina</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4368"/>
+        <dc:title>Towards the Conversion of National Corpus of Polish to Universal Dependencies</dc:title>
+        <dcterms:abstract>The research presented in this paper aims at enriching the manually morphosyntactically annotated part of National Corpus of Polish (NKJP1M) with a syntactic layer, i.e. dependency trees of sentences, and at converting both dependency trees and morphosyntactic annotations of particular tokens to Universal Dependencies. The dependency layer is built using a semi-automatic annotation procedure. The sentences from NKJP1M are first parsed with a dependency parser trained on Polish Dependency Bank, i.e. the largest bank of Polish dependency trees. The predicted dependency trees and the morphosyntactic annotations of tokens are then automatically converted into UD dependency graphs. NKJP1M sentences are an essential part of Polish Dependency Bank, we thus replace some automatically predicted dependency trees with their manually annotated equivalents. The final dependency treebank consists of 86K trees (including 15K gold-standard trees). A natural language pre-processing model trained on the enlarged set of (possibly noisy) dependency trees outperforms a model trained on a smaller set of the gold-standard trees in predicting part-of-speech tags, morphological features, lemmata, and labelled dependency trees</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.653</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 20:32:41</dcterms:dateSubmitted>
+        <bib:pages>5308–5315</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4368">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.653.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 20:32:45</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-3-030-58323-1">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dcterms:isPartOf>
+                    <bib:Series>
+                       <dc:title>Lecture Notes in Computer Science</dc:title>
+                    </bib:Series>
+                </dcterms:isPartOf>
+                <dc:identifier>ISBN 978-3-030-58323-1</dc:identifier>
+                <dc:title>Text, Speech, and Dialogue</dc:title>
+                <dc:identifier>DOI 10.1007/978-3-030-58323-1_24</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Cham</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Springer International Publishing</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Alekseev</foaf:surname>
+                        <foaf:givenName>Anton</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nikolenko</foaf:surname>
+                        <foaf:givenName>Sergey</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sojka</foaf:surname>
+                        <foaf:givenName>Petr</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kopeček</foaf:surname>
+                        <foaf:givenName>Ivan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pala</foaf:surname>
+                        <foaf:givenName>Karel</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Horák</foaf:surname>
+                        <foaf:givenName>Aleš</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Anonymous data</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Russian NLP</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>User profiling</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Recognizing Preferred Grammatical Gender in Russian Anonymous Online Confessions</dc:title>
+        <dcterms:abstract>We present annotation results for a dataset of public anonymous online confessions in Russian (“Overheard/Podslushano” group in VKontakte, posts tagged #family). Unlike many other cases with online social network data, intentionally anonymous posts do not contain any explicit metadata such as age or gender. We consider the problem of predicting the author’s preferred grammatical gender for self-reference, a problem that proved to be surprisingly hard and not reducible to simple morphological analysis. We describe an expert labeling of a dataset for this problem, show the findings of predictive analysis, and introduce rule-based and machine learning approaches.</dcterms:abstract>
+        <dc:date>2020</dc:date>
+        <z:language>en</z:language>
+        <z:libraryCatalog>Springer Link</z:libraryCatalog>
+        <bib:pages>222-230</bib:pages>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.483">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>McCarthy</foaf:surname>
+                        <foaf:givenName>Arya D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kirov</foaf:surname>
+                        <foaf:givenName>Christo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grella</foaf:surname>
+                        <foaf:givenName>Matteo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nidhi</foaf:surname>
+                        <foaf:givenName>Amrit</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xia</foaf:surname>
+                        <foaf:givenName>Patrick</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gorman</foaf:surname>
+                        <foaf:givenName>Kyle</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vylomova</foaf:surname>
+                        <foaf:givenName>Ekaterina</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mielke</foaf:surname>
+                        <foaf:givenName>Sabrina J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nicolai</foaf:surname>
+                        <foaf:givenName>Garrett</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Silfverberg</foaf:surname>
+                        <foaf:givenName>Miikka</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Arkhangelskiy</foaf:surname>
+                        <foaf:givenName>Timofey</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Krizhanovsky</foaf:surname>
+                        <foaf:givenName>Nataly</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Krizhanovsky</foaf:surname>
+                        <foaf:givenName>Andrew</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Klyachko</foaf:surname>
+                        <foaf:givenName>Elena</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sorokin</foaf:surname>
+                        <foaf:givenName>Alexey</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mansfield</foaf:surname>
+                        <foaf:givenName>John</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ernštreits</foaf:surname>
+                        <foaf:givenName>Valts</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pinter</foaf:surname>
+                        <foaf:givenName>Yuval</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jacobs</foaf:surname>
+                        <foaf:givenName>Cassandra L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cotterell</foaf:surname>
+                        <foaf:givenName>Ryan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hulden</foaf:surname>
+                        <foaf:givenName>Mans</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yarowsky</foaf:surname>
+                        <foaf:givenName>David</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4277"/>
+        <dc:title>UniMorph 3.0: Universal Morphology</dc:title>
+        <dcterms:abstract>The Universal Morphology (UniMorph) project is a collaborative effort providing broad-coverage instantiated normalized morphological paradigms for hundreds of diverse world languages. The project comprises two major thrusts: a language-independent feature schema for rich morphological annotation and a type-level resource of annotated data in diverse languages realizing that schema. We have implemented several improvements to the extraction pipeline which creates most of our data, so that it is both more complete and more correct. We have added 66 new languages, as well as new parts of speech for 12 languages. We have also amended the schema in several ways. Finally, we present three new community tools: two to validate data for resource creators, and one to make morphological data available from the command line. UniMorph is based at the Center for Language and Speech Processing (CLSP) at Johns Hopkins University in Baltimore, Maryland. This paper details advances made to the schema, tooling, and dissemination of project resources since the UniMorph 2.0 release described at LREC 2018.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:shortTitle>UniMorph 3.0</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.483</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-20 19:27:23</dcterms:dateSubmitted>
+        <bib:pages>3922–3931</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4277">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.483.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-20 19:27:27</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.zurnalai.vu.lt/verbum/article/view/21210">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2029-6223"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Samo</foaf:surname>
+                        <foaf:givenName>Giuseppe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhao</foaf:surname>
+                        <foaf:givenName>Ursula Yu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gamhewage</foaf:surname>
+                        <foaf:givenName>Gaya</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4373"/>
+        <dc:title>Syntactic Complexity of Learning Content in Italian for COVID-19 Frontline Responders: A Study on WHO’s Emergency Learning Platform</dc:title>
+        <dc:date>2021-01-20</dc:date>
+        <z:shortTitle>Syntactic Complexity of Learning Content in Italian for COVID-19 Frontline Responders</z:shortTitle>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.zurnalai.vu.lt/verbum/article/view/21210</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>4</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2029-6223">
+        <prism:volume>11</prism:volume>
+        <dc:title>Verbum</dc:title>
+        <dc:identifier>DOI 10.15388/Verb.15</dc:identifier>
+        <prism:number>0</prism:number>
+        <dcterms:alternative>VB</dcterms:alternative>
+        <dc:identifier>ISSN 2029-6223</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_4373">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Verbum | Verbum</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.zurnalai.vu.lt/verbum/article/view/21210/21628</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 10:21:12</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.tlt-1.8">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 19th International Workshop on Treebanks and Linguistic Theories</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.tlt-1.8</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Düsseldorf, Germany</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Berdicevskis</foaf:surname>
+                        <foaf:givenName>Aleksandrs</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schmidtke-Bode</foaf:surname>
+                        <foaf:givenName>Karsten</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Seržant</foaf:surname>
+                        <foaf:givenName>Ilja</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4365"/>
+        <dc:title>Subjects tend to be coded only once: Corpus-based and grammar-based evidence for an efficiency-driven trade-off</dc:title>
+        <dc:date>2020-10</dc:date>
+        <z:shortTitle>Subjects tend to be coded only once</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.tlt-1.8</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 10:19:11</dcterms:dateSubmitted>
+        <bib:pages>79–92</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>TLT 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4365">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.tlt-1.8.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 10:19:13</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://halshs.archives-ouvertes.fr/halshs-02707601">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>114</prism:volume>
+                <dc:title>The Prague Bulletin of Mathematical Linguistics</dc:title>
+                <dc:identifier>DOI 10.14712/00326585.001</dc:identifier>
+                <prism:number>1</prism:number>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Namer</foaf:surname>
+                        <foaf:givenName>Fiammetta</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hathout</foaf:surname>
+                        <foaf:givenName>Nabil</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4342"/>
+        <link:link rdf:resource="#item_4363"/>
+        <dc:title>ParaDis and Démonette – From Theory to Resources for Derivational Paradigms</dc:title>
+        <dcterms:abstract>In this article, we trace the genesis of the French derivational database Démonette and show how its architecture and content stem from recent theoretical developments in derivational morphology and from user needs. The development of this large-scale resource began a year ago as part of the Demonext project. Its conception is grounded in a theoretical approach where the lexemes are connected by derivational relations within derivational families which in turn fit into paradigms. More precisely, Démonette is a partial implementation of ParaDis, a paradigmatic model of morphological representation designed for the description of regular processes and of form-meaning discrepancies. The article focuses on the principles that govern the morphological, structural and semantic encoding of morphologically complex lexemes in Démonette and illustrates the range of form-meaning discrepancies with a variety of examples of non-canonical word formations.</dcterms:abstract>
+        <dc:date>2020/04</dc:date>
+        <z:language>en</z:language>
+        <z:libraryCatalog>halshs.archives-ouvertes.fr</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://halshs.archives-ouvertes.fr/halshs-02707601</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 10:05:33</dcterms:dateSubmitted>
+        <bib:pages>5-34</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_4342">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://halshs.archives-ouvertes.fr/halshs-02707601/document</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 10:05:35</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4363">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://halshs.archives-ouvertes.fr/halshs-02707601/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 10:05:37</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.emnlp-main.456">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.emnlp-main.456</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>McCarthy</foaf:surname>
+                        <foaf:givenName>Arya D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Williams</foaf:surname>
+                        <foaf:givenName>Adina</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Liu</foaf:surname>
+                        <foaf:givenName>Shijia</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yarowsky</foaf:surname>
+                        <foaf:givenName>David</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cotterell</foaf:surname>
+                        <foaf:givenName>Ryan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4389"/>
+        <dc:title>Measuring the Similarity of Grammatical Gender Systems by Comparing Partitions</dc:title>
+        <dcterms:abstract>A grammatical gender system divides a lexicon into a small number of relatively fixed grammatical categories. How similar are these gender systems across languages? To quantify the similarity, we define gender systems extensionally, thereby reducing the problem of comparisons between languages' gender systems to cluster evaluation. We borrow a rich inventory of statistical tools for cluster evaluation from the field of community detection (Driver and Kroeber, 1932; Cattell, 1945), that enable us to craft novel information theoretic metrics for measuring similarity between gender systems. We first validate our metrics, then use them to measure gender system similarity in 20 languages. We then ask whether our gender system similarities alone are sufficient to reconstruct historical relationships between languages. Towards this end, we make phylogenetic predictions on the popular, but thorny, problem from historical linguistics of inducing a phylogenetic tree over extant Indo-European languages. Of particular interest, languages on the same branch of our phylogenetic tree are notably similar, whereas languages from separate branches are no more similar than chance.</dcterms:abstract>
+        <dc:date>2020-11</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.emnlp-main.456</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-20 09:05:51</dcterms:dateSubmitted>
+        <bib:pages>5664–5675</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>EMNLP 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4389">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.emnlp-main.456.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-20 09:05:54</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1162/coli_a_00376">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0891-2017"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Şahin</foaf:surname>
+                        <foaf:givenName>Gözde Gül</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vania</foaf:surname>
+                        <foaf:givenName>Clara</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kuznetsov</foaf:surname>
+                        <foaf:givenName>Ilia</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gurevych</foaf:surname>
+                        <foaf:givenName>Iryna</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4273"/>
+        <link:link rdf:resource="#item_4347"/>
+        <dc:title>LINSPECTOR: Multilingual Probing Tasks for Word Representations</dc:title>
+        <dcterms:abstract>Despite an ever-growing number of word representation models introduced for a large number of languages, there is a lack of a standardized technique to provide insights into what is captured by these models. Such insights would help the community to get an estimate of the downstream task performance, as well as to design more informed neural architectures, while avoiding extensive experimentation that requires substantial computational resources not all researchers have access to. A recent development in NLP is to use simple classification tasks, also called probing tasks, that test for a single linguistic feature such as part-of-speech. Existing studies mostly focus on exploring the linguistic information encoded by the continuous representations of English text. However, from a typological perspective the morphologically poor English is rather an outlier: The information encoded by the word order and function words in English is often stored on a subword, morphological level in other languages. To address this, we introduce 15 type-level probing tasks such as case marking, possession, word length, morphological tag count, and pseudoword identification for 24 languages. We present a reusable methodology for creation and evaluation of such tests in a multilingual setting, which is challenging because of a lack of resources, lower quality of tools, and differences among languages. We then present experiments on several diverse multilingual word embedding models, in which we relate the probing task performance for a diverse set of languages to a range of five classic NLP tasks: POS-tagging, dependency parsing, semantic role labeling, named entity recognition, and natural language inference. We find that a number of probing tests have significantly high positive correlation to the downstream tasks, especially for morphologically rich languages. We show that our tests can be used to explore word embeddings or black-box neural models for linguistic cues in a multilingual setting. We release the probing data sets and the evaluation suite LINSPECTOR with https://github.com/UKPLab/linspector.</dcterms:abstract>
+        <dc:date>March 23, 2020</dc:date>
+        <z:shortTitle>LINSPECTOR</z:shortTitle>
+        <z:libraryCatalog>MIT Press Journals</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1162/coli_a_00376</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 10:50:24</dcterms:dateSubmitted>
+        <dc:description>Publisher: MIT Press</dc:description>
+        <bib:pages>335-385</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0891-2017">
+        <prism:volume>46</prism:volume>
+        <dc:title>Computational Linguistics</dc:title>
+        <dc:identifier>DOI 10.1162/coli_a_00376</dc:identifier>
+        <prism:number>2</prism:number>
+        <dc:identifier>ISSN 0891-2017</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_4273">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.mitpressjournals.org/doi/full/10.1162/coli_a_00376</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 10:50:32</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4347">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.mitpressjournals.org/doi/pdf/10.1162/coli_a_00376</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 10:50:33</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.wmt-1.110">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the Fifth Conference on Machine Translation</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lo</foaf:surname>
+                        <foaf:givenName>Chi-kiu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Joanis</foaf:surname>
+                        <foaf:givenName>Eric</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4369"/>
+        <dc:title>Improving Parallel Data Identification using Iteratively Refined Sentence Alignments and Bilingual Mappings of Pre-trained Language Models</dc:title>
+        <dcterms:abstract>The National Research Council of Canada's team submissions to the parallel corpus filtering task at the Fifth Conference on Machine Translation are based on two key components: (1) iteratively refined statistical sentence alignments for extracting sentence pairs from document pairs and (2) a crosslingual semantic textual similarity metric based on a pretrained multilingual language model, XLM-RoBERTa, with bilingual mappings learnt from a minimal amount of clean parallel data for scoring the parallelism of the extracted sentence pairs. The translation quality of the neural machine translation systems trained and fine-tuned on the parallel data extracted by our submissions improved significantly when compared to the organizers' LASER-based baseline, a sentence-embedding method that worked well last year. For re-aligning the sentences in the document pairs (component 1), our statistical approach has outperformed the current state-of-the-art neural approach in this low-resource context.</dcterms:abstract>
+        <dc:date>2020-11</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.wmt-1.110</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 10:05:45</dcterms:dateSubmitted>
+        <bib:pages>972–978</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>EMNLP-WMT 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4369">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.wmt-1.110.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 10:05:47</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.500">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kanayama</foaf:surname>
+                        <foaf:givenName>Hiroshi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Iwamoto</foaf:surname>
+                        <foaf:givenName>Ran</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4367"/>
+        <dc:title>How Universal are Universal Dependencies? Exploiting Syntax for Multilingual Clause-level Sentiment Detection</dc:title>
+        <dcterms:abstract>This paper investigates clause-level sentiment detection in a multilingual scenario. Aiming at a high-precision, fine-grained, configurable, and non-biased system for practical use cases, we have designed a pipeline method that makes the most of syntactic structures based on Universal Dependencies, avoiding machine-learning approaches that may cause obstacles to our purposes. We achieved high precision in sentiment detection for 17 languages and identified the advantages of common syntactic structures as well as issues stemming from structural differences on Universal Dependencies. In addition to reusable tips for handling multilingual syntax, we provide a parallel benchmarking data set for further research.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:shortTitle>How Universal are Universal Dependencies?</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.500</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:23:13</dcterms:dateSubmitted>
+        <bib:pages>4063–4073</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4367">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.500.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:23:15</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://hal.archives-ouvertes.fr/hal-03018261">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the 24th Conference on Computational Natural Language Learning (CoNLL)</dc:title>
+                <dc:identifier>DOI 10.18653/v1/P17</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Paris, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Veeman</foaf:surname>
+                        <foaf:givenName>Hartger</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Allassonnière-Tang</foaf:surname>
+                        <foaf:givenName>Marc</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Berdicevskis</foaf:surname>
+                        <foaf:givenName>Aleksandrs</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Basirat</foaf:surname>
+                        <foaf:givenName>Ali</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4362"/>
+        <dc:title>Cross-lingual Embeddings Reveal Universal and Lineage-Specific Patterns in Grammatical Gender Assignment</dc:title>
+        <dc:date>November 2020</dc:date>
+        <z:libraryCatalog>HAL Archives Ouvertes</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://hal.archives-ouvertes.fr/hal-03018261</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:31:17</dcterms:dateSubmitted>
+        <bib:pages>265-275</bib:pages>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4362">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>HAL PDF Full Text</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://hal.archives-ouvertes.fr/hal-03018261/document</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:31:18</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.636">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Falenska</foaf:surname>
+                        <foaf:givenName>Agnieszka</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Czesznak</foaf:surname>
+                        <foaf:givenName>Zoltán</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jung</foaf:surname>
+                        <foaf:givenName>Kerstin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Völkel</foaf:surname>
+                        <foaf:givenName>Moritz</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Seeker</foaf:surname>
+                        <foaf:givenName>Wolfgang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kuhn</foaf:surname>
+                        <foaf:givenName>Jonas</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4271"/>
+        <dc:title>GRAIN-S: Manually Annotated Syntax for German Interviews</dc:title>
+        <dcterms:abstract>We present GRAIN-S, a set of manually created syntactic annotations for radio interviews in German. The dataset extends an existing corpus GRAIN and comes with constituency and dependency trees for six interviews. The rare combination of gold- and silver-standard annotation layers coming from GRAIN with high-quality syntax trees can serve as a useful resource for speech- and text-based research. Moreover, since interviews can be put between carefully prepared speech and spontaneous conversational speech, they cover phenomena not seen in traditional newspaper-based treebanks. Therefore, GRAIN-S can contribute to research into techniques for model adaptation and for building more corpus-independent tools. GRAIN-S follows TIGER, one of the established syntactic treebanks of German. We describe the annotation process and discuss decisions necessary to adapt the original TIGER guidelines to the interviews domain. Next, we give details on the conversion from TIGER-style trees to dependency trees. We provide data statistics and demonstrate differences between the new dataset and existing out-of-domain test sets annotated with TIGER syntactic structures. Finally, we provide baseline parsing results for further comparison.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:shortTitle>GRAIN-S</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.636</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 10:44:23</dcterms:dateSubmitted>
+        <bib:pages>5169–5177</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4271">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.636.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 10:44:25</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-3-030-33491-8">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dcterms:isPartOf>
+                    <bib:Series>
+                       <dc:title>Mechanisms and Machine Science</dc:title>
+                    </bib:Series>
+                </dcterms:isPartOf>
+                <dc:identifier>ISBN 978-3-030-33491-8</dc:identifier>
+                <dc:title>Advanced Technologies in Robotics and Intelligent Systems</dc:title>
+                <dc:identifier>DOI 10.1007/978-3-030-33491-8_4</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Cham</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Springer International Publishing</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sboev</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rybka</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gryaznov</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Misyurin</foaf:surname>
+                        <foaf:givenName>Sergey Yu.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Arakelian</foaf:surname>
+                        <foaf:givenName>Vigen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Avetisyan</foaf:surname>
+                        <foaf:givenName>Arutyun I.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <link:link rdf:resource="#item_4275"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Coreference resolution</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Deep learning</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ELMo</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>FastText</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Neural networks ensemble</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Words vector representation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Deep Neural Networks Ensemble with Word Vector Representation Models to Resolve Coreference Resolution in Russian</dc:title>
+        <dcterms:abstract>In this paper we present a novel neural networks ensemble to solve the task of coreference resolution in Russian texts. The ensemble consists of several neural networks, each based on recurrent Bidirectional long short-term memory layers (BiLSTM), attention mechanism, consistent scoring with selection of probable mentions and antecedents. The applied neural network topology has already shown state-of-the-art results in English for this task, and is now adapted for the Russian language. The resulting coreference markup is obtained by aggregating output scores from several blocks of independently trained neural network models. To represent an input source text, a combination of word vectors from two language models is used. We study the dependence of the coreference detection accuracy on various combinations of models of vector representation of words along with two tokenization approaches: gold markup or UDpipe tools. Finally, to show the improvement made by our ensemble approach, we present the results of experiments with both RuCor and AnCor datasets.</dcterms:abstract>
+        <dc:date>2020</dc:date>
+        <z:language>en</z:language>
+        <z:libraryCatalog>Springer Link</z:libraryCatalog>
+        <bib:pages>35-44</bib:pages>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4275">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Sboev et al. - 2020 - Deep Neural Networks Ensemble with Word Vector Rep.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.357">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jónsdóttir</foaf:surname>
+                        <foaf:givenName>Hildur</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ingason</foaf:surname>
+                        <foaf:givenName>Anton Karl</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4343"/>
+        <dc:title>Creating a Parallel Icelandic Dependency Treebank from Raw Text to Universal Dependencies</dc:title>
+        <dcterms:abstract>Making the low-resource language, Icelandic, accessible and usable in Language Technology is a work in progress and is supported by the Icelandic government. Creating resources and suitable training data (e.g., a dependency treebank) is a fundamental part of that work. We describe work on a parallel Icelandic dependency treebank based on Universal Dependencies (UD). This is important because it is the first parallel treebank resource for the language and since several other languages already have a resource based on the same text. Two Icelandic treebanks based on phrase-structure grammar have been built and ongoing work aims to convert them to UD. Previously, limited work has been done on dependency grammar for Icelandic. The current project aims to ameliorate this situation by creating a small dependency treebank from scratch. Creating a treebank is a laborious task so the process was implemented in an accessible manner using freely available tools and resources. The parallel data in the UD project was chosen as a source because this would furthermore give us the first parallel treebank for Icelandic. The Icelandic parallel UD corpus will be published as part of UD version 2.6.</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.357</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:21:36</dcterms:dateSubmitted>
+        <bib:pages>2924–2931</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4343">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.357.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:21:38</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.semeval-1.15">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Proceedings of the Fourteenth Workshop on Semantic Evaluation</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Barcelona (online)</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>International Committee for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kovács</foaf:surname>
+                        <foaf:givenName>Ádám</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gémes</foaf:surname>
+                        <foaf:givenName>Kinga</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kornai</foaf:surname>
+                        <foaf:givenName>Andras</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Recski</foaf:surname>
+                        <foaf:givenName>Gábor</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4384"/>
+        <dc:title>BMEAUT at SemEval-2020 Task 2: Lexical Entailment with Semantic Graphs</dc:title>
+        <dcterms:abstract>In this paper we present a novel rule-based, language independent method for determining lexical entailment relations using semantic representations built from Wiktionary definitions. Combined with a simple WordNet-based method our system achieves top scores on the English and Italian datasets of the Semeval-2020 task “Predicting Multilingual and Cross-lingual (graded) Lexical Entailment” (Glavaš et al., 2020). A detailed error analysis of our output uncovers future di- rections for improving both the semantic parsing method and the inference process on semantic graphs.</dcterms:abstract>
+        <dc:date>2020-12</dc:date>
+        <z:shortTitle>BMEAUT at SemEval-2020 Task 2</z:shortTitle>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.semeval-1.15</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 10:24:37</dcterms:dateSubmitted>
+        <bib:pages>135–141</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+               <dc:title>COLING-SemEval 2020</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4384">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.semeval-1.15.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-23 10:24:39</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1093/bioinformatics/btaa993">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1367-4803"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fei</foaf:surname>
+                        <foaf:givenName>Hao</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhang</foaf:surname>
+                        <foaf:givenName>Yue</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ren</foaf:surname>
+                        <foaf:givenName>Yafeng</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ji</foaf:surname>
+                        <foaf:givenName>Donghong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4276"/>
+        <link:link rdf:resource="#item_4380"/>
+        <dc:title>A span-graph neural model for overlapping entity relation extraction in biomedical texts</dc:title>
+        <dcterms:abstract>Entity relation extraction is one of the fundamental tasks in biomedical text mining, which is usually solved by the models from natural language processing. Compared with traditional pipeline methods, joint methods can avoid the error propagation from entity to relation, giving better performances. However, the existing joint models are built upon sequential scheme, and fail to detect overlapping entity and relation, which are ubiquitous in biomedical texts. The main reason is that sequential models have relatively weaker power in capturing long-range dependencies, which results in lower performance in encoding longer sentences. In this article, we propose a novel span-graph neural model for jointly extracting overlapping entity relation in biomedical texts. Our model treats the task as relation triplets prediction, and builds the entity-graph by enumerating possible candidate entity spans. The proposed model captures the relationship between the correlated entities via a span scorer and a relation scorer, respectively, and finally outputs all valid relational triplets.Experimental results on two biomedical entity relation extraction tasks, including drug–drug interaction detection and protein–protein interaction detection, show that the proposed method outperforms previous models by a substantial margin, demonstrating the effectiveness of span-graph-based method for overlapping relation extraction in biomedical texts. Further in-depth analysis proves that our model is more effective in capturing the long-range dependencies for relation extraction compared with the sequential models.Related codes are made publicly available at http://github.com/Baxelyne/SpanBioER.</dcterms:abstract>
+        <dc:date>November 27, 2020</dc:date>
+        <z:libraryCatalog>Silverchair</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://doi.org/10.1093/bioinformatics/btaa993</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:14:33</dcterms:dateSubmitted>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1367-4803">
+        <dc:title>Bioinformatics</dc:title>
+        <dc:identifier>DOI 10.1093/bioinformatics/btaa993</dc:identifier>
+        <prism:number>btaa993</prism:number>
+        <dcterms:alternative>Bioinformatics</dcterms:alternative>
+        <dc:identifier>ISSN 1367-4803</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_4276">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btaa993/6007258</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-22 11:14:38</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4380">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Fei et al. - 2020 - A span-graph neural model for overlapping entity r.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1162/coli_a_00390">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Computational Linguistics</dc:title>
+                <dc:identifier>DOI 10.1162/coli_a_00390</dc:identifier>
+                <dc:identifier>ISSN 0891-2017</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Krishna</foaf:surname>
+                        <foaf:givenName>Amrith</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Santra</foaf:surname>
+                        <foaf:givenName>Bishal</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gupta</foaf:surname>
+                        <foaf:givenName>Ashim</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Satuluri</foaf:surname>
+                        <foaf:givenName>Pavankumar</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Goyal</foaf:surname>
+                        <foaf:givenName>Pawan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4278"/>
+        <link:link rdf:resource="#item_4375"/>
+        <dc:title>A Graph Based Framework for Structured Prediction Tasks in Sanskrit</dc:title>
+        <dcterms:abstract>We propose a framework using Energy Based Models for multiple structured prediction tasks in Sanskrit. Ours is an arc-factored model, similar to the graph-based parsing approaches, and we consider the tasks of word segmentation, morphological parsing, dependency parsing, syntactic linearization, and prosodification, a prosody-level task we introduce in this work. Ours is a search-based structured prediction framework, which expects a graph as input, where relevant linguistic information is encoded in the nodes, and the edges are then used to indicate the association between these nodes. Typically, the state of the art models for morphosyntactic tasks in morphologically rich languages still rely on hand-crafted features for their performance. But here, we automate the learning of the feature function. The feature function so learned, along with the search space we construct, encode relevant linguistic information for the tasks we consider. This enables us to substantially reduce the training data requirements to as low as 10 % as compared to the data requirements for the neural state of the art models. Our experiments in Czech and Sanskrit show the language-agnostic nature of the framework, where we train highly competitive models for both the languages. Moreover, our framework enables us to incorporate languagespecific constraints to prune the search space and to filter the candidates during inference. We obtain significant improvements in morphosyntactic tasks for Sanskrit by incorporating language-specific constraints into the model. In all the tasks we discuss for Sanskrit, we either achieve state of the art results or ours is the only data-driven solution for those tasks.</dcterms:abstract>
+        <dc:date>October 22, 2020</dc:date>
+        <z:libraryCatalog>MIT Press Journals</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1162/coli_a_00390</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 11:57:45</dcterms:dateSubmitted>
+        <dc:description>Publisher: MIT Press</dc:description>
+        <bib:pages>1-63</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_4278">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.mitpressjournals.org/doi/abs/10.1162/coli_a_00390</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 11:57:51</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4375">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.mitpressjournals.org/doi/pdf/10.1162/coli_a_00390</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 11:57:52</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:979-10-95546-53-5">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-53-5</dc:identifier>
+                <dc:title>Proceedings of LT4HALA 2020 - 1st Workshop on Language Technologies for Historical and Ancient Languages</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association (ELRA)</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Celano</foaf:surname>
+                        <foaf:givenName>Giuseppe G. A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4274"/>
+        <dc:title>A Gradient Boosting-Seq2Seq System for Latin POS Tagging and Lemmatization</dc:title>
+        <dcterms:abstract>The paper presents the system used in the EvaLatin shared task to POS tag and lemmatize Latin. It consists of two components. A gradient boosting machine (LightGBM) is used for POS tagging, mainly fed with pre-computed word embeddings of a window of seven contiguous tokens—the token at hand plus the three preceding and following ones—per target feature value. Word embeddings are trained on the texts of the Perseus Digital Library, Patrologia Latina, and Biblioteca Digitale di Testi Tardo Antichi, which together comprise a high number of texts of different genres from the Classical Age to Late Antiquity. Word forms plus the outputted POS labels are used to feed a seq2seq algorithm implemented in Keras to predict lemmas. The final shared-task accuracies measured for Classical Latin texts are in line with state-of-the-art POS taggers (∼0.96) and lemmatizers (∼0.95).</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lt4hala-1.19</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 10:04:23</dcterms:dateSubmitted>
+        <bib:pages>119–123</bib:pages>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4274">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lt4hala-1.19.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-21 10:04:24</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.lrec-1.646">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-10-95546-34-4</dc:identifier>
+                <dc:title>Proceedings of the 12th Language Resources and Evaluation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Marseille, France</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>European Language Resources Association</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Berdicevskis</foaf:surname>
+                        <foaf:givenName>Aleksandrs</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Eckhoff</foaf:surname>
+                        <foaf:givenName>Hanne</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4351"/>
+        <dc:title>A Diachronic Treebank of Russian Spanning More Than a Thousand Years</dc:title>
+        <dcterms:abstract>We describe the Tromsø Old Russian and Old Church Slavonic Treebank (TOROT) that spans from the earliest Old Church Slavonic to modern Russian texts, covering more than a thousand years of continuous language history. We focus on the latest additions to the treebank, first of all, the modern subcorpus that was created by a high-quality conversion of the existing treebank of contemporary standard Russian (SynTagRus).</dcterms:abstract>
+        <dc:date>2020-05</dc:date>
+        <z:language>English</z:language>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.646</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 10:36:01</dcterms:dateSubmitted>
+        <bib:pages>5251–5256</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>LREC 2020</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4351">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.lrec-1.646.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 10:36:02</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.ceeol.com/search/article-detail?id=923991">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0037-6973"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gogora</foaf:surname>
+                        <foaf:givenName>Andrej</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4359"/>
+        <dc:title>Ako a prečo pomenovať to, čo robíme? Problém slovenského prekladu termínu „digital humanities“</dc:title>
+        <dc:date>2020</dc:date>
+        <z:language>Slovak</z:language>
+        <z:shortTitle>Ako a prečo pomenovať to, čo robíme?</z:shortTitle>
+        <z:libraryCatalog>www.ceeol.com</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ceeol.com/search/article-detail?id=923991</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 10:48:43</dcterms:dateSubmitted>
+        <dc:description>Publisher: Ústav slovenskej literatúry SAV</dc:description>
+        <bib:pages>598-613</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0037-6973">
+        <prism:volume>67</prism:volume>
+        <dc:title>SLOVENSKÁ LITERATÚRA</dc:title>
+        <prism:number>6</prism:number>
+        <dc:identifier>ISSN 0037-6973</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_4359">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ceeol.com/search/article-detail?id=923991</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 10:48:46</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.aclweb.org/anthology/2020.findings-emnlp.391">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Findings of the Association for Computational Linguistics: EMNLP 2020</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2020.findings-emnlp.391</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Online</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Seker</foaf:surname>
+                        <foaf:givenName>Amit</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tsarfaty</foaf:surname>
+                        <foaf:givenName>Reut</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_4383"/>
+        <dc:title>A Pointer Network Architecture for Joint Morphological Segmentation and Tagging</dc:title>
+        <dcterms:abstract>Morphologically Rich Languages (MRLs) such as Arabic, Hebrew and Turkish often require Morphological Disambiguation (MD), i.e., the prediction of morphological decomposition of tokens into morphemes, early in the pipeline. Neural MD may be addressed as a simple pipeline, where segmentation is followed by sequence tagging, or as an end-to-end model, predicting morphemes from raw tokens. Both approaches are sub-optimal; the former is heavily prone to error propagation, and the latter does not enjoy explicit access to the basic processing units called morphemes. This paper offers MD architecture that combines the symbolic knowledge of morphemes with the learning capacity of neural end-to-end modeling. We propose a new, general and easy-to-implement Pointer Network model where the input is a morphological lattice and the output is a sequence of indices pointing at a single disambiguated path of morphemes. We demonstrate the efficacy of the model on segmentation and tagging, for Hebrew and Turkish texts, based on their respective Universal Dependencies (UD) treebanks. Our experiments show that with complete lattices, our model outperforms all shared-task results on segmenting and tagging these languages. On the SPMRL treebank, our model outperforms all previously reported results for Hebrew MD in realistic scenarios.</dcterms:abstract>
+        <dc:date>2020-11</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.findings-emnlp.391</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 20:28:28</dcterms:dateSubmitted>
+        <bib:pages>4368–4378</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+               <dc:title>EMNLP-Findings 2020</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_4383">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aclweb.org/anthology/2020.findings-emnlp.391.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2021-02-19 20:28:32</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+</rdf:RDF>

@@ -16,7 +16,8 @@ use Path::Tiny;
 #GetOptions( "stdout|s" => \our $use_stdout, "out|o" => \our $out_filename )
 #  or die "Usage: $0 [--stdout|-s] [--out|-o] <filename>\n";
 
-my $in_filename = 'biblio-export-csl.json';
+#my $in_filename = 'biblio-export-csl.json';
+my $in_filename = 'Zotero/zotero-export-csl.json';
 my $out_filename = 'publikace.xml';
 my $obdobi = '2021';
 my $autor_dodavky = "Pavel Straňák";
@@ -100,17 +101,20 @@ my $result_elem_name = "vysledek";
 
 #JSON attributes to RIV XML elements – mapping
 my %name_mapped = ( 
-    language => jazyk, 
-    type => druh,
-    abstract => anotace,
-    title => nazev,
-    author => autor,
-    last => prijmeni,
-    given => jmeno,
-)
+    "language" => "jazyk", 
+    "type" => "druh",
+    "abstract" => "anotace",
+    "title" => "nazev",
+    "author" => "autor",
+    "last" => "prijmeni",
+    "given" => "jmeno",
+    "URL" => "odkaz",
+    "DOI" => "doi",
+);
 
 # loop over the imported results and output them
 for my $res_idx ( 0..$#{$zotero} ) {
+    my $lang = 'eng'; #default 
     my $result = $content->addNewChild( '', $result_elem_name );
     $result->setAttribute( 
         'identifikacni-kod', $zotero->[$res_idx]->{"id"} );
@@ -122,15 +126,17 @@ for my $res_idx ( 0..$#{$zotero} ) {
         'druh', 'ostatni' ); #TODO implementovat dalsi druhy
 
     # simple text nodes unique per result
-    for my $name ( qw(type language title abstract source) ) {
+    for my $name ( qw(language title abstract URL DOI source) ) {
+        $lang = $zotero->[$res_idx]->{"$name"} if $name eq 'language';
         $result->appendTextChild(
-            $name , 
+            $name_mapped{ "$name" } , 
             $zotero->[$res_idx]->{"$name"} 
-        ) if $zotero->[$res_idx]->{"$name"};
+        ) if defined $zotero->[$res_idx]->{$name};
     }
+
     # complex nodes
     # authors
-    my $authors_node = $doc->createElement('authors');
+    my $authors_node = $doc->createElement('autori');
     $authors_node = $result->addChild( $authors_node );
 
     # loop over all authors
@@ -143,12 +149,13 @@ for my $res_idx ( 0..$#{$zotero} ) {
              $zotero->[$res_idx]->{"author"}->[$auth_idx]->{"given"};
 
         # set the author
-        my $authornode = $doc->createElement('author');
-        $authornode = $authors_node->addChild( $authornode );
-        $authornode->setAttribute('last', $author_last);
-        $authornode->setAttribute('given', $author_given);
+        my $authornode = $authors_node->addNewChild( '', $name_mapped{'author'} );
+        $authornode->setAttribute( 'je-domaci', 'false' );
+        $authornode->appendTextChild($name_mapped{'given'}, $author_given);
+        $authornode->appendTextChild($name_mapped{'last'}, $author_last);
     }
 }
+#TODO klasifikace, navaznosti
 
 #$state = $doc->toFile($filename, $format);
 
