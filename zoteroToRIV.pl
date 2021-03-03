@@ -135,14 +135,16 @@ for my $res_idx ( 0..$#{$zotero} ) {
     }
 
     # complex nodes
-    # authors
-    my $authors_node = $doc->createElement('autori');
-    $authors_node = $result->addChild( $authors_node );
 
+    # authors
+#    my $authors_node = $doc->createElement('autori');
+    my $authors_node = $result->addNewChild( '', 'autori' );
+    my $pocet_autoru;
     # loop over all authors
     for my $auth_idx ( 0..$#{$zotero->[$res_idx]->{"author"}} ){
-
+        
         # get the author
+        $pocet_autoru += 1;
         my $author_last = 
              $zotero->[$res_idx]->{"author"}->[$auth_idx]->{"family"};
         my $author_given = 
@@ -154,6 +156,8 @@ for my $res_idx ( 0..$#{$zotero} ) {
         $authornode->appendTextChild($name_mapped{'given'}, $author_given);
         $authornode->appendTextChild($name_mapped{'last'}, $author_last);
     }
+    $authors_node->setAttribute( 'pocet-celkem', $pocet_autoru );
+    $authors_node->setAttribute( 'pocet-domacich', '0' );
 }
 #TODO klasifikace, navaznosti
 
