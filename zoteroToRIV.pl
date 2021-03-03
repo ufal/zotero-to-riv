@@ -18,7 +18,7 @@ use Path::Tiny;
 
 #my $in_filename = 'biblio-export-csl.json';
 my $in_filename = 'Zotero/zotero-export-csl.json';
-my $out_filename = 'publikace.xml';
+my $out_filename = 'RIV21-MSM-11320___,R01.vav';
 my $obdobi = '2021';
 my $autor_dodavky = "Pavel Straňák";
 my $autor_tel = "221 914 247";
@@ -126,14 +126,14 @@ for my $res_idx ( 0..$#{$zotero} ) {
         'druh', 'ostatni' ); #TODO implementovat dalsi druhy
 
     # simple text nodes unique per result
-    for my $name ( qw(language title abstract URL DOI source) ) {
-        $lang = $zotero->[$res_idx]->{"$name"} if $name eq 'language';
-        $result->appendTextChild(
-            $name_mapped{ "$name" } , 
-            $zotero->[$res_idx]->{"$name"} 
-        ) if defined $zotero->[$res_idx]->{$name};
+    for my $name ( qw(language title abstract URL DOI) ) {
+        if ( defined $zotero->[$res_idx]->{$name} ){
+            $lang = $zotero->[$res_idx]->{"$name"} if $name eq 'language';
+            my $node = $result->addNewChild( '', $name_mapped{ "$name" } ); 
+            $node->appendText( $zotero->[$res_idx]->{$name} );
+            $node->setAttribute( 'jazyk', $lang ) if $name eq 'title' or $name eq 'abstract';
+        }
     }
-
     # complex nodes
 
     # authors
