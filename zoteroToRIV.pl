@@ -98,6 +98,16 @@ my $content = $doc->createElement('obsah');
 my $result_elem_name = "vysledek";
 # RIV XML Template – END
 
+#JSON attributes to RIV XML elements – mapping
+my %name_mapped = ( 
+    language => jazyk, 
+    type => druh,
+    abstract => anotace,
+    title => nazev,
+    author => autor,
+    last => prijmeni,
+    given => jmeno,
+)
 
 # loop over the imported results and output them
 for my $res_idx ( 0..$#{$zotero} ) {
