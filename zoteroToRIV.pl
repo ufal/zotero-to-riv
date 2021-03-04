@@ -17,7 +17,8 @@ use Path::Tiny;
 #  or die "Usage: $0 [--stdout|-s] [--out|-o] <filename>\n";
 
 #my $in_filename = 'biblio-export-csl.json';
-my $in_filename = 'Zotero/zotero-export-csl.json';
+#my $in_filename = 'Zotero/zotero-export-csl.json';
+my $in_filename = 'test-ufal.json';
 my $out_filename = 'RIV21-MSM-11320___,R01.vav';
 my $obdobi = '2021';
 my $autor_dodavky = "Pavel Straňák";
@@ -25,6 +26,9 @@ my $autor_tel = "221 914 247";
 my $autor_email = 'stranak@ufal.mff.cuni.cz';
 my $verze = "01";
 my $cislo_jednaci = 1;
+my $id_vvi = 90101; # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
+my $fallback_obor = "undefined"; # TODO add CUNI code for LINDAT default area (obor)
+my $fallback_keyword = "Digital Humanities"; 
 
 # Publications from a CSL JSON file
 my $json = JSON->new->allow_nonref;
@@ -116,6 +120,8 @@ my %name_mapped = (
 for my $res_idx ( 0..$#{$zotero} ) {
     my $lang = 'eng'; #default 
     my $result = $content->addNewChild( '', $result_elem_name );
+
+    # fixed result attributes - template
     $result->setAttribute( 
         'identifikacni-kod', $zotero->[$res_idx]->{"id"} );
     $result->setAttribute( 
@@ -124,6 +130,47 @@ for my $res_idx ( 0..$#{$zotero} ) {
         'rok-uplatneni', $obdobi );
     $result->setAttribute( 
         'druh', 'ostatni' ); #TODO implementovat dalsi druhy
+
+    # klasifikace – at least the main area (obor) and one keyword required
+    my $klasifikace = $result->addNewChild( '', 'klasifikace' );
+    my $obor_node = $klasifikace->addNewChild( '', 'obor' );
+    $obor_node->setAttribute( 'postaveni', 'hlavni' ); 
+    $obor_node->setAttribute( 'ciselnik', 'oblastiUK' ); # obor dle klasifikace UK
+    # get "obor" (area) from CSL and set it
+    # CSL JSON doesn't have an attribute for this. We store it in 
+    # 'note' (Zotero displays as 'Extra') line 'obor:value'
+    my ($obor, @keywords);
+    if ( defined $zotero->[$res_idx]->{'note'} ){
+        my $note = $zotero->[$res_idx]->{'note'};
+#        say "\nNOTE:\n-----\n$note\n" if defined $note;
+        $note =~ m/^\s*obor\s*:\s*(\N+)\s*$/sm;
+        $obor = $1;
+        $note =~ m/^\s*kw\s*:\s*(\N+)\s*$/sm;
+        my $kw_string = $1;
+        @keywords = split( /,\s*/, $kw_string) if defined $kw_string; 
+    }
+    if ( @keywords ){
+        for my $kw ( @keywords ){
+            my $keyword_node = $klasifikace->addNewChild( '', 'klicove-slovo' );
+            $keyword_node->setAttribute( 'jazyk', 'eng' ); # must be in English
+            $keyword_node->appendText( $kw ); 
+        }
+    }
+    else { # a fallback keyword to make data valid RIV
+        my $keyword_node = $klasifikace->addNewChild( '', 'klicove-slovo' );
+        $keyword_node->setAttribute( 'jazyk', 'eng' ); # must be in English
+        $keyword_node->appendText( $fallback_keyword ); 
+    }
+    # a fallback area (obor) to make data valid RIV
+    $obor = $fallback_obor if not defined $obor;
+    $obor_node->appendText( $obor );
+
+    # navaznosti - support of the LRI (why we are doing all of this)
+    my $navaznosti = $result->addNewChild( '', 'navaznosti' );
+    my $navaznost = $navaznosti->addNewChild( '', 'navaznost' );
+    $navaznost->setAttribute( 'druh-vztahu', 'byl-dosazen-pri-reseni' ); # p. 28 XML docs
+    my $vvi = $navaznost->addNewChild( '', 'vvi' );
+    $vvi->setAttribute( 'identifikacni-kod', $id_vvi );
 
     # simple text nodes unique per result
     for my $name ( qw(language title abstract URL DOI) ) {
@@ -134,6 +181,7 @@ for my $res_idx ( 0..$#{$zotero} ) {
             $node->setAttribute( 'jazyk', $lang ) if $name eq 'title' or $name eq 'abstract';
         }
     }
+
     # complex nodes
 
     # authors
@@ -159,7 +207,7 @@ for my $res_idx ( 0..$#{$zotero} ) {
     $authors_node->setAttribute( 'pocet-celkem', $pocet_autoru );
     $authors_node->setAttribute( 'pocet-domacich', '0' );
 }
-#TODO klasifikace, navaznosti
+#TODO klasifikace, navaznosti, spravna ID zaznamu
 
 #$state = $doc->toFile($filename, $format);
 
