@@ -15,7 +15,7 @@ use Path::Tiny;
 
 #my $in_filename = 'biblio-export-csl.json';
 #my $in_filename = 'Zotero/zotero-export-csl.json';
-my $in_filename = 'test-ufal.json';
+my $in_filename = 'Zotero/test-ufal.json';
 my $out_filename = 'RIV21-MSM-11320___,R01.vav';
 my $obdobi = '2021';
 my $autor_dodavky = "Pavel Straňák";
