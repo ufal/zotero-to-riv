@@ -1,0 +1,120 @@
+[
+	{
+		"id": "http://zotero.org/users/3179948/items/W3B6ATEK",
+		"type": "paper-conference",
+		"title": "Syntax v českém národním korpusu",
+		"author": [
+			{
+				"family": "Hajič",
+				"given": "Jan"
+			},
+			{
+				"family": "Panevová",
+				"given": "Jarmila"
+			},
+			{
+				"family": "Hajičová",
+				"given": "Eva"
+			},
+			{
+				"family": "Sgall",
+				"given": "Petr"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1998"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/3179948/items/XTAIJ4AH",
+		"type": "thesis",
+		"title": "Pravděpodobnostní model významových zápisů vět",
+		"author": [
+			{
+				"family": "Zeman",
+				"given": "Daniel"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1997",
+					5
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/3179948/items/U5FYWWAE",
+		"type": "article",
+		"abstract": "The Valency Lexicon of Czech Verbs, Version 2.6 (VALLEX 2.6), is a collection of linguistically annotated data and documentation, resulting from an attempt at formal description of valency frames of Czech verbs. VALLEX 2.6 has been developed at the Institute of Formal and Applied Linguistics, Faculty of Mathematics and Physics, Charles University, Prague. VALLEX 2.6 provides information on the valency structure (combinatorial potential) of verbs in their particular senses. VALLEX 2.6 is a successor of VALLEX 1.0, extended in both theoretical and quantitative aspects (including corpus evidence).",
+		"language": "eng",
+		"note": "type: dataset",
+		"publisher": "ÚFAL MFF UK",
+		"source": "ÚFAL Biblio",
+		"title": "VALLEX 2.6",
+		"URL": "http://ufal.mff.cuni.cz/vallex/2.6/",
+		"author": [
+			{
+				"family": "Lopatková",
+				"given": "Markéta"
+			},
+			{
+				"family": "Kettnerová",
+				"given": "Václava"
+			},
+			{
+				"family": "Bejček",
+				"given": "Eduard"
+			},
+			{
+				"family": "Skwarska",
+				"given": "Karolína"
+			},
+			{
+				"family": "Žabokrtský",
+				"given": "Zdeněk"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2012",
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/3179948/items/PECW9H35",
+		"type": "book",
+		"abstract": "UDPipe is an trainable pipeline for tokenization, tagging, lemmatization and dependency parsing of CoNLL-U files. UDPipe is language-agnostic and can be trained given only annotated data in CoNLL-U format. Trained models are provided for nearly all UD treebanks. UDPipe is available as a binary, as a library for C++, Python, Perl, Java, C#, and as a web service. UDPipe is a free software under Mozilla Public License 2.0 and the linguistic models are free for non-commercial use and distributed under CC BY-NC-SA license, although for some models the original data used to create the model may impose additional licensing conditions.",
+		"note": "type: software\nobor:natural language processing\nkw: web service, DNN, GPU\nOA: ano",
+		"publisher": "ÚFAL MFF UK",
+		"source": "ÚFAL Biblio",
+		"title": "UDPipe",
+		"URL": "http://ufal.mff.cuni.cz/udpipe",
+		"author": [
+			{
+				"family": "Straka",
+				"given": "Milan"
+			},
+			{
+				"family": "Straková",
+				"given": "Jana"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					5
+				]
+			]
+		}
+	}
+]
