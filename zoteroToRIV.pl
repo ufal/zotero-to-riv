@@ -6,9 +6,6 @@ use open qw(:std :utf8);
 use strict;
 use warnings;
 use XML::LibXML;
-use URI;
-use URI::file;
-use List::Util qw(first);
 use JSON;
 use Path::Tiny;
 
