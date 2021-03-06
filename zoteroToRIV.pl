@@ -177,11 +177,10 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
     for my $name (qw(language title abstract URL DOI)) {
         if ( defined $zotero->[$res_idx]->{$name} ) {
             $lang = $zotero->[$res_idx]->{"$name"} if $name eq 'language';
-            $lang =
-              ( $lang =~ /eng/i )
-              ? 'eng'
-              : $lang    # normalise lang matching .*eng.* to 'eng'
-              my $node = $result->addNewChild( '', $name_mapped{"$name"} );
+
+            # If language matches .*(Ee)ng.*, make it 'eng'. Even Bengali.
+            $lang = ( $lang =~ /eng/i ) ? 'eng' : $lang;
+            my $node = $result->addNewChild( '', $name_mapped{"$name"} );
             $node->appendText( $zotero->[$res_idx]->{$name} );
             $node->setAttribute( 'jazyk', $lang )
               if $name eq 'title' or $name eq 'abstract';
