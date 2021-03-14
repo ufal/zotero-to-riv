@@ -19,7 +19,9 @@ GetOptions(
 
 #  $in_filename   = 'Zotero/test-ufal.json';
 #  $out_filename  = 'RIV21-MSM-11320___,R01.vav';
-my $obdobi        = '2021';
+my $obdobi        = 2021;
+my $ico           = '00216208';                   # IČO of Univerzita Karlova
+my $org_unit_id   = 11320;                        # RIV ID of MFF (faculty)
 my $autor_dodavky = "Pavel Straňák";
 my $autor_tel     = "221 914 247";
 my $autor_email   = 'stranak@ufal.mff.cuni.cz';
@@ -29,7 +31,7 @@ my $id_vvi        = 90101;    # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
 my $fallback_obor = "10201";  # comp. science, inf. science, bioinformatics
 my $fallback_keyword = "Digital Humanities";
 
-#TODO MFF ID
+# MFF ID
 #Marcel Golias: Jako jeden z nejčastějších problémů tam máte prvek "identifikacni-kod":
 
 #- váš prvek: identifikacni-kod="http://zotero.org/groups/2792663/items/4HNZZHPS"
@@ -41,7 +43,7 @@ my $fallback_keyword = "Digital Humanities";
 my $json      = JSON->new->allow_nonref;
 my $all_of_it = path("$in_filename")->slurp;    #efficient with Path::Tiny
 my $zotero    = $json->decode($all_of_it);
-say STDERR "Imported $#{$zotero} results.";            #debug
+say STDERR "Imported $#{$zotero} results.";     #info
 
 # RIV XML template – START
 my $encoding = 'utf8';
@@ -65,7 +67,7 @@ $predkladatel = $rozsah->appendChild($predkladatel);
 my $subjekt = $doc->createElement('subjekt');
 $subjekt = $predkladatel->appendChild($subjekt);
 $subjekt->appendTextChild( 'druh', 'verejna-vysoka-skola' );
-$subjekt->appendTextChild( 'ICO',  '00216208' );
+$subjekt->appendTextChild( 'ICO',  $ico );
 my $uk = $doc->createElement('nazev');
 $uk = $subjekt->appendChild($uk);
 $uk->appendTextNode('Univerzita Karlova');
@@ -78,7 +80,7 @@ $subjekt->appendTextChild( 'nadrizena-organizacni-slozka-statu', 'MSM' );
 
 my $org_unit = $doc->createElement('organizacni-jednotka');
 $org_unit = $predkladatel->appendChild($org_unit);
-$org_unit->appendTextChild( 'kod', '11320' );    # opsano z prikladu
+$org_unit->appendTextChild( 'kod', $org_unit_id );
 my $mff = $doc->createElement('nazev');
 $mff = $org_unit->appendChild($mff);
 $mff->appendTextNode('Matematicko-fyzikální fakulta');
@@ -127,12 +129,22 @@ my %name_mapped = (
 
 # loop over the imported results and output them
 for my $res_idx ( 0 .. $#{$zotero} ) {
+
+    # set and normalise some attributes
     my $lang = $zotero->[$res_idx]->{"language"} // 'eng';
     $zotero->[$res_idx]->{"language"} = $lang; # everything MUST have a language
+
+    # RIV ID like: identifikacni-kod="RIV/00216208:11320/17:10336140"
+    my $zotero_item_id = $zotero->[$res_idx]->{"id"};
+    $zotero_item_id =~ s{^http://zotero\.org/groups/2792663/items/}{};
+    my $shortyear = $obdobi - 2000;
+    my $id        = "RIV/$ico:$org_unit_id/$shortyear:$zotero_item_id";
+
+    # generate and fill-in the node
     my $result = $content->addNewChild( '', $result_elem_name );
 
     # fixed result attributes - template
-    $result->setAttribute( 'identifikacni-kod', $zotero->[$res_idx]->{"id"} );
+    $result->setAttribute( 'identifikacni-kod', $id );
     $result->setAttribute( 'duvernost-udaju',   'verejne-pristupne' );
     $result->setAttribute( 'rok-uplatneni',     $obdobi );
     $result->setAttribute( 'druh', 'ostatni' );  #TODO implementovat dalsi druhy
@@ -183,42 +195,44 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
     my $vvi = $navaznost->addNewChild( '', 'vvi' );
     $vvi->setAttribute( 'identifikacni-kod', $id_vvi );
 
-LANGUAGE: {
-    if ( $lang =~ /^en(g|glish)?$/i ){ 
-        $lang = 'eng'; # normalise English to ISO-639-3
+  LANGUAGE: {
+        if ( $lang =~ /^en(g|glish)?$/i ) {
+            $lang = 'eng';    # normalise English to ISO-639-3
+        }
+        else {    # non-English, so look for English Title and Abstract
+            my ( $eng_title, $eng_abstract );
+
+            #English Title (cut it and leave the original)
+            $zotero->[$res_idx]->{"title"} =~ s/\|\s*(.*)$//
+              || die "ID: ",
+              $zotero->[$res_idx]->{"id"},
+              " missing English title.\n",
+              "Zotero title: $1\n",
+              "\$1: $1";
+            $eng_title = $1;
+            my $et_node = $result->addNewChild( '', $name_mapped{"title"} );
+            $et_node->appendText($eng_title);
+            $et_node->setAttribute( 'jazyk', 'eng' );
+
+            # English Abstract (cut it and leave the original)
+            $zotero->[$res_idx]->{"abstract"} =~ s/\|\s*(.*)$//
+              || die "ID: ", $zotero->[$res_idx]->{"id"},
+              " missing English abstract.";
+            $eng_abstract = $1;
+            my $ea_node = $result->addNewChild( '', $name_mapped{"abstract"} );
+            $ea_node->appendText($eng_abstract);
+            $ea_node->setAttribute( 'jazyk', 'eng' );
+        }
     }
-    else { # non-English, so look for English Title and Abstract
-        my ($eng_title, $eng_abstract);
 
-        #English Title (cut it and leave the original)
-        $zotero->[$res_idx]->{"title"} =~ s/\|\s*(.*)$// 
-        || die "ID: ", 
-        $zotero->[$res_idx]->{"id"},
-        " missing English title.\n",
-        "Zotero title: $1\n",
-        "\$1: $1";
-        $eng_title = $1;
-        my $et_node = $result->addNewChild( '', $name_mapped{"title"} );
-        $et_node->appendText( $eng_title );
-        $et_node->setAttribute( 'jazyk', 'eng' );
-
-        # English Abstract (cut it and leave the original)
-        $zotero->[$res_idx]->{"abstract"} =~ s/\|\s*(.*)$// 
-        || die "ID: ", $zotero->[$res_idx]->{"id"}," missing English abstract.";
-        $eng_abstract = $1;
-        my $ea_node = $result->addNewChild( '', $name_mapped{"abstract"} );
-        $ea_node->appendText( $eng_abstract );
-        $ea_node->setAttribute( 'jazyk', 'eng' );
-    }
-}
-
-    # simple text nodes one per result 
+    # simple text nodes one per result
     # (except for English abstract and titles of foreign language results above)
     for my $name (qw(language title abstract URL DOI)) {
         if ( defined $zotero->[$res_idx]->{$name} ) {
-#            $lang = $zotero->[$res_idx]->{"$name"} if $name eq 'language';
-            if ( $name eq 'DOI' ) { # remove the URL part to make a valid DOI
-                $zotero->[$res_idx]->{$name} =~ s/^.*10\./10\./ ; 
+
+     #            $lang = $zotero->[$res_idx]->{"$name"} if $name eq 'language';
+            if ( $name eq 'DOI' ) {    # remove the URL part to make a valid DOI
+                $zotero->[$res_idx]->{$name} =~ s/^.*10\./10\./;
             }
             my $node = $result->addNewChild( '', $name_mapped{"$name"} );
             $node->appendText( $zotero->[$res_idx]->{$name} );
