@@ -153,7 +153,7 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
     my $klasifikace = $result->addNewChild( '', 'klasifikace' );
     my $obor_node   = $klasifikace->addNewChild( '', 'obor' );
     $obor_node->setAttribute( 'postaveni', 'hlavni' );
-    $obor_node->setAttribute( 'ciselnik',  'oblastiUK' )
+    $obor_node->setAttribute( 'ciselnik',  'oblastiOECD' )
       ;    # obor dle klasifikace UK
            # get "obor" (area) from CSL and set it
            # CSL JSON doesn't have an attribute for this. We store it in
