@@ -196,7 +196,8 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
             my ( $eng_title, $eng_abstract );
 
             #English Title (cut it and leave the original)
-            $zotero->[$res_idx]->{"title"} =~ s/\|\s*(.*)$//
+            my $note = $zotero->[$res_idx]->{'note'};
+            $note =~ m/^\s*title\s*:\s*(\N+)\s*$/sm
               || die "ID: ",
               $zotero->[$res_idx]->{"id"},
               " missing English title.\n",
@@ -208,8 +209,8 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
             $et_node->setAttribute( 'jazyk', 'eng' );
 
             # English Abstract (cut it and leave the original)
-            $zotero->[$res_idx]->{"abstract"} =~ s/\|\s*(.*)$//
-              || die "ID: ", $zotero->[$res_idx]->{"id"},
+            $note =~ m/^\s*abstract\s*:\s*(\N+)\s*$/sm
+            || die "ID: ", $zotero->[$res_idx]->{"id"},
               " missing English abstract.";
             $eng_abstract = $1;
             my $ea_node = $result->addNewChild( '', $name_mapped{"abstract"} );
