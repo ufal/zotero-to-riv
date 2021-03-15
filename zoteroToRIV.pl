@@ -29,15 +29,8 @@ my $verze         = "01";
 my $cislo_jednaci = 1;
 my $id_vvi        = 90101;    # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
 my $fallback_obor = "10201";  # comp. science, inf. science, bioinformatics
+#TODO obor UK: "Computational Linguistics"?
 my $fallback_keyword = "Digital Humanities";
-
-# MFF ID
-#Marcel Golias: Jako jeden z nejčastějších problémů tam máte prvek "identifikacni-kod":
-
-#- váš prvek: identifikacni-kod="http://zotero.org/groups/2792663/items/4HNZZHPS"
-#- můj prvek: identifikacni-kod="RIV/00216208:11320/17:10336140"
-
-#Jen upozorňuji, že každý takovýto prvek má zpravidla přesně definovaný formát. Ta první část ("RIV/00216208:11320/") je tam povinná, neboť identifikuje naši fakultu => jedná se o naše IČO a přidělený kód fakulty). To další dvojčíslí (např. "17") je označení roku publikování výsledku (17 = 2017, 20 = 2020 apod.). A to poslední osmičíslí (např. "10336140") je konkrétní identifikační kód výsledku, který je (chápu-li to správně) libovolný, ale každý výsledek ho musí mít jedinečný (čili pravděpodobně nelze použít nějaký, který už v RIV u nějakého výsledku je ... pravidla jeho generování ale neznám, existují-li vůbec nějaká).
 
 # Publications from a CSL JSON file
 my $json      = JSON->new->allow_nonref;
