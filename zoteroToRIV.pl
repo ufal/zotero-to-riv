@@ -28,8 +28,8 @@ my $autor_email   = 'stranak@ufal.mff.cuni.cz';
 my $verze         = "01";
 my $cislo_jednaci = 1;
 my $id_vvi        = 90101;    # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
-my $fallback_obor = "10201";  # comp. science, inf. science, bioinformatics
-#TODO obor UK: "Computational Linguistics"?
+#my $fallback_obor = "10201";  # OECD: comp. science, inf. science, bioinformatics
+my $fallback_obor = "Matematická lingvistika";  # CUNI 
 my $fallback_keyword = "Digital Humanities";
 
 # Publications from a CSL JSON file
@@ -157,7 +157,7 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
         my $note = $zotero->[$res_idx]->{'note'};
 
         #        say "\nNOTE:\n-----\n$note\n" if defined $note;
-        $note =~ m/^\s*obor\s*:\s*(\N+)\s*$/sm;
+        $note =~ m/^\s*field\s*:\s*(\N+)\s*$/sm;
         $obor = $1;
         $note =~ m/^\s*kw\s*:\s*(\N+)\s*$/sm;
         my $kw_string = $1;
@@ -197,7 +197,7 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
 
             #English Title (cut it and leave the original)
             my $note = $zotero->[$res_idx]->{'note'};
-            $note =~ m/^\s*title\s*:\s*(\N+)\s*$/sm
+            $note =~ m/^\s*title_EN\s*:\s*(\N+)\s*$/sm
               || die "ID: ",
               $zotero->[$res_idx]->{"id"},
               " missing English title.\n",
@@ -209,7 +209,7 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
             $et_node->setAttribute( 'jazyk', 'eng' );
 
             # English Abstract (cut it and leave the original)
-            $note =~ m/^\s*abstract\s*:\s*(\N+)\s*$/sm
+            $note =~ m/^\s*abstract_EN\s*:\s*(\N+)\s*$/sm
             || die "ID: ", $zotero->[$res_idx]->{"id"},
               " missing English abstract.";
             $eng_abstract = $1;
