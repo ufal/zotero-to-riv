@@ -15,7 +15,8 @@ GetOptions(
     "stdout"   => \our $use_stdout,
     "output=s" => \our $out_filename,
     "input=s"  => \our $in_filename,
-) or die "Usage: $0 [--stdout|-s] [--in|-i] <file> [--out|-o] <filename>\n";
+    "debug"    => \our $debug,
+) or die "Usage: $0 [--stdout|-s] --debug [--in|-i] <file> [--out|-o] <filename>\n";
 
 #  $in_filename   = 'Zotero/test-ufal.json';
 #  $out_filename  = 'RIV21-MSM-11320___,R01.vav';
@@ -28,8 +29,8 @@ my $autor_email   = 'stranak@ufal.mff.cuni.cz';
 my $verze         = "01";
 my $cislo_jednaci = 1;
 my $id_vvi        = 90101;    # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
-#my $fallback_obor = "10201";  # OECD: comp. science, inf. science, bioinformatics
 my $fallback_obor = "Matematická lingvistika";  # CUNI 
+my $debug_obor    = "10201";  # OECD; valid RIV value, use for RVVI validator
 my $fallback_keyword = "Digital Humanities";
 
 # Publications from a CSL JSON file
@@ -178,6 +179,7 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
 
     # a fallback area (obor) to make data valid RIV
     $obor = $fallback_obor if not defined $obor;
+    $obor = $debug_obor if $debug; # override - use the OECD value for the validator
     $obor_node->appendText($obor);
 
     # navaznosti - support of the LRI (why we are doing all of this)
