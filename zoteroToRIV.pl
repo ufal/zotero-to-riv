@@ -16,21 +16,23 @@ GetOptions(
     "output=s" => \our $out_filename,
     "input=s"  => \our $in_filename,
     "debug"    => \our $debug,
-) or die "Usage: $0 [--stdout|-s] --debug [--in|-i] <file> [--out|-o] <filename>\n";
+  )
+  or die
+  "Usage: $0 [--stdout|-s] --debug [--in|-i] <file> [--out|-o] <filename>\n";
 
 #  $in_filename   = 'Zotero/test-ufal.json';
 #  $out_filename  = 'RIV21-MSM-11320___,R01.vav';
-my $obdobi        = 2021;
-my $ico           = '00216208';                   # IČO of Univerzita Karlova
-my $org_unit_id   = 11320;                        # RIV ID of MFF (faculty)
-my $autor_dodavky = "Pavel Straňák";
-my $autor_tel     = "221 914 247";
-my $autor_email   = 'stranak@ufal.mff.cuni.cz';
-my $verze         = "01";
-my $cislo_jednaci = 1;
-my $id_vvi        = 90101;    # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
-my $fallback_obor = "Matematická lingvistika";  # CUNI 
-my $debug_obor    = "10201";  # OECD; valid RIV value, use for RVVI validator
+my $obdobi           = 2021;
+my $ico              = '00216208';                   # IČO of Univerzita Karlova
+my $org_unit_id      = 11320;                        # RIV ID of MFF (faculty)
+my $autor_dodavky    = "Pavel Straňák";
+my $autor_tel        = "221 914 247";
+my $autor_email      = 'stranak@ufal.mff.cuni.cz';
+my $verze            = "01";
+my $cislo_jednaci    = 1;
+my $id_vvi           = 90101; # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
+my $fallback_obor    = "Matematická lingvistika";    # CUNI
+my $debug_obor       = "10201";  # OECD; valid RIV value, use for RVVI validator
 my $fallback_keyword = "Digital Humanities";
 
 # Publications from a CSL JSON file
@@ -131,8 +133,9 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
     # RIV ID like: identifikacni-kod="RIV/00216208:11320/17:10336140"
     my $zotero_item_id = $zotero->[$res_idx]->{"id"};
     $zotero_item_id =~ s{^http://zotero\.org/groups/2792663/items/}{};
-    my $shortyear = $obdobi - 2000;
-    my $id        = "RIV/$ico:$org_unit_id/$shortyear:$zotero_item_id";
+    my $shortyear =
+      $obdobi - 2000;    #TODO uplatneni nebo sberu? Toto je spravne pro sber!
+    my $id = "RIV/$ico:$org_unit_id/$shortyear:$zotero_item_id";
 
     # generate and fill-in the node
     my $result = $content->addNewChild( '', $result_elem_name );
@@ -140,7 +143,8 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
     # fixed result attributes - template
     $result->setAttribute( 'identifikacni-kod', $id );
     $result->setAttribute( 'duvernost-udaju',   'verejne-pristupne' );
-    $result->setAttribute( 'rok-uplatneni',     $obdobi );
+
+    #    $result->setAttribute( 'rok-uplatneni',     $obdobi );
     $result->setAttribute( 'druh', 'ostatni' );  #TODO implementovat dalsi druhy
 
     # klasifikace – at least the main area (obor) and one keyword required
@@ -154,10 +158,20 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
            # 'note' (Zotero displays as 'Extra') line 'obor:value'
     my ( $obor, @keywords );
 
+    # date issued = rok-uplatneni || obdobi sberu
+    if ( defined $zotero->[$res_idx]->{'issued'} ) {
+        my $rok = $zotero->[$res_idx]->{'issued'}->{'date-parts'}->[0]->[0];
+        $result->setAttribute( 'rok-uplatneni', $rok );
+    }
+    else {
+        warn "Item $id has no year issued. Inserting $obdobi.\n";
+        $result->setAttribute( 'rok-uplatneni', $obdobi );
+    }
+
+    # Attributes not covered by the Zotero scheme.
+    # We store them as "key: value" pairs in the "note" field
     if ( defined $zotero->[$res_idx]->{'note'} ) {
         my $note = $zotero->[$res_idx]->{'note'};
-
-        #        say "\nNOTE:\n-----\n$note\n" if defined $note;
         $note =~ m/^\s*field\s*:\s*(\N+)\s*$/sm;
         $obor = $1;
         $note =~ m/^\s*kw\s*:\s*(\N+)\s*$/sm;
@@ -179,14 +193,15 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
 
     # a fallback area (obor) to make data valid RIV
     $obor = $fallback_obor if not defined $obor;
-    $obor = $debug_obor if $debug; # override - use the OECD value for the validator
+    $obor = $debug_obor
+      if $debug;    # override - use the OECD value for the validator
     $obor_node->appendText($obor);
 
     # navaznosti - support of the LRI (why we are doing all of this)
     my $navaznosti = $result->addNewChild( '', 'navaznosti' );
     my $navaznost  = $navaznosti->addNewChild( '', 'navaznost' );
     $navaznost->setAttribute( 'druh-vztahu', 'byl-dosazen-pri-reseni' )
-      ;    # p. 28 XML docs
+      ;             # p. 28 XML docs
     my $vvi = $navaznost->addNewChild( '', 'vvi' );
     $vvi->setAttribute( 'identifikacni-kod', $id_vvi );
 
@@ -212,7 +227,7 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
 
             # English Abstract (cut it and leave the original)
             $note =~ m/^\s*abstract_EN\s*:\s*(\N+)\s*$/sm
-            || die "ID: ", $zotero->[$res_idx]->{"id"},
+              || die "ID: ", $zotero->[$res_idx]->{"id"},
               " missing English abstract.";
             $eng_abstract = $1;
             my $ea_node = $result->addNewChild( '', $name_mapped{"abstract"} );
