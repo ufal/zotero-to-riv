@@ -144,8 +144,52 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
     $result->setAttribute( 'identifikacni-kod', $id );
     $result->setAttribute( 'duvernost-udaju',   'verejne-pristupne' );
 
-    #    $result->setAttribute( 'rok-uplatneni',     $obdobi );
-    $result->setAttribute( 'druh', 'ostatni' );  #TODO implementovat dalsi druhy
+# druh vysledku: TODO WOS a SCOPUS, pokud mame data v Zoteru
+# J (clanek-v-periodiku), everything as Jost, i.e. <poddruh>clanek-ostatni</poddruh>
+# D (clanek-ve-sborniku),
+# O (ostatni) for everything else
+# J
+    my $zotero_type = $zotero->[$res_idx]->{'type'};
+    my $subtype;
+    if ( $zotero_type eq 'article-journal' ) {    # type: J
+        $result->setAttribute( 'druh', 'clanek-v-periodiku' );
+        $subtype = 'clanek-ostatni';
+        $result->appendTextChild( 'poddruh', $subtype );
+        my $periodikum_node = $result->addNewChild( '', 'periodikum' );
+        {
+            my $issn = $zotero->[$res_idx]->{'ISSN'} || warn "No ISSN in $id";
+        $issn =~ s/.*(\d\d\d\d\-\d\d\d\w).*/$1/; # keep just one valid ISSN
+        $periodikum_node->appendTextChild( 'ISSN', $issn );
+        }
+        $periodikum_node->appendTextChild( 'nazev', $zotero->[$res_idx]->{'container-title'} );
+#          || warn "No journal name in $id";
+        my $vydavatel_node = $periodikum_node->addNewChild( '', 'vydavatel' );
+        $vydavatel_node->appendTextChild( 'stat',
+            $zotero->[$res_idx]->{'country'} // 'US' );    # !!! NEEXISTUJE V DATECH!
+#          || warn
+#          "$zotero->[$res_idx]->{'id'}: No country for a journal. Setting 'US'";
+        # sometimes issue or volume is missing. 
+        # In that case set it to the other.
+        $result->appendTextChild( 'rocnik', $zotero->[$res_idx]->{'volume'} // $zotero->[$res_idx]->{'issue'}  );
+        $result->appendTextChild( 'cislo', $zotero->[$res_idx]->{'issue'} // $zotero->[$res_idx]->{'volume'} );
+        $result->appendTextChild( 'zpusob-publikovani', 'open-access' ); # How to store in Zotero?
+        my $strany_node = $result->addNewChild( '', 'strany' );
+        my $strany = $zotero->[$res_idx]->{'page'} // 1-10; # !!! if there are no pages, say 10
+        $strany_node->appendTextChild( 'rozsah', $strany);    
+        #        || warn "An article MUST have pages from-to: $zotero->[$res_idx]->{'id'}, $zotero->[$res_idx]->{'page'}";
+        $zotero->[$res_idx]->{'page'} =~ /(\d+)\-(\d+)/;
+        my $count = $2-$1;
+        $strany_node->setAttribute( 'pocet', $count );
+    }
+    elsif ( $zotero_type eq 'paper-conference' ) {    # type: D
+        $result->setAttribute( 'druh', 'clanek-ve-sborniku' );
+
+        #TODO ostatni atributy, str. 33
+
+    }
+    else {                                            #type: O
+        $result->setAttribute( 'druh', 'ostatni' );
+    }
 
     # klasifikace – at least the main area (obor) and one keyword required
     my $klasifikace = $result->addNewChild( '', 'klasifikace' );
@@ -255,7 +299,6 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
     # complex nodes
 
     # authors
-    #    my $authors_node = $doc->createElement('autori');
     my $authors_node = $result->addNewChild( '', 'autori' );
     my $pocet_autoru;
 
@@ -282,14 +325,10 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
 
 #TODO klasifikace, navaznosti, spravna ID zaznamu
 
-#$state = $doc->toFile($filename, $format);
-
 #if ($use_stdout) {
 #    $doc->toFH( \*STDOUT );
 #}
 #else {
-#$doc->setCompression('6');
-#$doc->toFile( $out_filename, 0 );
 $doc->toFile( $out_filename, 2 );
 
 #}
