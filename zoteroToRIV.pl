@@ -22,18 +22,22 @@ GetOptions(
 
 #  $in_filename   = 'Zotero/test-ufal.json';
 #  $out_filename  = 'RIV21-MSM-11320___,R01.vav';
-my $obdobi           = 2021;
+my $obdobi           = 2022;
 my $ico              = '00216208';                   # IČO of Univerzita Karlova
 my $org_unit_id      = 11320;                        # RIV ID of MFF (faculty)
 my $autor_dodavky    = "Pavel Straňák";
-my $autor_tel        = "221 914 247";
+my $autor_tel        = "951 554 247";
 my $autor_email      = 'stranak@ufal.mff.cuni.cz';
 my $verze            = "01";
 my $cislo_jednaci    = 1;
 my $id_vvi           = 90101; # ID VVI LINDAT/CLARIAH-CZ 01.01.2019 - 31.12.2022
-my $fallback_obor    = "Matematická lingvistika";    # CUNI
-my $debug_obor       = "10201";  # OECD; valid RIV value, use for RVVI validator
+my $fallback_obor    = "Matematická lingvistika";    # CUNI-required subject
 my $fallback_keyword = "Digital Humanities";
+
+# RIV-required OECD subject classification. Use this only for validating
+# the exported XML in the RVVI validator, since the XML we produce is for
+# internal use at CUNI, not for sending directly to RVVI.
+my $debug_obor = "10201";
 
 # Publications from a CSL JSON file
 my $json      = JSON->new->allow_nonref;
@@ -158,27 +162,38 @@ for my $res_idx ( 0 .. $#{$zotero} ) {
         my $periodikum_node = $result->addNewChild( '', 'periodikum' );
         {
             my $issn = $zotero->[$res_idx]->{'ISSN'} || warn "No ISSN in $id";
-        $issn =~ s/.*(\d\d\d\d\-\d\d\d\w).*/$1/; # keep just one valid ISSN
-        $periodikum_node->appendTextChild( 'ISSN', $issn );
+            $issn =~ s/.*(\d\d\d\d\-\d\d\d\w).*/$1/;  # keep just one valid ISSN
+            $periodikum_node->appendTextChild( 'ISSN', $issn );
         }
-        $periodikum_node->appendTextChild( 'nazev', $zotero->[$res_idx]->{'container-title'} );
-#          || warn "No journal name in $id";
+        $periodikum_node->appendTextChild( 'nazev',
+            $zotero->[$res_idx]->{'container-title'} );
+
+        #          || warn "No journal name in $id";
         my $vydavatel_node = $periodikum_node->addNewChild( '', 'vydavatel' );
         $vydavatel_node->appendTextChild( 'stat',
-            $zotero->[$res_idx]->{'country'} // 'US' );    # !!! NEEXISTUJE V DATECH!
+            $zotero->[$res_idx]->{'country'} // 'US' )
+          ;    # !!! NEEXISTUJE V DATECH!
+
 #          || warn
 #          "$zotero->[$res_idx]->{'id'}: No country for a journal. Setting 'US'";
-        # sometimes issue or volume is missing. 
+
+        # sometimes issue or volume is missing.
         # In that case set it to the other.
-        $result->appendTextChild( 'rocnik', $zotero->[$res_idx]->{'volume'} // $zotero->[$res_idx]->{'issue'}  );
-        $result->appendTextChild( 'cislo', $zotero->[$res_idx]->{'issue'} // $zotero->[$res_idx]->{'volume'} );
-        $result->appendTextChild( 'zpusob-publikovani', 'open-access' ); # How to store in Zotero?
+        $result->appendTextChild( 'rocnik',
+            $zotero->[$res_idx]->{'volume'} // $zotero->[$res_idx]->{'issue'} );
+        $result->appendTextChild( 'cislo',
+            $zotero->[$res_idx]->{'issue'} // $zotero->[$res_idx]->{'volume'} );
+        $result->appendTextChild( 'zpusob-publikovani', 'open-access' )
+          ;    # How to store in Zotero?
         my $strany_node = $result->addNewChild( '', 'strany' );
-        my $strany = $zotero->[$res_idx]->{'page'} // 1-10; # !!! if there are no pages, say 10
-        $strany_node->appendTextChild( 'rozsah', $strany);    
-        #        || warn "An article MUST have pages from-to: $zotero->[$res_idx]->{'id'}, $zotero->[$res_idx]->{'page'}";
+        my $strany      = $zotero->[$res_idx]->{'page'}
+          // 1 - 10;    # if there are no pages, let us assume 1-10
+        $strany_node->appendTextChild( 'rozsah', $strany );
+
+    #        || warn "An article MUST have pages from-to:
+    #               $zotero->[$res_idx]->{'id'}, $zotero->[$res_idx]->{'page'}";
         $zotero->[$res_idx]->{'page'} =~ /(\d+)\-(\d+)/;
-        my $count = $2-$1;
+        my $count = $2 - $1;
         $strany_node->setAttribute( 'pocet', $count );
     }
     elsif ( $zotero_type eq 'paper-conference' ) {    # type: D
