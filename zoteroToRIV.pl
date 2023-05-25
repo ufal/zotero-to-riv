@@ -7,8 +7,9 @@ use strict;
 use warnings;
 use local::lib;
 use XML::LibXML;
-use JSON;
+use JSON::XS;
 use Path::Tiny;
+use Time::HiRes qw(clock);
 
 use Getopt::Long;
 GetOptions(
@@ -40,10 +41,14 @@ my $fallback_keyword = "Digital Humanities";
 my $debug_obor = "10201";
 
 # Publications from a CSL JSON file
-my $json      = JSON->new->allow_nonref;
+# measure elapsed time
+my $t0 = clock();
+my $json      = JSON::XS->new->allow_nonref;
 my $all_of_it = path("$in_filename")->slurp;    #efficient with Path::Tiny
 my $zotero    = $json->decode($all_of_it);
-say STDERR "Imported $#{$zotero} results.";     #info
+my $t1 = clock();
+my $elapsed = $t1 - $t0;
+say STDERR "Imported $#{$zotero} results in $elapsed sec.";     #info
 
 # RIV XML template – START
 my $encoding = 'utf8';
